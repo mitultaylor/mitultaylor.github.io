@@ -13,29 +13,17 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             margin: 0;
             color: #1d1d1f;
-            background-color: #fff5ed; /* Fallback color */
+            /* REINFORCED VIBRANT SUNRISE BACKGROUND */
+            background: #fff5ed; 
+            background: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%) no-repeat center center fixed;
+            background-size: cover;
         }
-        
-        /* REINFORCED SUNRISE BACKGROUND LAYER */
-        .sunrise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%);
-            background-attachment: fixed;
-        }
-
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); }
+        .glass { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); }
         .logo-frame { width: 64px; height: 64px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
         .logo-frame img { max-width: 100%; height: auto; object-fit: contain; }
     </style>
 </head>
 <body class="antialiased">
-
-    <div class="sunrise-overlay"></div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
         <div class="glass rounded-2xl px-8 py-4 flex justify-between items-center shadow-2xl">
@@ -67,7 +55,7 @@
     </section>
 
     <section id="experience" class="max-w-4xl mx-auto py-24 px-6">
-        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900">Professional Journey</h2>
+        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900 italic">Professional Journey</h2>
         <div class="space-y-6">
             
             <div class="glass p-6 rounded-3xl flex items-center gap-6 shadow-sm">
@@ -92,13 +80,13 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass p-8 rounded-3xl border-blue-200 bg-blue-50/30 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div class="glass p-8 rounded-3xl border-blue-200 bg-blue-50/30">
                     <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter">Education</h3>
                     <p class="text-xs font-bold text-blue-600 uppercase tracking-widest">Bachelors in Computer Application (2013)</p>
                     <p class="text-[10px] font-medium text-slate-500 uppercase mt-1">Yashwantrao Chavan Maharashtra Open University</p>
                 </div>
-                <div class="glass p-8 rounded-3xl text-left">
+                <div class="glass p-8 rounded-3xl">
                     <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter">Foundations</h3>
                     <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 space-y-1">
                         <div>• Sam Infotech (2011-2012)</div>
