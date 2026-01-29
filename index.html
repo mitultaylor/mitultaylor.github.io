@@ -13,17 +13,29 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             margin: 0;
             color: #1d1d1f;
-            /* REINFORCED SUNRISE BACKGROUND */
-            background: #fff5ed; 
-            background: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%) no-repeat center center fixed;
-            background-size: cover;
+            background-color: #fff5ed; /* Fallback color */
         }
+        
+        /* REINFORCED SUNRISE BACKGROUND LAYER */
+        .sunrise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%);
+            background-attachment: fixed;
+        }
+
         .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); }
         .logo-frame { width: 64px; height: 64px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
         .logo-frame img { max-width: 100%; height: auto; object-fit: contain; }
     </style>
 </head>
 <body class="antialiased">
+
+    <div class="sunrise-overlay"></div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
         <div class="glass rounded-2xl px-8 py-4 flex justify-between items-center shadow-2xl">
@@ -36,7 +48,7 @@
             </div>
             <div class="hidden md:flex gap-8 items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="#projects" class="hover:text-blue-600 transition">Impact</a>
-                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="#experience" class="hover:text-blue-600 transition">Journey</a>
                 <button onclick="copyEmail()" class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-blue-600 transition">Contact</button>
             </div>
         </div>
@@ -55,12 +67,12 @@
     </section>
 
     <section id="experience" class="max-w-4xl mx-auto py-24 px-6">
-        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900">Professional Experience</h2>
+        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900">Professional Journey</h2>
         <div class="space-y-6">
             
             <div class="glass p-6 rounded-3xl flex items-center gap-6 shadow-sm">
                 <div class="logo-frame shrink-0">
-                    <img src="KF_Logo.webp" alt="Korn Ferry" onerror="this.src='https://via.placeholder.com/60?text=KF'">
+                    <img src="KF_Logo.webp" alt="Korn Ferry" onerror="this.src='https://via.placeholder.com/64?text=KF'">
                 </div>
                 <div class="text-left">
                     <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest">2013 — 2025</span>
@@ -71,7 +83,7 @@
 
             <div class="glass p-6 rounded-3xl flex items-center gap-6 shadow-sm">
                 <div class="logo-frame shrink-0">
-                    <img src="Team's Logo.jfif" alt="Team Computers" onerror="this.src='https://via.placeholder.com/60?text=TEAM'">
+                    <img src="Team's Logo.jfif" alt="Team Computers" onerror="this.src='https://via.placeholder.com/64?text=TEAM'">
                 </div>
                 <div class="text-left">
                     <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2012 — 2013</span>
@@ -82,13 +94,13 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="glass p-8 rounded-3xl border-blue-200 bg-blue-50/30 text-left">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter text-left">Education</h3>
-                    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest text-left">Bachelors in Computer Application (2013)</p>
-                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1 text-left">Yashwantrao Chavan Maharashtra Open University</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter">Education</h3>
+                    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest">Bachelors in Computer Application (2013)</p>
+                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1">Yashwantrao Chavan Maharashtra Open University</p>
                 </div>
                 <div class="glass p-8 rounded-3xl text-left">
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter text-left">Foundations</h3>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 space-y-1 text-left">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter">Foundations</h3>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 space-y-1">
                         <div>• Sam Infotech (2011-2012)</div>
                         <div>• LYM Computers (2009-2011)</div>
                         <div>• Indiabulls | Reliance (2007-2008)</div>
