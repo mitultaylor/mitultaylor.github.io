@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
     
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="favicon.png?v=1">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -16,17 +16,18 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             margin: 0; 
             color: #1d1d1f; 
-            background-color: #fff5ed;
+            background-color: #fcefe3; /* Stronger fallback color */
         }
 
-        /* FIXED BACKGROUND LAYER - This forces the sunrise to stay visible */
-        .bg-fixed-sunrise {
+        /* VIBRANT FIXED BACKGROUND LAYER */
+        .sunrise-bg-fixed {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%);
+            width: 100%;
+            height: 100%;
+            /* Intensified colors: Sunset Orange to Deep Sky Blue */
+            background: linear-gradient(135deg, #ffd8b1 0%, #a5d8ff 50%, #d8c9ff 100%);
             z-index: -1;
         }
 
@@ -37,7 +38,7 @@
 </head>
 <body class="antialiased">
 
-    <div class="bg-fixed-sunrise"></div>
+    <div class="sunrise-bg-fixed"></div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
         <div class="glass rounded-2xl px-8 py-4 flex justify-between items-center shadow-2xl">
@@ -49,14 +50,14 @@
                 </div>
             </div>
             <div class="hidden md:flex gap-8 items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
-                <a href="#impact" class="hover:text-blue-600 transition">Impact</a>
-                <a href="#journey" class="hover:text-blue-600 transition">Journey</a>
+                <a href="#impact-section" class="hover:text-blue-600 transition">Impact</a>
+                <a href="#journey-section" class="hover:text-blue-600 transition">Journey</a>
                 <button onclick="copyEmail()" class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-blue-600 transition shadow-lg">Contact</button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20">
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20">
         <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-200">
             USA Green Card Holder | ITIL 4 Certified
         </div>
@@ -68,33 +69,33 @@
         </p>
     </section>
 
-    <section id="impact" class="max-w-5xl mx-auto py-24 px-6">
+    <section id="impact-section" class="max-w-5xl mx-auto py-24 px-6">
         <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900 italic">Strategic Impact</h2>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="glass p-10 rounded-[2.5rem] shadow-sm">
                 <h3 class="text-2xl font-bold mb-4 uppercase">Fleet Modernization</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">Managed the upgrade of 70 systems to Windows 10 and 50 strategic systems to Windows 11 with 100% data integrity.</p>
-                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Lifecycle Refresh</span>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6 italic text-center">Managed the upgrade of 70 systems to Windows 10 and 50 strategic systems to Windows 11 with 100% data integrity.</p>
+                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-center">Lifecycle Refresh</span>
             </div>
             <div class="glass p-10 rounded-[2.5rem] shadow-sm">
-                <h3 class="text-2xl font-bold mb-4 uppercase">Site Relocation</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6">Directed IT logistics for 70+ user office moves, ensuring 100% Day-One operational readiness.</p>
-                <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Site Reliability</span>
+                <h3 class="text-2xl font-bold mb-4 uppercase text-center">Infrastructure Relocation</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6 italic text-center text-center">Directed IT logistics for 70+ user office moves, ensuring 100% Day-One operational readiness.</p>
+                <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-center text-center">Site Reliability</span>
             </div>
         </div>
     </section>
 
-    <section id="journey" class="max-w-4xl mx-auto py-24 px-6">
-        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900 italic text-center">Journey</h2>
+    <section id="journey-section" class="max-w-4xl mx-auto py-24 px-6">
+        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900 italic">Journey</h2>
         <div class="space-y-6">
             <div class="glass p-6 rounded-3xl flex items-center gap-6 shadow-sm transition-all hover:bg-white/40">
                 <div class="logo-frame shrink-0">
                     <img src="KF_Logo.webp" alt="Korn Ferry" onerror="this.src='https://via.placeholder.com/64?text=KF'">
                 </div>
-                <div class="text-left">
+                <div class="text-left text-left text-left">
                     <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest">2013 — 2025</span>
                     <h3 class="text-xl font-bold text-slate-900 uppercase">IT Operations & EUC Lead</h3>
-                    <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter">Korn Ferry International</p>
+                    <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter text-left">Korn Ferry International</p>
                 </div>
             </div>
 
@@ -102,22 +103,22 @@
                 <div class="logo-frame shrink-0">
                     <img src="Team's Logo.jfif" alt="Team Computers" onerror="this.src='https://via.placeholder.com/64?text=TEAM'">
                 </div>
-                <div class="text-left">
+                <div class="text-left text-left text-left">
                     <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2012 — 2013</span>
                     <h3 class="text-lg font-bold text-slate-900 uppercase leading-tight">Senior Support Engineer</h3>
-                    <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter">Team Computers</p>
+                    <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter text-left">Team Computers</p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <div class="glass p-8 rounded-3xl bg-blue-50/40">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter">Education</h3>
-                    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest">Bachelors in Computer Application (2013)</p>
-                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1">Yashwantrao Chavan Maharashtra Open University</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter text-left">Education</h3>
+                    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest text-left">Bachelors in Computer Application (2013)</p>
+                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1 leading-tight text-left">Yashwantrao Chavan Maharashtra Open University</p>
                 </div>
                 <div class="glass p-8 rounded-3xl">
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter">Foundations</h3>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 space-y-1">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter text-left text-left">Foundations</h3>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 space-y-1 text-left text-left">
                         <div>• Sam Infotech (2011-2012)</div>
                         <div>• LYM Computers (2009-2011)</div>
                         <div>• Indiabulls | Reliance (2007-2008)</div>
