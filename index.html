@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
     
-    <link rel="icon" type="image/png" href="favicon.png?v=1">
+    <link rel="icon" type="image/png" href="favicon.png?v=3">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -15,110 +15,158 @@
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             margin: 0; 
-            color: #1d1d1f; 
-            background-color: #fcefe3; /* Stronger fallback color */
+            color: #ffffff; 
+            background: #0a0a0c;
+            overflow-x: hidden;
         }
 
-        /* VIBRANT FIXED BACKGROUND LAYER */
-        .sunrise-bg-fixed {
+        /* WATERMARK-FREE DYNAMIC BACKGROUND */
+        .digital-horizon {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Intensified colors: Sunset Orange to Deep Sky Blue */
-            background: linear-gradient(135deg, #ffd8b1 0%, #a5d8ff 50%, #d8c9ff 100%);
             z-index: -1;
+            background: radial-gradient(circle at 50% 100%, #1e3a8a 0%, #0f172a 40%, #020617 100%);
         }
 
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); }
-        .logo-frame { width: 64px; height: 64px; background: white; border-radius: 14px; display: flex; align-items: center; justify-content: center; padding: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; }
+        .digital-horizon::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(500px) rotateX(60deg);
+            transform-origin: bottom;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            from { background-position: 0 0; }
+            to { background-position: 0 100%; }
+        }
+
+        .glow-orb {
+            position: absolute;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            filter: blur(80px);
+        }
+
+        .glass { 
+            background: rgba(15, 23, 42, 0.7); 
+            backdrop-filter: blur(16px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        
+        .logo-frame { 
+            width: 64px; height: 64px; 
+            background: white; 
+            border-radius: 14px; 
+            display: flex; items-center: center; justify-content: center; 
+            padding: 6px; 
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); 
+        }
         .logo-frame img { max-width: 100%; height: auto; object-fit: contain; }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="sunrise-bg-fixed"></div>
+    <div class="digital-horizon">
+        <div class="glow-orb"></div>
+    </div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
         <div class="glass rounded-2xl px-8 py-4 flex justify-between items-center shadow-2xl">
             <div class="flex items-center gap-3 text-left">
-                <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-orange-400 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg">MT</div>
+                <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-cyan-400 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg">MT</div>
                 <div class="flex flex-col leading-none">
-                    <span class="font-black text-slate-900 tracking-tighter text-lg uppercase">Mitul Tailor</span>
-                    <span class="text-[8px] font-bold text-blue-600 uppercase tracking-[0.2em]">IT Operations Leader</span>
+                    <span class="font-black text-white tracking-tighter text-lg uppercase">Mitul Tailor</span>
+                    <span class="text-[8px] font-bold text-blue-400 uppercase tracking-[0.2em]">IT Operations Leader</span>
                 </div>
             </div>
-            <div class="hidden md:flex gap-8 items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
-                <a href="#impact-section" class="hover:text-blue-600 transition">Impact</a>
-                <a href="#journey-section" class="hover:text-blue-600 transition">Journey</a>
-                <button onclick="copyEmail()" class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-blue-600 transition shadow-lg">Contact</button>
+            <div class="hidden md:flex gap-8 items-center text-[10px] font-black uppercase tracking-widest text-slate-300">
+                <a href="#impact" class="hover:text-blue-400 transition">Impact</a>
+                <a href="#journey" class="hover:text-blue-400 transition">Journey</a>
+                <button onclick="copyEmail()" class="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-500 transition shadow-lg shadow-blue-500/20">Contact</button>
             </div>
         </div>
     </nav>
 
     <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20">
-        <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-200">
-            USA Green Card Holder | ITIL 4 Certified
+        <div class="glass px-4 py-1 rounded-full text-blue-400 text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-500/30">
+            USA Green Card Holder | ITIL® 4 Certified
         </div>
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-none text-slate-900 uppercase">
-            Elevating <br><span class="text-blue-600 italic">Operations.</span>
+        <h1 class="text-6xl md:text-9xl font-extrabold tracking-tighter mb-8 leading-none uppercase">
+            Elevating <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 italic">Operations.</span>
         </h1>
-        <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
+        <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto font-medium leading-relaxed">
             17+ years of driving stability and excellence at <strong>Korn Ferry</strong> through global infrastructure transitions and SLA mastery.
         </p>
     </section>
 
-    <section id="impact-section" class="max-w-5xl mx-auto py-24 px-6">
-        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900 italic">Strategic Impact</h2>
+    <section id="impact" class="max-w-5xl mx-auto py-24 px-6">
+        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-white italic">Strategic Impact</h2>
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass p-10 rounded-[2.5rem] shadow-sm">
-                <h3 class="text-2xl font-bold mb-4 uppercase">Fleet Modernization</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6 italic text-center">Managed the upgrade of 70 systems to Windows 10 and 50 strategic systems to Windows 11 with 100% data integrity.</p>
-                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-center">Lifecycle Refresh</span>
+            <div class="glass p-10 rounded-[2.5rem] hover:border-blue-500/50 transition-all">
+                <h3 class="text-2xl font-bold mb-4 uppercase text-blue-400">Fleet Modernization</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">Managed the upgrade of 70 systems to Windows 10 and 50 strategic systems to Windows 11 with 100% data integrity.</p>
+                <div class="flex gap-2">
+                    <span class="bg-blue-500/20 text-blue-400 border border-blue-500/30 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Enterprise Refresh</span>
+                </div>
             </div>
-            <div class="glass p-10 rounded-[2.5rem] shadow-sm">
-                <h3 class="text-2xl font-bold mb-4 uppercase text-center">Infrastructure Relocation</h3>
-                <p class="text-slate-500 text-sm leading-relaxed mb-6 italic text-center text-center">Directed IT logistics for 70+ user office moves, ensuring 100% Day-One operational readiness.</p>
-                <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest text-center text-center">Site Reliability</span>
+            <div class="glass p-10 rounded-[2.5rem] hover:border-cyan-500/50 transition-all">
+                <h3 class="text-2xl font-bold mb-4 uppercase text-cyan-400">Infrastructure Move</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-6">Directed IT logistics for 70+ user office moves, ensuring 100% Day-One operational readiness.</p>
+                <div class="flex gap-2">
+                    <span class="bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">Site Reliability</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="journey-section" class="max-w-4xl mx-auto py-24 px-6">
-        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-slate-900 italic">Journey</h2>
-        <div class="space-y-6">
-            <div class="glass p-6 rounded-3xl flex items-center gap-6 shadow-sm transition-all hover:bg-white/40">
+    <section id="journey" class="max-w-4xl mx-auto py-24 px-6">
+        <h2 class="text-4xl font-black mb-16 text-center uppercase tracking-tighter text-white italic">Professional Journey</h2>
+        <div class="space-y-6 text-left">
+            
+            <div class="glass p-6 rounded-3xl flex items-center gap-6 group hover:bg-white/5 transition-all">
                 <div class="logo-frame shrink-0">
                     <img src="KF_Logo.webp" alt="Korn Ferry" onerror="this.src='https://via.placeholder.com/64?text=KF'">
                 </div>
-                <div class="text-left text-left text-left">
-                    <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest">2013 — 2025</span>
-                    <h3 class="text-xl font-bold text-slate-900 uppercase">IT Operations & EUC Lead</h3>
-                    <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter text-left">Korn Ferry International</p>
+                <div>
+                    <span class="text-blue-400 font-bold text-[10px] uppercase tracking-widest">2013 — 2025</span>
+                    <h3 class="text-xl font-bold text-white uppercase">IT Operations & EUC Lead</h3>
+                    <p class="text-slate-400 text-xs font-bold uppercase tracking-tighter">Korn Ferry International</p>
                 </div>
             </div>
 
-            <div class="glass p-6 rounded-3xl flex items-center gap-6 shadow-sm transition-all hover:bg-white/40">
+            <div class="glass p-6 rounded-3xl flex items-center gap-6 group hover:bg-white/5 transition-all">
                 <div class="logo-frame shrink-0">
                     <img src="Team's Logo.jfif" alt="Team Computers" onerror="this.src='https://via.placeholder.com/64?text=TEAM'">
                 </div>
-                <div class="text-left text-left text-left">
-                    <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2012 — 2013</span>
-                    <h3 class="text-lg font-bold text-slate-900 uppercase leading-tight">Senior Support Engineer</h3>
-                    <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter text-left">Team Computers</p>
+                <div>
+                    <span class="text-slate-400 font-bold text-[10px] uppercase tracking-widest">2012 — 2013</span>
+                    <h3 class="text-lg font-bold text-white uppercase leading-tight">Senior Support Engineer</h3>
+                    <p class="text-slate-400 text-xs font-bold uppercase tracking-tighter">Team Computers</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div class="glass p-8 rounded-3xl bg-blue-50/40">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter text-left">Education</h3>
-                    <p class="text-xs font-bold text-blue-600 uppercase tracking-widest text-left">Bachelors in Computer Application (2013)</p>
-                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1 leading-tight text-left">Yashwantrao Chavan Maharashtra Open University</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="glass p-8 rounded-3xl border-blue-500/20">
+                    <h3 class="text-lg font-bold text-white mb-2 uppercase tracking-tighter">Education</h3>
+                    <p class="text-xs font-bold text-blue-400 uppercase tracking-widest">BCA (2013)</p>
+                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1">YCMOU</p>
                 </div>
-                <div class="glass p-8 rounded-3xl">
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter text-left text-left">Foundations</h3>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-400 space-y-1 text-left text-left">
+                <div class="glass p-8 rounded-3xl border-slate-700">
+                    <h3 class="text-lg font-bold text-white mb-4 uppercase tracking-tighter">Foundations</h3>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-slate-500 space-y-1">
                         <div>• Sam Infotech (2011-2012)</div>
                         <div>• LYM Computers (2009-2011)</div>
                         <div>• Indiabulls | Reliance (2007-2008)</div>
@@ -129,13 +177,13 @@
     </section>
 
     <footer class="py-40 text-center px-6">
-        <div class="max-w-xl mx-auto glass p-12 rounded-[3rem] shadow-2xl">
-            <h2 class="text-4xl font-black mb-6 tracking-tighter uppercase italic text-slate-900">Let's Collaborate</h2>
+        <div class="glass max-w-xl mx-auto p-12 rounded-[3rem] shadow-2xl border-blue-500/20">
+            <h2 class="text-4xl font-black mb-6 tracking-tighter uppercase italic text-white">Let's Collaborate</h2>
             <div class="flex flex-col gap-6">
-                <button onclick="copyEmail()" id="smartBtn" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black uppercase text-[10px] tracking-widest shadow-xl hover:bg-blue-700 transition">
+                <button onclick="copyEmail()" id="smartBtn" class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black uppercase text-[10px] tracking-widest shadow-xl hover:bg-blue-500 transition">
                     Copy meetul.t@gmail.com
                 </button>
-                <a href="Resume_L2_ITIL.pdf" target="_blank" class="text-blue-600 font-black text-[10px] uppercase tracking-[0.3em] hover:underline transition">View Full Resume (PDF)</a>
+                <a href="Resume_L2_ITIL.pdf" target="_blank" class="text-blue-400 font-black text-[10px] uppercase tracking-[0.3em] hover:text-white transition underline">View Full Resume (PDF)</a>
             </div>
         </div>
     </footer>
