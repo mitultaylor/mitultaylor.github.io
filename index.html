@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
     
-    <link rel="icon" type="image/png" href="favicon.png?v=36">
-    
+    <link rel="icon" type="image/png" href="favicon.png?v=37">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -15,57 +14,63 @@
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             margin: 0; 
-            background-color: #F5F5F7; /* Apple/Phenomenon Light Mode */
+            background-color: #f8f9fa;
             color: #1a1a1a;
             overflow-x: hidden;
         }
 
-        /* 1. SYMMETRICAL IMPACT CARDS */
+        /* 1. WORKSPACE BACKGROUND WITH LIGHT FROST */
+        .workspace-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+            background: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+            background-size: cover;
+        }
+        .bg-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: rgba(255, 255, 255, 0.92); /* Soft light frost */
+            backdrop-filter: blur(4px);
+        }
+
+        /* 2. CLICKABLE CLIPBOARD ANIMATION */
+        .clipboard-link {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        .clipboard-link:hover {
+            transform: scale(1.1) rotate(-3deg);
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+        }
+
         .impact-card {
             background: #ffffff;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #eee;
             border-radius: 2.5rem;
             padding: 4rem;
             height: 100%;
             display: flex;
             flex-direction: column;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: 0.3s;
         }
-        .impact-card:hover {
-            border-color: #1a1a1a;
-            transform: translateY(-10px);
-            box-shadow: 0 40px 80px -20px rgba(0,0,0,0.05);
-        }
+        .impact-card:hover { border-color: #1a1a1a; box-shadow: 0 30px 60px -15px rgba(0,0,0,0.05); }
 
-        .btn-action-dark {
-            background: #1a1a1a;
-            color: #ffffff;
-            padding: 1.25rem 2.5rem;
-            border-radius: 9999px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.7rem;
-            transition: all 0.3s;
+        .btn-dark {
+            background: #1a1a1a; color: #fff;
+            padding: 1.25rem 2.5rem; border-radius: 9999px;
+            font-weight: 800; text-transform: uppercase;
+            letter-spacing: 0.1em; font-size: 0.7rem; transition: 0.3s;
         }
-        .btn-action-dark:hover { background: #3b82f6; transform: scale(1.05); }
-
-        .logo-box {
-            width: 70px; height: 70px;
-            background: #f9f9fb;
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            padding: 8px;
-            border: 1px solid #eee;
-        }
+        .btn-dark:hover { background: #3b82f6; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center bg-white/70 backdrop-blur-lg border-b border-gray-100">
+    <div class="workspace-bg"></div>
+    <div class="bg-overlay"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-10 py-8 flex justify-between items-center bg-white/50 backdrop-blur-md border-b border-gray-100">
         <div class="flex items-center gap-3">
             <div class="w-8 h-8 bg-black rounded-md flex items-center justify-center text-white font-black text-xs">MT</div>
-            <span class="font-bold tracking-tighter text-lg uppercase">M. Tailor</span>
+            <span class="font-extrabold tracking-tighter text-lg uppercase">M. Tailor</span>
         </div>
         <div class="hidden md:flex gap-12 text-[10px] font-black uppercase tracking-widest text-gray-400">
             <a href="#impact" class="hover:text-black transition">Impact</a>
@@ -74,103 +79,88 @@
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center px-10 md:px-24">
+    <section class="min-h-screen flex flex-col justify-center items-center px-10 text-center">
+        <a href="#impact" class="clipboard-link mb-10">
+            <div class="w-20 h-24 bg-white rounded-lg shadow-xl border border-gray-100 flex flex-col p-3 relative">
+                <div class="w-8 h-2 bg-gray-200 rounded-full mx-auto mb-4"></div>
+                <div class="space-y-2">
+                    <div class="w-full h-1 bg-blue-100 rounded"></div>
+                    <div class="w-full h-1 bg-gray-100 rounded"></div>
+                    <div class="w-2/3 h-1 bg-gray-100 rounded"></div>
+                </div>
+                <span class="absolute -bottom-2 -right-2 bg-blue-600 text-white text-[8px] font-bold px-2 py-1 rounded-full">GO</span>
+            </div>
+        </a>
+
         <div class="flex gap-4 mb-8">
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-4 py-2 bg-green-100 text-green-700 rounded-full">USA Green Card Holder</span>
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-4 py-2 bg-blue-100 text-blue-700 rounded-full">ITIL® 4 Certified</span>
+            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-4 py-2 bg-green-50 text-green-700 rounded-full border border-green-100">USA Green Card Holder</span>
+            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-4 py-2 bg-blue-50 text-blue-700 rounded-full border border-blue-100">ITIL® 4 Certified</span>
         </div>
         
-        <h1 class="text-7xl md:text-[9rem] font-extrabold tracking-tighter leading-[0.85] mb-12">
-            Operations <br><span class="text-gray-300 italic">Redefined.</span>
+        <h1 class="text-7xl md:text-[8rem] font-extrabold tracking-tighter leading-[0.85] mb-12">
+            Operations <br><span class="text-gray-400 italic">Excellence.</span>
         </h1>
         
-        <div class="max-w-2xl text-left">
-            <p class="text-xl text-gray-500 leading-relaxed mb-12">
-                17+ years of infrastructure mastery. Delivering stability and global transitions for world-class organizations like Korn Ferry.
+        <div class="max-w-xl">
+            <p class="text-lg text-gray-500 leading-relaxed mb-12">
+                17+ years of leading IT infrastructure and global transitions at Korn Ferry.
             </p>
-            <div class="flex items-center gap-8">
-                <a href="#impact" class="btn-action-dark">View Portfolio</a>
-                <a href="Resume_L2_ITIL.pdf" target="_blank" class="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-black transition border-b border-gray-200 pb-1">Download CV / Resume</a>
+            <div class="flex gap-6 justify-center">
+                <a href="Resume_L2_ITIL.pdf" target="_blank" class="btn-dark">Download CV</a>
             </div>
         </div>
     </section>
 
-    <section id="impact" class="py-40 px-10 md:px-24 bg-white">
+    <section id="impact" class="py-40 px-10 md:px-24 bg-white/50">
         <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 mb-20 text-center">Strategic Impact</h2>
-        <div class="grid md:grid-cols-2 gap-10 items-stretch">
+        <div class="grid md:grid-cols-2 gap-8 items-stretch max-w-7xl mx-auto">
             <div class="impact-card">
-                <div class="text-xs font-black text-blue-500 mb-6 tracking-widest">01 / ENTERPRISE</div>
                 <h3 class="text-4xl font-extrabold mb-8 tracking-tighter">Fleet Modernization</h3>
-                <p class="text-gray-500 text-lg leading-relaxed mb-10">Directed regional Windows 10/11 transitions for Korn Ferry. Managed hardware lifecycles for 120+ workstations with zero operational leakage and 100% data integrity.</p>
-                <div class="mt-auto border-t border-gray-100 pt-8">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Global Lifecycle Management</span>
-                </div>
+                <p class="text-gray-500 text-lg leading-relaxed">Regional lead for Windows transitions at Korn Ferry. Managed 120+ workstation lifecycles with 100% data integrity.</p>
+                <div class="mt-auto pt-10 text-[10px] font-bold text-blue-600 uppercase tracking-widest">Leadership</div>
             </div>
             <div class="impact-card">
-                <div class="text-xs font-black text-orange-500 mb-6 tracking-widest">02 / INFRASTRUCTURE</div>
                 <h3 class="text-4xl font-extrabold mb-8 tracking-tighter">Site Reliability</h3>
-                <p class="text-gray-500 text-lg leading-relaxed mb-10">Masterminded end-to-end IT logistics for complex office relocations for 70+ power users. Achieved 100% Day-One operational readiness.</p>
-                <div class="mt-auto border-t border-gray-100 pt-8">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Logistics & Deployment</span>
-                </div>
+                <p class="text-gray-500 text-lg leading-relaxed">Masterminded IT logistics for office relocations for 70+ users, ensuring 100% Day-One operational readiness.</p>
+                <div class="mt-auto pt-10 text-[10px] font-bold text-blue-600 uppercase tracking-widest">Operations</div>
             </div>
         </div>
     </section>
 
     <section id="journey" class="py-40 px-10 md:px-24">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 mb-20 text-center">Experience</h2>
-        <div class="max-w-5xl mx-auto space-y-4">
+        <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400 mb-20 text-center">Professional History</h2>
+        <div class="max-w-4xl mx-auto space-y-4">
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 flex items-center gap-10">
+                <div class="w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center p-2 border border-gray-100">
+                    <img src="KF_Logo.webp" class="max-w-full" alt="KF">
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold">Korn Ferry International</h3>
+                    <p class="text-gray-500 text-xs font-bold uppercase tracking-widest">IT Operations & EUC Lead (2013-2025)</p>
+                </div>
+            </div>
             
-            <div class="bg-white p-8 rounded-2xl border border-gray-200 flex items-center justify-between hover:border-black transition">
-                <div class="flex items-center gap-10">
-                    <div class="logo-box"><img src="KF_Logo.webp" alt="KF"></div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Korn Ferry International</h3>
-                        <p class="text-gray-500 text-xs font-bold uppercase tracking-widest mt-1">IT Operations & EUC Lead (2013-2025)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl border border-gray-200 flex items-center justify-between hover:border-black transition">
-                <div class="flex items-center gap-10">
-                    <div class="logo-box"><img src="Team's Logo.jfif" alt="Team"></div>
-                    <div>
-                        <h3 class="text-2xl font-bold">Team Computers</h3>
-                        <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mt-1">Senior Support Engineer (2012-2013)</p>
-                    </div>
-                </div>
-            </div>
-
             <div class="grid md:grid-cols-2 gap-4 pt-6">
-                <div class="bg-white border border-gray-200 p-12 rounded-2xl">
-                    <h4 class="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-6">Foundations</h4>
-                    <div class="space-y-3 text-[10px] font-bold text-gray-400 uppercase">
-                        <p>• Sam Infotech (2011-2012)</p>
-                        <p>• LYM Computers (2009-2011)</p>
-                        <p>• Indiabulls | Reliance (2007-2008)</p>
+                <div class="bg-white/80 p-10 rounded-2xl border border-gray-100">
+                    <h4 class="text-[9px] font-black text-gray-300 uppercase tracking-widest mb-4">Foundations</h4>
+                    <div class="text-[10px] font-bold text-gray-400 space-y-1">
+                        <p>SAM INFOTECH • LYM COMPUTERS • RELIANCE</p>
                     </div>
                 </div>
-                <div class="bg-white border border-gray-200 p-12 rounded-2xl">
-                    <h4 class="text-[10px] font-black text-gray-300 uppercase tracking-widest mb-6">Academic</h4>
-                    <p class="text-2xl font-bold text-black">BCA (2013)</p>
-                    <p class="text-xs text-gray-500 uppercase font-bold mt-2">YCMOU University</p>
+                <div class="bg-white/80 p-10 rounded-2xl border border-gray-100">
+                    <h4 class="text-[9px] font-black text-gray-300 uppercase tracking-widest mb-4">Education</h4>
+                    <p class="text-sm font-bold">BCA - YCMOU University</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-60 text-center">
+    <footer class="py-40 text-center">
         <div class="flex items-center justify-center gap-2 mb-8">
             <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Available for US-Based Opportunities</span>
+            <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Available for Opportunities</span>
         </div>
-        
-        <h2 class="text-7xl md:text-9xl font-black tracking-tighter mb-16 uppercase italic text-gray-200">Connect.</h2>
-        
-        <div class="flex flex-col items-center gap-10">
-            <button onclick="copyEmail()" id="smartBtn" class="btn-action-dark shadow-2xl">Copy meetul.t@gmail.com</button>
-            <a href="Resume_L2_ITIL.pdf" target="_blank" class="text-gray-400 font-black text-[10px] uppercase tracking-[0.3em] hover:text-black transition underline">Download Portfolio Resume (PDF)</a>
-        </div>
+        <button onclick="copyEmail()" id="smartBtn" class="btn-dark">Copy meetul.t@gmail.com</button>
     </footer>
 
     <script>
