@@ -3,103 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitul Tailor | IT Operations Excellence</title>
+    <title>Mitul Tailor | IT Operations Leader</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             margin: 0; 
-            background: #0a0a0a; 
-            color: #f5f5f3;
-            overflow-x: hidden;
+            background: #f9f6fa; /* Bloom-inspired soft background */
+            color: #1a1a1a;
         }
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
 
-        /* Subtle Luxury Vignette Background */
-        .luxury-bg {
+        /* Luminous Mesh Gradient */
+        .luminous-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            background: 
+                radial-gradient(at 0% 0%, #ffffff 0px, transparent 50%),
+                radial-gradient(at 100% 0%, #f3e8ff 0px, transparent 50%),
+                radial-gradient(at 100% 100%, #fff7ed 0px, transparent 50%);
         }
 
-        .nav-glass {
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        .bloom-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            border-radius: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bloom-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.05);
         }
 
-        .experience-card {
-            border-left: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .btn-bloom {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
         }
-        .experience-card:hover {
-            border-left: 1px solid #ffffff;
-            padding-left: 2rem;
-            background: rgba(255, 255, 255, 0.02);
+        .btn-bloom:hover {
+            background: #6d28d9; /* Subtle purple from Bloom */
+            transform: scale(1.05);
         }
 
-        .logo-box {
+        .logo-frame {
             width: 80px; height: 80px;
-            background: #fff;
-            padding: 8px;
-            border-radius: 4px;
+            background: #f9f6fa;
+            border-radius: 1.5rem;
             display: flex; align-items: center; justify-content: center;
+            padding: 12px;
         }
-        .logo-box img { max-width: 100%; height: auto; filter: grayscale(100%); transition: 0.3s; }
-        .experience-card:hover .logo-box img { filter: grayscale(0%); }
-
-        .btn-luxury {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s ease;
-        }
-        .btn-luxury:hover {
-            background: #fff;
-            color: #000;
-            border-color: #fff;
-        }
+        .logo-frame img { max-width: 100%; height: auto; border-radius: 4px; }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="luxury-bg"></div>
+    <div class="luminous-bg"></div>
 
-    <nav class="fixed top-0 w-full z-50 nav-glass px-10 py-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-bold tracking-[0.3em] uppercase">M. Tailor</span>
-            <div class="flex gap-12 text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">
-                <a href="#impact" class="hover:text-white transition">Impact</a>
-                <a href="#journey" class="hover:text-white transition">Journey</a>
-                <a href="mailto:meetul.t@gmail.com" class="text-white border-b border-white/30 pb-1">Get in touch</a>
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-6xl">
+        <div class="bg-white/80 backdrop-blur-xl border border-black/5 rounded-[2rem] px-8 py-5 flex justify-between items-center shadow-sm">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white font-black">MT</div>
+                <span class="font-bold tracking-tighter text-lg">Mitul Tailor</span>
+            </div>
+            <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+                <a href="#impact" class="hover:text-black transition">Strategic Impact</a>
+                <a href="#journey" class="hover:text-black transition">Professional Journey</a>
+                <a href="mailto:meetul.t@gmail.com" class="text-purple-600">Connect</a>
             </div>
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center px-10 md:px-20 max-w-7xl mx-auto">
-        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-500 mb-6">17+ Years of Enterprise IT Leadership</p>
-        <h1 class="text-7xl md:text-[10rem] leading-[0.9] mb-12 tracking-tighter">
-            Timeless <br><span class="italic text-gray-400">Excellence.</span>
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 pt-32 text-center">
+        <p class="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 mb-8">IT Operations & Leadership</p>
+        <h1 class="text-6xl md:text-[7rem] font-extrabold tracking-tighter leading-[0.9] mb-12">
+            Stability. <br><span class="text-gray-300">Modernized.</span>
         </h1>
-        <div class="max-w-xl">
-            <p class="text-lg text-gray-400 leading-relaxed mb-10">
-                Specializing in global infrastructure transitions and fleet modernization for elite consulting firms. Driving serenity through technical sophistication.
-            </p>
-            <a href="#impact" class="btn-luxury px-12 py-4 text-[10px] uppercase tracking-[0.3em] inline-block">Explore Portfolio</a>
+        <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-medium mb-12">
+            Driving seamless enterprise transitions through 17+ years of infrastructure mastery at <strong>Korn Ferry</strong> and global tech firms.
+        </p>
+        <div class="flex gap-4">
+            <a href="#impact" class="btn-bloom">View Impact</a>
+            <a href="Resume_L2_ITIL.pdf" target="_blank" class="px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-black transition">Download CV</a>
         </div>
     </section>
 
-    <section id="impact" class="py-40 px-10 md:px-20 max-w-7xl mx-auto">
-        <h2 class="text-5xl mb-24 tracking-tight">Strategic Impact</h2>
-        <div class="grid md:grid-cols-2 gap-20">
-            <div>
-                <div class="overflow-hidden mb-8">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" class="hover:scale-105 transition duration-700" alt="Office">
+    <section id="impact" class="max-w-7xl mx-auto py-32 px-10">
+        <h2 class="text-3xl font-bold mb-20 tracking-tighter uppercase">Strategic Outcomes</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bloom-card p-12">
+                <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-8 font-bold">01</div>
+                <h3 class="text-3xl font-bold mb-6 tracking-tight">Fleet Modernization</h3>
+                <p class="text-gray-500 leading-relaxed mb-8">Directed the regional migration to Windows 10/11 for Korn Ferry, ensuring zero downtime for 120+ critical workstations and 100% data integrity.</p>
+                <div class="flex gap-2">
+                    <span class="bg-gray-100 px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest text-gray-500">Asset Management</span>
                 </div>
-                <h3 class="text-3xl mb-4">Fleet Modernization</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-6 uppercase tracking-widest font-semibold">Windows 10/11 Regional Lead</p>
-                <p class="text-gray-400 leading-relaxed">Managed the multi-phase upgrade of regional assets at Korn Ferry. 100% data integrity and zero operational downtime across the fleet refresh.</p>
             </div>
-            <div class="md:mt-40">
-                <div class="overflow-hidden mb-8">
-                    <img src="
+            <div class="bloom-card p-12">
+                <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center text-orange-600 mb-8 font-bold">02</div>
+                <h3 class="text-3xl font-bold mb-6 tracking-tight">Site Reliability</h3>
+                <p class="text-gray-500 leading-relaxed mb-8">Led end-to-end IT logistics for office relocations involving 70+ users, delivering Day-One operational readiness in high-pressure environments.</p>
+                <div class="flex gap-2">
+                    <span class="bg-gray-100 px-3 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest text-gray-500">Logistics Mastery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="max-w-5xl mx-auto py-32 px-10">
+        <h2 class="text-3xl font-bold mb-20 tracking-tighter uppercase text-center">Journey</h2>
+        <div class="space-y-4">
+            
+            <div class="bg-white p-8 rounded-[2.5rem] flex items-center gap-8 border border-black/5 hover:border-purple-200 transition">
+                <div class="logo-frame shrink-0">
+                    <img src="KF_Logo.webp" alt="Korn Ferry">
+                </div>
+                <div>
+                    <p class="text-[10px] font-black text-purple-500 uppercase tracking-widest mb-1">2013 — 2025</p>
+                    <h3 class="text-2xl font-bold tracking-tight">IT Operations & EUC Lead</h3>
+                    <p class="text-gray-400 text-xs font-bold uppercase tracking-tighter">Korn Ferry International</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[2.5rem] flex items-center gap-8 border border-black/5 hover:border-purple-200 transition">
+                <div class="logo-frame shrink-0">
+                    <img src="Team's Logo.jfif" alt="Team Computers">
+                </div>
+                <div>
+                    <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">2012 — 2013</p>
+                    <h3 class="text-2xl font-bold tracking-tight">Senior Support Engineer</h3>
+                    <p class="text-gray-400 text-xs font-bold uppercase tracking-tighter">Team Computers</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 pt-4">
+                <div class="bg-white p-10 rounded-[2.5rem] border border-black/5">
+                    <h4 class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-6">Education</h4>
+                    <p class="text-xl font-bold">BCA (2013)</p>
+                    <p class="text-sm text-gray-400 font-medium">Yashwantrao Chavan Open University</p>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] border border-black/5">
+                    <h4 class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-6">History</h4>
+                    <div class="space-y-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                        <p>• Sam Infotech (2011-2012)</p>
+                        <p>• LYM Computers (2009-2011)</p>
+                        <p>• Indiabulls | Reliance (2007-2008)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-40 text-center">
+        <div class="max-w-xl mx-auto px-6">
+            <h2 class="text-5xl font-black tracking-tighter mb-12 uppercase italic">Let's build the <br>next chapter.</h2>
+            <button onclick="copyEmail()" id="smartBtn" class="btn-bloom">Copy meetul.t@gmail.com</button>
+        </div>
+    </footer>
+
+    <script>
+        function copyEmail() {
+            const email = "meetul.t@gmail.com";
+            navigator.clipboard.writeText(email);
+            const btn = document.getElementById('smartBtn');
+            btn.innerText = "COPIED TO CLIPBOARD!";
+            window.location.href = "mailto:" + email;
+            setTimeout(() => { btn.innerText = "Copy meetul.t@gmail.com"; }, 3000);
+        }
+    </script>
+</body>
+</html>
