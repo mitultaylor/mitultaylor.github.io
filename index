@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitul Tailor | IT Operations & EUC Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <header class="bg-slate-900 text-white py-20 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold">Mitul Tailor</h1>
+        <p class="mt-4 text-xl text-blue-400">IT Operations Manager | EUC Leader | ITIL® 4 Certified</p>
+        <div class="mt-8">
+            <a href="mailto:meetul.t@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold mr-4">Contact Me</a>
+            <a href="https://linkedin.com/in/mitultailor" class="border border-white hover:bg-white hover:text-slate-900 text-white px-6 py-3 rounded-lg font-semibold transition">LinkedIn</a>
+        </div>
+    </header>
+
+    <section class="max-w-5xl mx-auto -mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
+            <h3 class="text-3xl font-bold text-gray-900">17+ Years</h3>
+            <p class="text-gray-500 uppercase text-sm tracking-widest">IT Experience</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
+            <h3 class="text-3xl font-bold text-gray-900">98%</h3>
+            <p class="text-gray-500 uppercase text-sm tracking-widest">SLA Compliance</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center border-t-4 border-blue-600">
+            <h3 class="text-3xl font-bold text-gray-900">ITIL® 4</h3>
+            <p class="text-gray-500 uppercase text-sm tracking-widest">Foundation Certified</p>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold border-b-2 border-blue-600 inline-block mb-8">Professional Summary</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mb-12">
+            Results-driven IT Operations & End User Computing (EUC) expert with over 17 years of experience. 
+            I specialize in running IT operations like a business—driving incident reduction, asset governance, 
+            and high-quality employee experiences for global organizations like Korn Ferry.
+        </p>
+
+        <h2 class="text-3xl font-bold border-b-2 border-blue-600 inline-block mb-8">Core Expertise</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">ServiceNow</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">Microsoft 365</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">SLA Management</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">Active Directory</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">Vendor Mgmt</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">Endpoint Lifecycle</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">Asset Governance</span>
+            <span class="bg-gray-200 p-3 rounded text-center font-medium">VIP Support</span>
+        </div>
+
+        <h2 class="text-3xl font-bold border-b-2 border-blue-600 inline-block mb-8">Career Highlights</h2>
+        <ul class="space-y-4 text-gray-700">
+            <li>📌 <strong>Korn Ferry (11+ Years):</strong> Directed EUC operations and maintained 100% CMDB accuracy.</li>
+            <li>📌 <strong>Operational Excellence:</strong> Consistently exceeded 98% SLA targets across incident and request management.</li>
+            <li>📌 <strong>Global Readiness:</strong> U.S. Green Card holder, ready for immediate employment in enterprise environments.</li>
+        </ul>
+    </main>
+
+    <footer class="bg-gray-100 py-10 text-center text-gray-500 text-sm">
+        &copy; 2026 Mitul Tailor | Built with GitHub Pages
+    </footer>
+
+</body>
+</html>
