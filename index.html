@@ -14,8 +14,9 @@
             margin: 0;
             color: #1d1d1f;
             /* REINFORCED VIBRANT SUNRISE BACKGROUND */
-            background: #fff5ed; 
-            background: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%) no-repeat center center fixed;
+            background-color: #fff5ed;
+            background-image: linear-gradient(135deg, #fff5ed 0%, #e0f2fe 50%, #f5f3ff 100%);
+            background-attachment: fixed;
             background-size: cover;
         }
         .glass { background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.4); }
@@ -27,9 +28,9 @@
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl">
         <div class="glass rounded-2xl px-8 py-4 flex justify-between items-center shadow-2xl">
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-3 text-left">
                 <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-orange-400 rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg">MT</div>
-                <div class="flex flex-col leading-none text-left">
+                <div class="flex flex-col leading-none">
                     <span class="font-black text-slate-900 tracking-tighter text-lg uppercase">Mitul Tailor</span>
                     <span class="text-[8px] font-bold text-blue-600 uppercase tracking-[0.2em]">IT Operations Leader</span>
                 </div>
@@ -37,7 +38,7 @@
             <div class="hidden md:flex gap-8 items-center text-[10px] font-black uppercase tracking-widest text-slate-500">
                 <a href="#projects" class="hover:text-blue-600 transition">Impact</a>
                 <a href="#experience" class="hover:text-blue-600 transition">Journey</a>
-                <button onclick="copyEmail()" class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-blue-600 transition">Contact</button>
+                <button onclick="copyEmail()" class="bg-slate-900 text-white px-5 py-2 rounded-xl hover:bg-blue-600 transition shadow-lg">Contact</button>
             </div>
         </div>
     </nav>
@@ -46,8 +47,8 @@
         <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 text-blue-600 text-[10px] font-black uppercase tracking-widest mb-8 border border-blue-200">
             USA Green Card Holder | ITIL® 4 Certified
         </div>
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-none text-slate-900">
-            ELEVATING <br><span class="text-blue-600 italic">OPERATIONS.</span>
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-none text-slate-900 uppercase">
+            Elevating <br><span class="text-blue-600 italic">Operations.</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto font-medium">
             17+ years of driving stability and excellence at <strong>Korn Ferry</strong> through global infrastructure transitions and SLA mastery.
@@ -64,7 +65,7 @@
                 </div>
                 <div class="text-left">
                     <span class="text-blue-600 font-bold text-[10px] uppercase tracking-widest">2013 — 2025</span>
-                    <h3 class="text-xl font-bold text-slate-900">IT Operations & EUC Lead</h3>
+                    <h3 class="text-xl font-bold text-slate-900 uppercase">IT Operations & EUC Lead</h3>
                     <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter">Korn Ferry International</p>
                 </div>
             </div>
@@ -75,7 +76,7 @@
                 </div>
                 <div class="text-left">
                     <span class="text-slate-500 font-bold text-[10px] uppercase tracking-widest">2012 — 2013</span>
-                    <h3 class="text-lg font-bold text-slate-900 leading-tight">Senior Support Engineer</h3>
+                    <h3 class="text-lg font-bold text-slate-900 leading-tight uppercase">Senior Support Engineer</h3>
                     <p class="text-slate-500 text-xs font-bold uppercase tracking-tighter">Team Computers</p>
                 </div>
             </div>
@@ -84,7 +85,7 @@
                 <div class="glass p-8 rounded-3xl border-blue-200 bg-blue-50/30">
                     <h3 class="text-lg font-bold text-slate-800 mb-2 uppercase tracking-tighter">Education</h3>
                     <p class="text-xs font-bold text-blue-600 uppercase tracking-widest">Bachelors in Computer Application (2013)</p>
-                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1">Yashwantrao Chavan Maharashtra Open University</p>
+                    <p class="text-[10px] font-medium text-slate-500 uppercase mt-1 leading-tight">Yashwantrao Chavan Maharashtra Open University</p>
                 </div>
                 <div class="glass p-8 rounded-3xl">
                     <h3 class="text-lg font-bold text-slate-800 mb-4 uppercase tracking-tighter">Foundations</h3>
