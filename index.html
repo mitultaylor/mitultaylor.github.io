@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=95">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=96">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         
-        /* FIXED BACKGROUND */
+        /* THE FOUNDATION: Fixed Desktop Image */
         body { 
             margin: 0; padding: 0; 
             background: #000 url('bg_mt_ws.jpg') no-repeat center center fixed !important; 
@@ -19,88 +19,87 @@
             overflow-x: hidden; 
         }
 
-        /* FROSTED GLASS TEXTURE ENGINE */
+        /* THE FROSTED SLAB ENGINE: Pure Texture */
         .frosted-slab {
-            background: rgba(255, 255, 255, 0.08) !important;
+            background: rgba(255, 255, 255, 0.07) !important;
             backdrop-filter: blur(45px) saturate(160%) !important;
             -webkit-backdrop-filter: blur(45px) saturate(160%) !important;
             border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            border-radius: 3rem;
+            border-radius: 3.5rem;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
         }
 
         .frosted-slab:hover {
-            transform: translateY(-15px) scale(1.015);
-            background: rgba(255, 255, 255, 0.15) !important;
-            border: 1px solid rgba(255, 255, 255, 0.5) !important;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+            transform: translateY(-12px) scale(1.01);
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
 
-        /* LIGHT SWIPE ANIMATION */
+        /* HOVER GLINT ANIMATION */
         .frosted-slab::after {
             content: '';
             position: absolute; top: 0; left: -150%;
-            width: 60%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+            width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
             transform: skewX(-20deg);
-            transition: 0.8s;
+            transition: 0.75s;
         }
         .frosted-slab:hover::after { left: 150%; }
 
-        /* NAVIGATION HOVER LOGIC */
-        .nav-zone { position: relative; display: inline-block; padding-bottom: 30px; }
-        .menu-trigger {
-            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.3); padding: 0.8rem 2rem;
-            border-radius: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer;
+        /* NAV HOVER REVEAL */
+        .nav-wrapper { position: relative; display: inline-block; padding-bottom: 30px; }
+        .nav-trigger {
+            background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3); padding: 0.9rem 2.2rem;
+            border-radius: 18px; display: flex; align-items: center; gap: 15px; cursor: pointer;
             color: white; font-weight: 800; transition: 0.3s;
         }
-        .nav-zone:hover .menu-trigger { background: white; color: black; }
+        .nav-wrapper:hover .nav-trigger { background: white; color: black; }
         
-        #dropdown-menu {
+        #nav-dropdown {
             display: none; position: absolute; top: 100%; left: 0;
             width: 280px; background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(30px); border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.4); z-index: 1000;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            backdrop-filter: blur(30px); border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.5); z-index: 1000;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
         }
-        .nav-zone:hover #dropdown-menu { display: block; }
+        .nav-wrapper:hover #nav-dropdown { display: block; }
         
-        .menu-link {
-            padding: 1.3rem 1.8rem; display: flex; items: center; justify-content: space-between;
-            font-size: 0.75rem; font-weight: 900; color: #111; text-transform: uppercase;
+        .tab-link {
+            padding: 1.4rem 2rem; display: flex; align-items: center; justify-content: space-between;
+            font-size: 0.8rem; font-weight: 900; color: #111; text-transform: uppercase;
             letter-spacing: 0.15em; border-bottom: 1px solid rgba(0,0,0,0.05); transition: 0.4s;
         }
-        .menu-link:hover { background: #2563eb; color: white; padding-left: 2.5rem; }
+        .tab-link:hover { background: #2563eb; color: white; padding-left: 2.5rem; }
 
         /* FULL SECTION CONFIG */
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 40px; }
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 40px; }
 
         .theme-blue { color: #60a5fa; }
         .theme-purple { color: #c084fc; }
-        .text-glow { text-shadow: 0 0 30px rgba(255,255,255,0.2); }
     </style>
 </head>
 <body class="antialiased">
 
-    <div class="fixed top-0 left-0 w-full h-full bg-black/40 -z-10"></div>
+    <div class="fixed top-0 left-0 w-full h-full bg-black/45 -z-10"></div>
 
-    <nav class="fixed top-0 w-full z-50 px-10 py-10">
-        <div class="nav-zone">
-            <div class="menu-trigger">
+    <nav class="fixed top-0 w-full z-50 px-12 py-12">
+        <div class="nav-wrapper">
+            <div class="nav-trigger">
                 <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-black text-[11px]">MT</div>
-                <span class="tracking-[0.3em] uppercase">M. Tailor</span>
+                <span class="tracking-[0.4em] uppercase">M. Tailor</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
             </div>
-            <div id="dropdown-menu">
-                <a href="#profile" class="menu-link">Profile</a>
-                <a href="#impact" class="menu-link">Impact</a>
-                <a href="#skills" class="menu-link">Skills</a>
-                <a href="#journey" class="menu-link">Journey</a>
-                <a href="#academic" class="menu-link">Academic</a>
-                <a href="#contact" class="menu-link">Contact</a>
+            <div id="nav-dropdown">
+                <a href="#profile" class="tab-link">Profile</a>
+                <a href="#impact" class="tab-link">Impact</a>
+                <a href="#skills" class="tab-link">Skills</a>
+                <a href="#journey" class="tab-link">Journey</a>
+                <a href="#academic" class="tab-link">Academic</a>
+                <a href="#contact" class="tab-link">Contact</a>
             </div>
         </div>
     </nav>
@@ -108,78 +107,78 @@
     <section id="profile">
         <div class="flex gap-6 mb-16 justify-center flex-wrap">
             <div class="px-10 py-5 frosted-slab theme-blue font-black text-[12px] uppercase tracking-[0.4em]">USA Green Card</div>
-            <div class="px-10 py-5 frosted-slab theme-purple font-black text-[12px] uppercase tracking-[0.4em]">ITIL® 4 Foundation</div>
+            <div class="px-10 py-5 frosted-slab theme-purple font-black text-[12px] uppercase tracking-[0.4em]">ITIL® 4 Certified</div>
         </div>
-        <div class="max-w-5xl mx-auto frosted-slab p-20 md:p-32 text-center border-t-2 border-white/20">
-            <h2 class="text-white text-7xl font-black mb-10 uppercase tracking-tighter text-glow">Executive Profile</h2>
+        <div class="max-w-6xl mx-auto frosted-slab p-24 md:p-36 text-center border-t-2 border-white/10">
+            <h2 class="text-white text-7xl md:text-8xl font-black mb-12 uppercase tracking-tighter">Executive Profile</h2>
             <p class="text-2xl md:text-3xl text-white/80 leading-relaxed font-medium">
-                Strategic IT Operations Leader with <span class="theme-blue font-bold">17+ years of expertise</span> in orchestrating high-availability infrastructure for global consulting giants.
+                Strategist and IT Operations Leader with <span class="theme-blue font-bold">17+ years of expertise</span>. Specializing in high-availability infrastructure and regional service excellence at <span class="theme-purple font-bold">Korn Ferry</span>.
             </p>
         </div>
     </section>
 
     <section id="impact">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14">
             <div class="frosted-slab p-16 border-l-4 border-blue-400">
-                <h3 class="text-4xl font-black mb-8 uppercase theme-blue tracking-tighter">Infrastructure Stabilization</h3>
+                <h3 class="text-4xl font-black mb-10 uppercase theme-blue tracking-tighter">Infrastructure Stabilization</h3>
                 <p class="text-white font-bold text-xl leading-relaxed mb-8">Directed the flawless relocation of Regional HQ for 70+ executive power-users.</p>
                 <ul class="text-white/60 space-y-5 font-semibold text-lg">
-                    <li>• 100% Day-One operational readiness achieved.</li>
                     <li>• Zero data loss during high-stakes server migrations.</li>
-                    <li>• Optimized regional uptime through proactive maintenance.</li>
+                    <li>• 100% Day-One operational readiness achieved.</li>
+                    <li>• Standardized EUC hardware for executive mobile units.</li>
                 </ul>
             </div>
             <div class="frosted-slab p-16 border-l-4 border-purple-400">
-                <h3 class="text-4xl font-black mb-8 uppercase theme-purple tracking-tighter">Fleet Modernization</h3>
-                <p class="text-white font-bold text-xl leading-relaxed mb-8">Orchestrated regional Windows 11 refresh cycles for 120+ workstations.</p>
+                <h3 class="text-4xl font-black mb-10 uppercase theme-purple tracking-tighter">Fleet Modernization</h3>
+                <p class="text-white font-bold text-xl leading-relaxed mb-8">Orchestrated regional Windows 11 refresh cycles for 120+ mission-critical workstations.</p>
                 <ul class="text-white/60 space-y-5 font-semibold text-lg">
                     <li>• Automated 85% of provisioning via SCCM/Intune logic.</li>
                     <li>• Reduced annual procurement overhead by 15%.</li>
-                    <li>• Standardized EUC hardware across multiple hubs.</li>
+                    <li>• Integrated hardware asset lifecycle tracking.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <h2 class="text-center text-[12px] font-black uppercase tracking-[1em] text-white/40 mb-24">Tech Ecosystem</h2>
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <h2 class="text-center text-[13px] font-black uppercase tracking-[1.2em] text-white/30 mb-24">Core Technology Stack</h2>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             <div class="frosted-slab p-12 text-center">
                 <div class="text-6xl mb-8">🛠️</div>
-                <h4 class="text-xl font-black theme-blue mb-4 uppercase">ServiceNow</h4>
-                <p class="text-white/60 text-sm leading-relaxed font-bold">Expert SLA orchestration & CMDB maintenance.</p>
+                <h4 class="text-xl font-black theme-blue mb-4 uppercase tracking-widest">ServiceNow</h4>
+                <p class="text-white/60 text-sm font-bold leading-relaxed uppercase">SLA Orchestration & CMDB</p>
             </div>
             <div class="frosted-slab p-12 text-center">
                 <div class="text-6xl mb-8">💻</div>
-                <h4 class="text-xl font-black theme-purple mb-4 uppercase">Intune</h4>
-                <p class="text-white/60 text-sm leading-relaxed font-bold">Automated provisioning & patch management.</p>
+                <h4 class="text-xl font-black theme-purple mb-4 uppercase tracking-widest">SCCM / Intune</h4>
+                <p class="text-white/60 text-sm font-bold leading-relaxed uppercase">Automated Patching & Provisioning</p>
             </div>
             <div class="frosted-slab p-12 text-center">
                 <div class="text-6xl mb-8">📜</div>
-                <h4 class="text-xl font-black theme-blue mb-4 uppercase">ITIL® 4</h4>
-                <p class="text-white/60 text-sm leading-relaxed font-bold">Strategic alignment of IT & business value.</p>
+                <h4 class="text-xl font-black theme-blue mb-4 uppercase tracking-widest">ITIL® 4</h4>
+                <p class="text-white/60 text-sm font-bold leading-relaxed uppercase">Continual Service Improvement</p>
             </div>
             <div class="frosted-slab p-12 text-center">
-                <div class="text-6xl mb-8">🏢</div>
-                <h4 class="text-xl font-black theme-purple mb-4 uppercase">Assets</h4>
-                <p class="text-white/60 text-sm leading-relaxed font-bold">Multi-million dollar portfolio lifecycle.</p>
+                <div class="text-6xl mb-8">📦</div>
+                <h4 class="text-xl font-black theme-purple mb-4 uppercase tracking-widest">Assets</h4>
+                <p class="text-white/60 text-sm font-bold leading-relaxed uppercase">Lifecycle & Vendor Relations</p>
             </div>
         </div>
     </section>
 
     <section id="journey">
-        <div class="max-w-5xl mx-auto space-y-12">
-            <div class="frosted-slab p-16 flex flex-col md:flex-row items-center gap-12 border-b-4 border-blue-400">
-                <img src="assets/logo/kf_logo.jpg" class="w-28 h-28 rounded-2xl shadow-2xl" alt="KF">
+        <div class="max-w-6xl mx-auto space-y-16">
+            <div class="frosted-slab p-16 flex flex-col md:flex-row items-center gap-14 border-b-4 border-blue-400">
+                <img src="assets/logo/kf_logo.jpg" class="w-32 h-32 rounded-2xl shadow-2xl" alt="KF">
                 <div>
-                    <p class="text-[12px] font-black theme-blue uppercase mb-3 tracking-widest">Korn Ferry International</p>
+                    <p class="text-[14px] font-black theme-blue uppercase mb-4 tracking-widest">Korn Ferry International</p>
                     <h3 class="text-5xl font-black uppercase text-white tracking-tighter">IT Operations Lead | 2013 — 2025</h3>
                 </div>
             </div>
-            <div class="frosted-slab p-16 flex flex-col md:flex-row items-center gap-12 border-b-4 border-purple-400">
-                <img src="assets/logo/team_logo.jpg" class="w-28 h-28 rounded-2xl shadow-2xl" alt="Team">
+            <div class="frosted-slab p-16 flex flex-col md:flex-row items-center gap-14 border-b-4 border-purple-400">
+                <img src="assets/logo/team_logo.jpg" class="w-32 h-32 rounded-2xl shadow-2xl" alt="Team">
                 <div>
-                    <p class="text-[12px] font-black theme-purple uppercase mb-3 tracking-widest">Team Computers</p>
+                    <p class="text-[14px] font-black theme-purple uppercase mb-4 tracking-widest">Team Computers</p>
                     <h3 class="text-5xl font-black uppercase text-white tracking-tighter">Senior Support Engineer | 2012 — 2013</h3>
                 </div>
             </div>
@@ -187,31 +186,31 @@
     </section>
 
     <section id="academic">
-        <div class="max-w-4xl mx-auto frosted-slab p-32 text-center border-t-2 border-blue-400">
-            <div class="text-8xl mb-12">🎓</div>
-            <h3 class="text-7xl font-black uppercase tracking-tighter text-white mb-6">BCA Degree</h3>
+        <div class="max-w-5xl mx-auto frosted-slab p-36 text-center border-t-2 border-white/10">
+            <div class="text-9xl mb-12">🎓</div>
+            <h3 class="text-7xl font-black uppercase tracking-tighter text-white mb-8">BCA Degree</h3>
             <p class="text-3xl font-bold theme-blue mb-4 uppercase">YCMOU University</p>
-            <p class="text-xl text-white/40 font-black uppercase tracking-widest">Graduated Class of 2013</p>
+            <p class="text-xl text-white/40 font-black uppercase tracking-[0.4em]">Graduated Class of 2013</p>
         </div>
     </section>
 
     <section id="contact">
-        <div class="max-w-6xl mx-auto frosted-slab p-20 shadow-2xl border-t-2 border-white/10">
-            <div class="grid md:grid-cols-3 gap-20 items-center">
+        <div class="max-w-6xl mx-auto frosted-slab p-24 shadow-2xl">
+            <div class="grid md:grid-cols-3 gap-24 items-center">
                 <div class="text-center">
-                    <div class="w-60 h-60 bg-white p-4 rounded-[2.5rem] shadow-2xl mx-auto">
-                        <img src="assets/logo/linkedin_qr.png" alt="QR" class="w-full h-full rounded-2xl">
+                    <div class="w-64 h-64 bg-white p-5 rounded-[3rem] shadow-2xl mx-auto">
+                        <img src="assets/logo/linkedin_qr.png" alt="QR" class="w-full h-full rounded-3xl">
                     </div>
-                    <p class="text-[12px] font-black text-white/40 uppercase tracking-[0.5em] mt-12">SCAN TO CONNECT</p>
+                    <p class="text-[13px] font-black text-white/40 uppercase tracking-[0.6em] mt-12">SCAN TO CONNECT</p>
                 </div>
-                <div class="md:col-span-2 space-y-16 text-center md:text-left md:border-l-2 md:border-white/10 md:pl-20">
+                <div class="md:col-span-2 space-y-20 text-center md:text-left md:border-l-2 md:border-white/10 md:pl-24">
                     <div>
-                        <p class="text-[12px] font-black theme-blue uppercase mb-6 tracking-[0.5em]">DIRECT LINE</p>
-                        <p class="text-6xl md:text-7xl font-black tracking-tighter text-white">+91 91677 75155</p>
+                        <p class="text-[13px] font-black theme-blue uppercase mb-6 tracking-[0.5em]">DIRECT LINE</p>
+                        <p class="text-7xl font-black tracking-tighter text-white">+91 91677 75155</p>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-10 items-center">
-                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-sm font-black text-white uppercase border-b-4 border-white tracking-[0.3em] hover:theme-blue transition-all">LINKEDIN</a>
-                        <button onclick="copyEmail()" id="smartBtn" class="bg-white text-black px-16 py-7 rounded-[2rem] font-black text-[14px] tracking-[0.3em] uppercase hover:bg-blue-600 hover:text-white transition-all">COPY EMAIL</button>
+                    <div class="flex flex-col sm:flex-row gap-12 items-center">
+                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-sm font-black text-white uppercase border-b-4 border-white tracking-[0.4em] hover:theme-blue transition-all">LINKEDIN</a>
+                        <button onclick="copyEmail()" id="smartBtn" class="bg-white text-black px-16 py-8 rounded-[2.5rem] font-black text-[14px] tracking-[0.4em] uppercase hover:bg-blue-600 hover:text-white transition-all">COPY EMAIL</button>
                     </div>
                 </div>
             </div>
@@ -219,10 +218,6 @@
     </section>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
         function copyEmail() {
             navigator.clipboard.writeText("meetul.t@gmail.com");
             const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
