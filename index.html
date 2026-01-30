@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="favicon.png?v=64">
+    <link rel="icon" type="image/png" href="favicon.png?v=65">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -21,11 +21,10 @@
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5;
             background: radial-gradient(circle at 5% 5%, rgba(59, 130, 246, 0.15), transparent 40%),
-                        radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.15), transparent 40%),
+                        radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.2), transparent 40%),
                         rgba(255, 255, 255, 0.12);
         }
 
-        /* NAVIGATION DROPDOWN */
         .menu-trigger {
             background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.5); padding: 0.75rem 1.5rem;
@@ -37,7 +36,7 @@
             width: 260px; background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(25px); border-radius: 16px;
             border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            overflow: hidden; z-index: 100;
+            z-index: 100;
         }
 
         .menu-item {
@@ -47,7 +46,6 @@
         }
         .menu-item:hover { background: rgba(59, 130, 246, 0.05); color: #3b82f6; padding-left: 1.8rem; }
 
-        /* BUTTONS & PANELS */
         @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
         .btn-pulse {
             background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%); color: #fff;
@@ -58,10 +56,10 @@
         .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); border-radius: 3rem; border: 1px solid rgba(255,255,255,0.4); }
         .hero-title { font-size: 8.5rem; line-height: 0.82; font-weight: 900; letter-spacing: -0.04em; }
 
-        #scrollTopBtn {
-            position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px;
-            background: white; border-radius: 12px; display: none; align-items: center; justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 100; cursor: pointer;
+        .qr-placeholder {
+            width: 140px; height: 140px; background: white; border: 8px solid white;
+            border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex; items-center; justify-center; margin: 0 auto;
         }
     </style>
 </head>
@@ -69,10 +67,6 @@
 
     <div id="fixed-bg-layer"></div>
     <div class="vibrant-glass-wash"></div>
-
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
-    </button>
 
     <nav class="fixed top-0 w-full z-50 px-10 py-8">
         <div class="relative inline-block text-left">
@@ -101,111 +95,63 @@
         <a href="Resume_L2_ITIL.pdf" target="_blank" class="btn-pulse">Full Profile</a>
     </section>
 
-    <section id="about" class="py-40 px-10 max-w-5xl mx-auto">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Expertise</h2>
-        <div class="glass-panel p-16 text-center shadow-2xl">
-            <h3 class="text-5xl font-black mb-8 uppercase tracking-tighter">IT Operations Architect</h3>
-            <p class="text-xl text-gray-600 leading-relaxed font-medium">
-                Seasoned leader specializing in global infrastructure stabilization, high-stakes office relocations, and end-user compute modernization. Leveraging ITIL® 4 frameworks to drive business efficiency.
-            </p>
-        </div>
-    </section>
-
-    <section id="impact" class="py-40 px-10 max-w-7xl mx-auto space-y-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Impact</h2>
-        <div class="grid md:grid-cols-2 gap-10">
-            <div class="glass-panel p-14 shadow-2xl">
-                <h3 class="text-3xl font-black mb-6 uppercase text-blue-600">Site Reliability</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Masterminded relocation for 70+ executive power-users, ensuring 100% Day-One operational readiness.</p>
-            </div>
-            <div class="glass-panel p-14 shadow-2xl">
-                <h3 class="text-3xl font-black mb-6 uppercase text-purple-600">Fleet Refresh</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Directed regional Windows transitions for 120+ users, achieving zero data leakage and 99.9% uptime.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="journey" class="py-40 px-10 max-w-5xl mx-auto space-y-12">
         <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Journey & Education</h2>
-        
         <div class="space-y-8">
-            <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 hover:border-blue-500 transition-all shadow-xl">
+            <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 shadow-xl">
                 <img src="KF_Logo.webp" class="w-20 h-20 rounded-xl" alt="KF">
                 <div>
                     <p class="text-[11px] font-black text-blue-600 uppercase mb-1">Korn Ferry International</p>
                     <h3 class="text-3xl font-black uppercase">IT Operations Lead | 2013 — 2025</h3>
                 </div>
             </div>
-            <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 hover:border-purple-500 transition-all shadow-xl">
-                <img src="Team's Logo.jfif" class="w-20 h-20 rounded-xl" alt="Team">
-                <div>
-                    <p class="text-[11px] font-black text-purple-600 uppercase mb-1">Team Computers</p>
-                    <h3 class="text-3xl font-black uppercase">Senior Support Engineer | 2012 — 2013</h3>
-                </div>
+            <div class="glass-panel p-12 shadow-xl text-center">
+                <h4 class="text-[10px] font-black text-blue-300 uppercase mb-8 tracking-widest">Education</h4>
+                <p class="text-4xl font-black uppercase tracking-tighter">BCA Degree</p>
+                <p class="text-[12px] text-gray-400 font-bold mt-2">YCMOU University • Graduated 2013</p>
             </div>
         </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass-panel p-12 shadow-xl">
-                <h4 class="text-[10px] font-black text-blue-300 uppercase mb-8">Education</h4>
-                <p class="text-3xl font-black uppercase tracking-tighter">BCA Degree</p>
-                <p class="text-[11px] text-gray-400 font-bold mt-2">YCMOU University • 2013</p>
-            </div>
-            <div class="glass-panel p-12 shadow-xl">
-                <h4 class="text-[10px] font-black text-purple-300 uppercase mb-8">Early Foundations</h4>
-                <div class="text-[10px] font-black text-gray-500 space-y-2 uppercase">
-                    <p>SAM Infotech • 2011</p>
-                    <p>Reliance | Indiabulls • 2007</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="py-40 px-10 max-w-5xl mx-auto text-center">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 uppercase">Certifications</h2>
-        <div class="glass-panel p-20 flex flex-col items-center gap-8 shadow-2xl">
-            <div class="w-24 h-24 bg-purple-50 rounded-full flex items-center justify-center text-4xl shadow-inner">🏆</div>
-            <div>
-                <h3 class="text-4xl font-black uppercase tracking-tighter">ITIL® 4 Foundation</h3>
-                <p class="text-gray-400 font-bold text-xs mt-4 tracking-widest uppercase">Issued by AXELOS | PeopleCert</p>
-            </div>
-        </div>
-        
     </section>
 
     <footer id="contact" class="py-40 text-center px-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-20">Get In Touch</h2>
-        <div class="max-w-3xl mx-auto glass-panel p-16 space-y-12 shadow-2xl">
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="text-center">
-                    <p class="text-[10px] font-black text-blue-600 uppercase mb-4">Direct Line</p>
-                    <p class="text-2xl font-black text-black tracking-tighter">+91 91677 75155</p>
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-20">Direct Connection</h2>
+        <div class="max-w-4xl mx-auto glass-panel p-16 shadow-2xl">
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="space-y-4">
+                    <div class="qr-placeholder">
+                        <img src="linkedin_qr.png" alt="Scan me" class="w-full h-full rounded-lg">
+                    </div>
+                    <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Scan to Connect</p>
                 </div>
-                <div class="text-center">
-                    <p class="text-[10px] font-black text-purple-600 uppercase mb-4">Professional Network</p>
-                    <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-2xl font-black text-black tracking-tighter hover:text-blue-600 transition-colors underline">LinkedIn Profile</a>
+                
+                <div class="space-y-10 md:col-span-2 text-left md:border-l border-gray-100 md:pl-12">
+                    <div>
+                        <p class="text-[10px] font-black text-blue-600 uppercase mb-2">Primary Contact</p>
+                        <p class="text-3xl font-black text-black tracking-tighter">+91 91677 75155</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-purple-600 uppercase mb-2">Email Address</p>
+                        <button onclick="copyEmail()" id="smartBtn" class="text-2xl font-black text-black tracking-tighter hover:text-blue-600 transition-all">meetul.t@gmail.com</button>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-black transition-all">
+                            Visit LinkedIn Profile
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="pt-10 border-t border-gray-100">
-                <button onclick="copyEmail()" id="smartBtn" class="btn-pulse">Copy meetul.t@gmail.com</button>
             </div>
         </div>
-    </section>
+    </footer>
 
     <script>
         function toggleMenu() {
             const menu = document.getElementById('dropdown-menu');
             menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
         }
-        window.onclick = function(e) { if (!e.target.closest('.menu-trigger')) document.getElementById('dropdown-menu').style.display = 'none'; }
-        window.onscroll = function() {
-            let btn = document.getElementById("scrollTopBtn");
-            btn.style.display = (document.documentElement.scrollTop > 500) ? "flex" : "none";
-        };
         function copyEmail() {
             navigator.clipboard.writeText("meetul.t@gmail.com");
-            const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
-            setTimeout(() => { btn.innerText = "Copy meetul.t@gmail.com"; }, 3000);
+            const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED TO CLIPBOARD!";
+            setTimeout(() => { btn.innerText = "meetul.t@gmail.com"; }, 3000);
         }
     </script>
 </body>
