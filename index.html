@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | Infrastructure Strategist</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=102">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=103">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -20,23 +20,20 @@
         :root {
             --cobalt: #60a5fa;
             --amethyst: #c084fc;
-            --glass-core: rgba(255, 255, 255, 0.07);
+            --glass-core: rgba(255, 255, 255, 0.08);
             --frost-level: blur(45px) saturate(170%);
         }
 
         .theme-blue { color: var(--cobalt); }
         .theme-purple { color: var(--amethyst); }
 
-        /* THE GLASS TRACKER (Point 2.A) */
+        /* THE GLASS TRACKER */
         #scroll-tracker {
             position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
             width: 4px; height: 30vh; background: rgba(255,255,255,0.1);
             border-radius: 10px; z-index: 1000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
         }
-        #scroll-fill {
-            width: 100%; height: 0%; background: var(--cobalt);
-            transition: height 0.2s ease-out; box-shadow: 0 0 15px var(--cobalt);
-        }
+        #scroll-fill { width: 100%; height: 0%; background: var(--cobalt); transition: height 0.2s ease-out; box-shadow: 0 0 15px var(--cobalt); }
 
         /* UNIFIED SLAB GEOMETRY */
         .frosted-slab {
@@ -49,19 +46,30 @@
             position: relative;
         }
 
-        @keyframes autoGlint { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
-        .frosted-slab::after {
-            content: ''; position: absolute; top: 0; left: -150%;
-            width: 40%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
-            transform: skewX(-20deg);
-            animation: autoGlint 12s infinite ease-in-out;
+        /* OPTIMIZED ACTION BUTTONS */
+        .action-btn {
+            background: rgba(255, 255, 255, 0.12) !important;
+            backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            border-radius: 2.5rem;
+            padding: 1.5rem 3.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .frosted-slab:hover {
-            transform: translateY(-10px) scale(1.01);
-            background: rgba(255, 255, 255, 0.12) !important;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.25) !important;
+            transform: translateY(-8px) scale(1.05);
+            border-color: var(--cobalt);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(96, 165, 250, 0.3);
+            color: white;
         }
 
         /* NAVIGATION */
@@ -78,7 +86,7 @@
         
         #nav-dropdown {
             display: none; position: absolute; top: 100%; left: 0;
-            width: 280px; background: rgba(255, 255, 255, 0.1) !important;
+            width: 280px; background: rgba(255, 255, 255, 0.12) !important;
             backdrop-filter: var(--frost-level) !important;
             border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.3) !important;
             z-index: 1000; padding: 12px 0;
@@ -95,12 +103,12 @@
         .tab-link:hover::before { opacity: 1; }
 
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 40px; }
+        .text-glow { text-shadow: 0 0 35px rgba(255,255,255,0.2); }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="fixed top-0 left-0 w-full h-full bg-black/45 -z-10"></div>
-
     <div id="scroll-tracker"><div id="scroll-fill"></div></div>
 
     <nav class="fixed top-0 w-full z-50 px-12 py-12">
@@ -127,12 +135,12 @@
             <div class="px-12 py-6 frosted-slab theme-purple font-black text-[13px] uppercase tracking-[0.5em]">ITIL® 4 Certified</div>
         </div>
         <div class="text-center">
-            <h1 class="text-white font-black text-[6rem] md:text-[9.5rem] leading-[0.8] mb-16 uppercase tracking-tighter">
+            <h1 class="text-white font-black text-[6rem] md:text-[9.5rem] leading-[0.8] mb-16 uppercase tracking-tighter text-glow">
                 Infrastructure <br><span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Strategist.</span>
             </h1>
-            <div class="flex flex-col sm:flex-row gap-10 justify-center">
-                <a href="assets/logo/Resume_L2_ITIL.pdf" target="_blank" class="bg-white text-black px-18 py-8 rounded-[2.5rem] font-black text-[15px] tracking-[0.4em] uppercase hover:bg-blue-600 hover:text-white transition-all shadow-2xl">View CV</a>
-                <a href="assets/certi/itil_cert.jpg" target="_blank" class="frosted-slab text-white px-18 py-8 rounded-[2.5rem] font-black text-[15px] tracking-[0.4em] uppercase">View Cert</a>
+            <div class="flex flex-col sm:flex-row gap-8 justify-center">
+                <a href="assets/logo/Resume_L2_ITIL.pdf" target="_blank" class="action-btn">View CV</a>
+                <a href="assets/certi/itil_cert.jpg" target="_blank" class="action-btn">View Cert</a>
             </div>
         </div>
     </section>
@@ -193,7 +201,6 @@
                 <p class="text-white/60 text-sm font-bold uppercase">Lifecycle MGMT</p>
             </div>
         </div>
-        
     </section>
 
     <section id="journey">
@@ -219,7 +226,7 @@
         <div class="max-w-4xl frosted-slab p-20 text-center border-t-2 border-white/20 shadow-2xl">
             <div class="text-9xl mb-10">🎓</div>
             <h3 class="text-7xl font-black uppercase tracking-tighter text-white mb-8">BCA Degree</h3>
-            <p class="text-3xl font-bold theme-blue mb-4 uppercase">YCMOU University</p>
+            <p class="text-3xl font-bold theme-blue mb-4 uppercase text-glow">YCMOU University</p>
             <p class="text-xl text-white/40 font-black uppercase tracking-[0.6em]">Class of 2013</p>
         </div>
     </section>
@@ -240,7 +247,7 @@
                     </div>
                     <div class="flex flex-col sm:flex-row gap-14 items-center">
                         <a href="https://www.linkedin.com/in/mitultaylor" target="_blank" class="text-sm font-black text-white uppercase border-b-4 border-white tracking-[0.6em] hover:theme-blue transition-all">LINKEDIN</a>
-                        <button onclick="copyEmail()" id="smartBtn" class="bg-white text-black px-16 py-8 rounded-[2.5rem] font-black text-[14px] tracking-[0.4em] uppercase hover:bg-blue-600 hover:text-white transition-all">COPY EMAIL</button>
+                        <button onclick="copyEmail()" id="smartBtn" class="action-btn px-16 py-8 rounded-[2.5rem]">COPY EMAIL</button>
                     </div>
                 </div>
             </div>
