@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | Infrastructure Strategist</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=101">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=102">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -27,6 +27,17 @@
         .theme-blue { color: var(--cobalt); }
         .theme-purple { color: var(--amethyst); }
 
+        /* THE GLASS TRACKER (Point 2.A) */
+        #scroll-tracker {
+            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+            width: 4px; height: 30vh; background: rgba(255,255,255,0.1);
+            border-radius: 10px; z-index: 1000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);
+        }
+        #scroll-fill {
+            width: 100%; height: 0%; background: var(--cobalt);
+            transition: height 0.2s ease-out; box-shadow: 0 0 15px var(--cobalt);
+        }
+
         /* UNIFIED SLAB GEOMETRY */
         .frosted-slab {
             background: var(--glass-core) !important;
@@ -36,15 +47,9 @@
             border-radius: 3.5rem;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
-            width: 100%;
         }
 
-        @keyframes autoGlint {
-            0% { left: -150%; }
-            20% { left: 150%; }
-            100% { left: 150%; }
-        }
-
+        @keyframes autoGlint { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
         .frosted-slab::after {
             content: ''; position: absolute; top: 0; left: -150%;
             width: 40%; height: 100%;
@@ -65,8 +70,7 @@
             background: rgba(255, 255, 255, 0.12) !important;
             backdrop-filter: blur(20px) !important;
             border: 1px solid rgba(255, 255, 255, 0.35) !important;
-            padding: 1rem 2.4rem;
-            border-radius: 20px;
+            padding: 1rem 2.4rem; border-radius: 20px;
             display: flex; align-items: center; gap: 15px;
             cursor: pointer; color: white; font-weight: 800; transition: 0.4s;
         }
@@ -78,9 +82,7 @@
             backdrop-filter: var(--frost-level) !important;
             border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.3) !important;
             z-index: 1000; padding: 12px 0;
-            animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
         .nav-wrapper:hover #nav-dropdown { display: block; }
         
         .tab-link {
@@ -93,12 +95,13 @@
         .tab-link:hover::before { opacity: 1; }
 
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 40px; }
-        .text-glow { text-shadow: 0 0 35px rgba(255,255,255,0.2); }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="fixed top-0 left-0 w-full h-full bg-black/45 -z-10"></div>
+
+    <div id="scroll-tracker"><div id="scroll-fill"></div></div>
 
     <nav class="fixed top-0 w-full z-50 px-12 py-12">
         <div class="nav-wrapper">
@@ -120,23 +123,23 @@
 
     <section id="hero">
         <div class="flex gap-6 mb-16 justify-center flex-wrap">
-            <div class="px-12 py-6 frosted-slab w-auto theme-blue font-black text-[13px] uppercase tracking-[0.5em] text-center">USA Green Card</div>
-            <div class="px-12 py-6 frosted-slab w-auto theme-purple font-black text-[13px] uppercase tracking-[0.5em] text-center">ITIL® 4 Certified</div>
+            <div class="px-12 py-6 frosted-slab theme-blue font-black text-[13px] uppercase tracking-[0.5em]">USA Green Card</div>
+            <div class="px-12 py-6 frosted-slab theme-purple font-black text-[13px] uppercase tracking-[0.5em]">ITIL® 4 Certified</div>
         </div>
         <div class="text-center">
-            <h1 class="text-white font-black text-[6rem] md:text-[9.5rem] leading-[0.8] mb-16 uppercase tracking-tighter text-glow">
+            <h1 class="text-white font-black text-[6rem] md:text-[9.5rem] leading-[0.8] mb-16 uppercase tracking-tighter">
                 Infrastructure <br><span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Strategist.</span>
             </h1>
             <div class="flex flex-col sm:flex-row gap-10 justify-center">
-                <a href="assets/logo/Resume_L2_ITIL.pdf" download="Mitul_Tailor_Resume" class="bg-white text-black px-18 py-8 rounded-[2.5rem] font-black text-[15px] tracking-[0.4em] uppercase hover:bg-blue-600 hover:text-white transition-all shadow-2xl">Download CV</a>
-                <a href="assets/certi/itil_cert.jpg" download="Mitul_Tailor_ITIL" class="frosted-slab w-auto text-white px-18 py-8 rounded-[2.5rem] font-black text-[15px] tracking-[0.4em] uppercase text-center">Download Cert</a>
+                <a href="assets/logo/Resume_L2_ITIL.pdf" target="_blank" class="bg-white text-black px-18 py-8 rounded-[2.5rem] font-black text-[15px] tracking-[0.4em] uppercase hover:bg-blue-600 hover:text-white transition-all shadow-2xl">View CV</a>
+                <a href="assets/certi/itil_cert.jpg" target="_blank" class="frosted-slab text-white px-18 py-8 rounded-[2.5rem] font-black text-[15px] tracking-[0.4em] uppercase">View Cert</a>
             </div>
         </div>
     </section>
 
     <section id="profile">
         <div class="max-w-6xl frosted-slab p-24 md:p-32 text-center border-t-2 border-white/15">
-            <h2 class="text-white text-7xl md:text-8xl font-black mb-14 uppercase tracking-tighter text-glow">Executive Profile</h2>
+            <h2 class="text-white text-7xl md:text-8xl font-black mb-14 uppercase tracking-tighter">Executive Profile</h2>
             <p class="text-2xl md:text-4xl text-white/85 leading-relaxed font-medium">
                 Strategist with <span class="theme-blue font-bold">17+ years of expertise</span> in orchestrating high-availability infrastructure at <span class="theme-purple font-bold">Korn Ferry</span>.
             </p>
@@ -145,7 +148,7 @@
 
     <section id="impact">
         <div class="max-w-7xl grid md:grid-cols-2 gap-12">
-            <div class="frosted-slab p-16 border-l-4 border-blue-400 shadow-2xl h-full">
+            <div class="frosted-slab p-16 border-l-4 border-blue-400 shadow-2xl min-h-[500px]">
                 <h3 class="text-5xl font-black mb-10 uppercase theme-blue tracking-tighter">HQ Relocation</h3>
                 <p class="text-white font-bold text-xl leading-relaxed mb-8">Directed relocation of Regional HQ for executive power-users with zero data loss.</p>
                 <ul class="text-white/65 space-y-6 font-semibold text-lg">
@@ -154,7 +157,7 @@
                     <li>• Proactive monitoring systems.</li>
                 </ul>
             </div>
-            <div class="frosted-slab p-16 border-l-4 border-purple-400 shadow-2xl h-full">
+            <div class="frosted-slab p-16 border-l-4 border-purple-400 shadow-2xl min-h-[500px]">
                 <h3 class="text-5xl font-black mb-10 uppercase theme-purple tracking-tighter">System Refresh</h3>
                 <p class="text-white font-bold text-xl leading-relaxed mb-8">Orchestrated Windows 11 refresh cycles for mission-critical regional hubs.</p>
                 <ul class="text-white/65 space-y-6 font-semibold text-lg">
@@ -190,6 +193,7 @@
                 <p class="text-white/60 text-sm font-bold uppercase">Lifecycle MGMT</p>
             </div>
         </div>
+        
     </section>
 
     <section id="journey">
@@ -212,10 +216,10 @@
     </section>
 
     <section id="academic">
-        <div class="max-w-4xl frosted-slab p-24 text-center border-t-2 border-white/20 shadow-2xl">
+        <div class="max-w-4xl frosted-slab p-20 text-center border-t-2 border-white/20 shadow-2xl">
             <div class="text-9xl mb-10">🎓</div>
             <h3 class="text-7xl font-black uppercase tracking-tighter text-white mb-8">BCA Degree</h3>
-            <p class="text-3xl font-bold theme-blue mb-4 uppercase text-glow">YCMOU University</p>
+            <p class="text-3xl font-bold theme-blue mb-4 uppercase">YCMOU University</p>
             <p class="text-xl text-white/40 font-black uppercase tracking-[0.6em]">Class of 2013</p>
         </div>
     </section>
@@ -244,6 +248,12 @@
     </section>
 
     <script>
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-fill").style.height = scrolled + "%";
+        };
         function copyEmail() {
             navigator.clipboard.writeText("meetul.t@gmail.com");
             const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
