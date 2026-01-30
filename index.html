@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | Infrastructure Strategist</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=104">
+    
+    <meta property="og:title" content="Mitul Tailor | Infrastructure Strategist">
+    <meta property="og:description" content="Strategist and IT Operations Leader with 17+ years of expertise in high-availability infrastructure.">
+    <meta property="og:image" content="https://mitultaylor.github.io/assets/logo/og-preview.jpg">
+    <meta property="og:url" content="https://mitultaylor.github.io/">
+    <meta property="og:type" content="website">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mitul Tailor | Infrastructure Strategist">
+    <meta name="twitter:description" content="17+ years of expertise in orchestrating high-availability infrastructure.">
+    <meta name="twitter:image" content="https://mitultaylor.github.io/assets/logo/og-preview.jpg">
+
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=105">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -35,7 +47,7 @@
         }
         #scroll-fill { width: 100%; height: 0%; background: var(--cobalt); transition: height 0.2s ease-out; box-shadow: 0 0 15px var(--cobalt); }
 
-        /* UNIFIED SLAB GEOMETRY */
+        /* FROSTED SLAB */
         .frosted-slab {
             background: var(--glass-core) !important;
             backdrop-filter: var(--frost-level) !important;
@@ -46,13 +58,22 @@
             position: relative;
         }
 
-        /* OPTIMIZED WIDESCREEN BUTTONS */
+        @keyframes autoGlint { 0% { left: -150%; } 20% { left: 150%; } 100% { left: 150%; } }
+        .frosted-slab::after {
+            content: ''; position: absolute; top: 0; left: -150%;
+            width: 40%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-20deg);
+            animation: autoGlint 12s infinite ease-in-out;
+        }
+
+        /* WIDESCREEN BUTTONS */
         .action-btn {
             background: rgba(255, 255, 255, 0.12) !important;
             backdrop-filter: blur(20px) !important;
             border: 1px solid rgba(255, 255, 255, 0.35) !important;
-            border-radius: 999px; /* Pill shape */
-            padding: 1.1rem 5.5rem; /* Reduced height, significantly increased width */
+            border-radius: 999px;
+            padding: 1.1rem 5.5rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.4em;
@@ -70,7 +91,6 @@
             transform: translateY(-5px) scale(1.03);
             border-color: var(--cobalt);
             box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 25px rgba(96, 165, 250, 0.3);
-            color: white;
         }
 
         /* NAVIGATION */
@@ -104,7 +124,6 @@
         .tab-link:hover::before { opacity: 1; }
 
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 40px; }
-        .text-glow { text-shadow: 0 0 35px rgba(255,255,255,0.2); }
     </style>
 </head>
 <body class="antialiased">
@@ -136,7 +155,7 @@
             <div class="px-12 py-6 frosted-slab theme-purple font-black text-[13px] uppercase tracking-[0.5em]">ITIL® 4 Certified</div>
         </div>
         <div class="text-center">
-            <h1 class="text-white font-black text-[6rem] md:text-[9.5rem] leading-[0.8] mb-16 uppercase tracking-tighter text-glow">
+            <h1 class="text-white font-black text-[6rem] md:text-[9.5rem] leading-[0.8] mb-16 uppercase tracking-tighter">
                 Infrastructure <br><span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Strategist.</span>
             </h1>
             <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
@@ -202,7 +221,6 @@
                 <p class="text-white/60 text-sm font-bold uppercase tracking-widest">Lifecycle MGMT</p>
             </div>
         </div>
-        
     </section>
 
     <section id="journey">
@@ -228,7 +246,7 @@
         <div class="max-w-4xl frosted-slab p-20 text-center border-t-2 border-white/20 shadow-2xl">
             <div class="text-9xl mb-10">🎓</div>
             <h3 class="text-7xl font-black uppercase tracking-tighter text-white mb-8">BCA Degree</h3>
-            <p class="text-3xl font-bold theme-blue mb-4 uppercase text-glow">YCMOU University</p>
+            <p class="text-3xl font-bold theme-blue mb-4 uppercase">YCMOU University</p>
             <p class="text-xl text-white/40 font-black uppercase tracking-[0.6em]">Class of 2013</p>
         </div>
     </section>
@@ -245,7 +263,7 @@
                 <div class="md:col-span-2 space-y-20 text-center md:text-left md:border-l-2 md:border-white/15 md:pl-28">
                     <div>
                         <p class="text-[15px] font-black theme-blue uppercase mb-8 tracking-[0.7em]">CONTACT</p>
-                        <p class="text-8xl font-black tracking-tighter text-white">+91 (982) 1906 348 </p>
+                        <p class="text-8xl font-black tracking-tighter text-white">+91 91677 75155</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-14 items-center">
                         <a href="https://www.linkedin.com/in/mitultaylor" target="_blank" class="text-sm font-black text-white uppercase border-b-4 border-white tracking-[0.6em] hover:theme-blue transition-all">LINKEDIN</a>
