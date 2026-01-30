@@ -4,167 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=76">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=77">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
-        body { margin: 0; padding: 0; background-color: #0c0c0e !important; font-family: 'Plus Jakarta Sans', sans-serif; color: #1a1a1a; overflow-x: hidden; }
+        body { margin: 0; padding: 0; background-color: #000 !important; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         
-        /* 1. BACKGROUND ENGINE - Ultra Clarity */
+        /* THE BACKGROUND LAYER - Forced Clarity */
         #fixed-bg-layer {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -10;
-            background: url('bg_mt_ws.jpg?v=76') no-repeat center center / cover !important;
-            filter: blur(6px) brightness(0.8) !important; transform: scale(1.05);
+            background: url('bg_mt_ws.jpg') no-repeat center center / cover !important;
+            filter: blur(5px) brightness(0.7) !important;
         }
 
-        /* 2. TRANSPARENCY FIX - Set to 0.03 to remove "thick wall" */
+        /* THE TRANSPARENCY - Removed the "Thick Wall" */
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5;
-            background: rgba(255, 255, 255, 0.03) !important;
+            background: rgba(255, 255, 255, 0.03) !important; /* Almost pure water */
         }
 
-        .menu-trigger {
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.5); padding: 0.75rem 1.5rem;
-            border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer;
+        .glass-panel { 
+            background: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(20px); 
+            border-radius: 2rem; 
+            border: 1px solid rgba(255,255,255,0.4); 
         }
 
-        #dropdown-menu {
-            display: none; position: absolute; top: 75px; left: 0;
-            width: 260px; background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(25px); border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.2); z-index: 100;
-        }
-
-        .menu-item {
-            padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
-            font-size: 0.75rem; font-weight: 800; color: #1e293b; text-transform: uppercase;
-            letter-spacing: 0.08em; border-bottom: 1px solid rgba(0,0,0,0.03); transition: 0.2s;
-        }
-
-        @keyframes pulse-glow { 0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); } 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); } }
-        .btn-pulse {
-            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%); color: #fff;
-            padding: 1.1rem 3rem; border-radius: 9999px; font-weight: 800; text-transform: uppercase;
-            letter-spacing: 0.15em; font-size: 0.65rem; animation: pulse-glow 2s infinite;
-        }
-
-        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); border-radius: 3rem; border: 1px solid rgba(255,255,255,0.4); }
-        .hero-title { font-size: 8.5rem; line-height: 0.82; font-weight: 900; letter-spacing: -0.04em; }
+        .hero-title { font-size: clamp(3.5rem, 10vw, 8.5rem); line-height: 0.85; font-weight: 900; letter-spacing: -0.04em; }
 
         #scrollTopBtn {
-            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
-            background: white; border-radius: 15px; display: none; align-items: center; justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 1000; cursor: pointer;
+            position: fixed; bottom: 20px; right: 20px; width: 45px; height: 45px;
+            background: white; border-radius: 12px; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000;
+        }
+
+        .qr-frame {
+            width: 120px; height: 120px; background: white; padding: 8px;
+            border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 auto;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased text-slate-900">
 
     <div id="fixed-bg-layer"></div>
     <div class="vibrant-glass-wash"></div>
 
     <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
     </button>
 
-    <nav class="fixed top-0 w-full z-50 px-10 py-8">
-        <div class="relative inline-block text-left">
-            <div class="menu-trigger" onclick="toggleMenu()">
-                <div class="w-6 h-6 bg-black rounded flex items-center justify-center text-white font-black text-[9px]">MT</div>
-                <span class="font-bold text-sm tracking-tight uppercase">M. Tailor</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
+        <div class="glass-panel px-4 py-3 flex items-center justify-between max-w-7xl mx-auto rounded-xl">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-black rounded flex items-center justify-center text-white font-black text-[10px]">MT</div>
+                <span class="font-bold text-xs uppercase tracking-widest hidden sm:block">M. Tailor</span>
             </div>
-            <div id="dropdown-menu">
-                <a href="#about" class="menu-item" onclick="toggleMenu()">Profile</a>
-                <a href="#impact" class="menu-item" onclick="toggleMenu()">Impact</a>
-                <a href="#skills" class="menu-item" onclick="toggleMenu()">Skills</a>
-                <a href="#journey" class="menu-item" onclick="toggleMenu()">Journey</a>
-                <a href="#certifications" class="menu-item" onclick="toggleMenu()">Certs</a>
-                <a href="#contact" class="menu-item" onclick="toggleMenu()">Contact</a>
+            <div class="flex gap-4">
+                <a href="#journey" class="text-[10px] font-black uppercase tracking-widest hover:text-blue-600">Journey</a>
+                <a href="#contact" class="text-[10px] font-black uppercase tracking-widest hover:text-blue-600">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center items-center px-10 text-center relative pt-24">
-        <div class="flex gap-4 mb-10">
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-blue-50 text-blue-600 rounded-full border border-blue-100 shadow-sm">USA Green Card</span>
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-purple-50 text-purple-600 rounded-full border border-purple-100 shadow-sm">ITIL® 4 Foundation</span>
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-20">
+        <div class="flex gap-3 mb-8 overflow-x-auto max-w-full">
+            <span class="whitespace-nowrap text-[8px] font-black uppercase tracking-widest px-4 py-2 bg-white/90 rounded-full border border-white">USA Green Card</span>
+            <span class="whitespace-nowrap text-[8px] font-black uppercase tracking-widest px-4 py-2 bg-white/90 rounded-full border border-white">ITIL® 4 Foundation</span>
         </div>
-        <h1 class="hero-title mb-10 text-black">Operations <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 italic">Leader.</span></h1>
-        <p class="text-xl text-gray-500 font-medium tracking-tight mb-16">17+ years of driving infrastructure excellence at <strong>Korn Ferry</strong>.</p>
-        <a href="assets/logo/Resume_L2_ITIL.pdf" target="_blank" class="btn-pulse">Full Profile</a>
+        <h1 class="hero-title mb-8 text-black">Operations <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 italic">Leader.</span></h1>
+        <p class="text-base md:text-xl text-slate-600 font-medium max-w-xl mb-12">17+ years of driving infrastructure excellence at <strong>Korn Ferry</strong>.</p>
+        <a href="assets/logo/Resume_L2_ITIL.pdf" target="_blank" class="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-4 rounded-full font-black text-[10px] tracking-[0.2em] shadow-lg">FULL PROFILE</a>
     </section>
 
-    <section id="impact" class="py-40 px-10 max-w-7xl mx-auto">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Impact</h2>
-        <div class="grid md:grid-cols-2 gap-10">
-            <div class="glass-panel p-14 shadow-2xl">
-                <h3 class="text-3xl font-black mb-6 uppercase text-blue-600">Site Reliability</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Directed end-to-end relocation for executive headquarters. Managed site reliability for 70+ power-users.</p>
+    <section id="impact" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass-panel p-8 md:p-12 shadow-xl">
+                <h3 class="text-2xl font-black mb-4 uppercase text-blue-600 tracking-tight">Site Reliability</h3>
+                <p class="text-sm text-slate-600 leading-relaxed font-medium">Directed end-to-end relocation for executive headquarters. Managed site reliability for 70+ power-users.</p>
             </div>
-            <div class="glass-panel p-14 shadow-2xl">
-                <h3 class="text-3xl font-black mb-6 uppercase text-purple-600">Fleet Refresh</h3>
-                <p class="text-gray-600 font-medium leading-relaxed">Orchestrated regional Windows transitions for 120+ workstations.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-40 px-10 max-w-6xl mx-auto">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Tech Stack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-white/70 backdrop-blur-lg p-10 rounded-3xl text-center border border-white/40"><p class="font-black uppercase text-xs">ServiceNow</p></div>
-            <div class="bg-white/70 backdrop-blur-lg p-10 rounded-3xl text-center border border-white/40"><p class="font-black uppercase text-xs">SCCM</p></div>
-            <div class="bg-white/70 backdrop-blur-lg p-10 rounded-3xl text-center border border-white/40"><p class="font-black uppercase text-xs">ITIL® 4</p></div>
-            <div class="bg-white/70 backdrop-blur-lg p-10 rounded-3xl text-center border border-white/40"><p class="font-black uppercase text-xs">Windows 11</p></div>
-        </div>
-    </section>
-
-    <section id="journey" class="py-40 px-10 max-w-5xl mx-auto space-y-12">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Journey & Academic</h2>
-        <div class="space-y-8">
-            <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 shadow-xl">
-                <img src="assets/logo/kf_logo.webp" class="w-20 h-20 rounded-xl" alt="KF">
-                <div>
-                    <p class="text-[11px] font-black text-blue-600 uppercase mb-1">Korn Ferry International</p>
-                    <h3 class="text-3xl font-black uppercase text-black">IT Operations Lead | 2013 — 2025</h3>
-                </div>
-            </div>
-            <div class="glass-panel p-12 shadow-xl text-center">
-                <h4 class="text-[10px] font-black text-blue-300 uppercase mb-8 tracking-widest uppercase">Academic Foundation</h4>
-                <p class="text-4xl font-black uppercase tracking-tighter text-black">BCA Degree</p>
-                <p class="text-[12px] text-gray-400 font-bold mt-2 uppercase">YCMOU University • 2013</p>
+            <div class="glass-panel p-8 md:p-12 shadow-xl">
+                <h3 class="text-2xl font-black mb-4 uppercase text-purple-600 tracking-tight">Fleet Refresh</h3>
+                <p class="text-sm text-slate-600 leading-relaxed font-medium">Orchestrated regional Windows transitions for 120+ workstations ensuring 99.9% uptime.</p>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="py-40 px-10 max-w-6xl mx-auto text-center">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 uppercase">Credentials</h2>
-        <div class="glass-panel p-12 md:p-20 shadow-2xl flex flex-col items-center">
-            <h3 class="text-4xl font-black uppercase tracking-tighter mb-12">ITIL® 4 Foundation Certificate</h3>
-            <div class="max-w-4xl rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
-                <img src="assets/certi/itil_cert.jpg" class="w-full h-auto" alt="ITIL Certificate">
+    <section id="journey" class="py-24 px-6 max-w-4xl mx-auto space-y-6">
+        <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-12 text-center">Career Journey</h2>
+        <div class="glass-panel p-8 flex flex-col md:flex-row items-center gap-6">
+            <img src="assets/logo/kf_logo.webp" class="w-16 h-16 rounded-xl shadow-md" alt="KF">
+            <div class="text-center md:text-left">
+                <p class="text-[9px] font-black text-blue-600 uppercase mb-1">Korn Ferry International</p>
+                <h3 class="text-xl font-black uppercase">IT Operations Lead | 2013 — 2025</h3>
             </div>
+        </div>
+        <div class="glass-panel p-10 text-center">
+            <h4 class="text-[9px] font-black text-blue-400 uppercase mb-4 tracking-widest">Education</h4>
+            <p class="text-2xl font-black uppercase tracking-tight">BCA Degree</p>
+            <p class="text-[10px] text-slate-400 font-bold mt-1 uppercase">YCMOU University • 2013</p>
         </div>
     </section>
 
-    <footer id="contact" class="py-60 text-center px-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-16 uppercase">Connect</h2>
-        <div class="max-w-4xl mx-auto glass-panel p-16 shadow-2xl">
-            <div class="grid md:grid-cols-2 gap-12 text-left items-center">
-                <div class="space-y-10">
-                    <div>
-                        <p class="text-[10px] font-black text-blue-600 uppercase mb-2">Direct Line</p>
-                        <p class="text-3xl font-black text-black tracking-tighter">+91 (982) 1906 348 </p>
+    <section id="certifications" class="py-24 px-6 max-w-5xl mx-auto text-center">
+        <div class="glass-panel p-8 md:p-16 shadow-2xl">
+            <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-10">ITIL® 4 Foundation Certificate</h3>
+            <img src="assets/certi/itil_cert.jpg" class="w-full h-auto rounded-xl border border-white/50 shadow-lg" alt="ITIL Certificate">
+        </div>
+    </section>
+
+    <footer id="contact" class="py-32 px-6">
+        <div class="max-w-5xl mx-auto glass-panel p-8 md:p-16 shadow-2xl">
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="text-center space-y-4">
+                    <div class="qr-frame">
+                        <img src="assets/logo/linkedin_qr.png" alt="Scan me" class="w-full h-full">
                     </div>
-                    <div>
-                        <p class="text-[10px] font-black text-purple-600 uppercase mb-2">Professional Network</p>
-                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-2xl font-black text-black border-b-2 border-black hover:text-blue-600 transition-colors">LinkedIn Profile</a>
-                    </div>
+                    <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Scan to Connect</p>
                 </div>
-                <div class="flex flex-col justify-center">
-                    <button onclick="copyEmail()" id="smartBtn" class="btn-pulse w-full uppercase">meetul.t@gmail.com</button>
+                <div class="md:col-span-2 space-y-8 text-center md:text-left md:border-l md:border-slate-200 md:pl-12">
+                    <div>
+                        <p class="text-[9px] font-black text-blue-600 uppercase mb-2">Direct Line</p>
+                        <p class="text-2xl md:text-3xl font-black tracking-tighter">+91 (982) 1906 348</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-xs font-black uppercase border-b-2 border-black tracking-widest hover:text-blue-600">LinkedIn Profile</a>
+                        <button onclick="copyEmail()" id="smartBtn" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl font-black text-[9px] tracking-widest w-full md:w-auto">COPY EMAIL</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,15 +141,14 @@
             const menu = document.getElementById('dropdown-menu');
             menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
         }
-        window.onclick = function(e) { if (!e.target.closest('.menu-trigger')) document.getElementById('dropdown-menu').style.display = 'none'; }
         window.onscroll = function() {
             let btn = document.getElementById("scrollTopBtn");
-            btn.style.display = (document.documentElement.scrollTop > 500) ? "flex" : "none";
+            btn.style.display = (document.documentElement.scrollTop > 400) ? "flex" : "none";
         };
         function copyEmail() {
             navigator.clipboard.writeText("meetul.t@gmail.com");
             const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
-            setTimeout(() => { btn.innerText = "MEETUL.T@GMAIL.COM"; }, 3000);
+            setTimeout(() => { btn.innerText = "COPY EMAIL"; }, 3000);
         }
     </script>
 </body>
