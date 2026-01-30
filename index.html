@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=90">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=91">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -17,88 +17,77 @@
             overflow-x: hidden; 
         }
 
-        /* THE CRYSTAL OVERLAY */
+        .theme-blue { color: #2563eb; }
+        .theme-purple { color: #9333ea; }
+
+        /* THE BOUNCING GLASS & HOVER EFFECT */
+        .glass-bounce {
+            background: rgba(255, 255, 255, 0.94) !important;
+            backdrop-filter: blur(25px) saturate(180%) !important;
+            border-radius: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.6) !important;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+        .glass-bounce:hover {
+            transform: translateY(-12px) scale(1.02) !important;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.35), 0 0 15px rgba(37, 99, 235, 0.2) !important;
+        }
+
+        /* TRANSPARENT GLASS BUTTONS */
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(10px) !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            transition: all 0.3s ease-in-out !important;
+        }
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.3) !important;
+            transform: translateY(-3px) scale(1.05) !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+            border-color: rgba(255, 255, 255, 0.8) !important;
+        }
+
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
-            background: rgba(0, 0, 0, 0.45) !important;
+            background: rgba(0, 0, 0, 0.4) !important;
             backdrop-filter: blur(5px);
         }
 
-        /* --- THE ULTIMATE GLASS BOUNCE & GLOW --- */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.88) !important;
-            backdrop-filter: blur(30px) saturate(200%) !important;
-            -webkit-backdrop-filter: blur(30px) saturate(200%) !important;
-            border-radius: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.6) !important;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .glass-panel:hover {
-            transform: translateY(-15px) scale(1.02) !important;
-            background: rgba(255, 255, 255, 0.96) !important;
-            border-color: rgba(37, 99, 235, 0.5) !important; /* Glows blue on hover */
-            box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 20px rgba(37, 99, 235, 0.2) !important;
-        }
-
-        /* --- HERO BADGES & BUTTONS --- */
-        .hero-badge {
-            background: rgba(255, 255, 255, 0.9) !important;
-            backdrop-filter: blur(10px);
-            border: 2px solid;
-            transition: all 0.4s ease;
-        }
-        .hero-badge:hover {
-            transform: translateY(-5px) scale(1.05);
-            background: #fff !important;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-
-        /* --- NAVIGATION --- */
         .menu-trigger {
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.5); padding: 0.75rem 1.5rem;
-            border-radius: 14px; display: flex; align-items: center; gap: 12px; cursor: pointer;
-            transition: 0.3s;
+            border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer;
         }
-        .menu-trigger:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
         #dropdown-menu {
-            display: none; position: absolute; top: 80px; left: 0;
+            display: none; position: absolute; top: 75px; left: 0;
             width: 260px; background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(30px); border-radius: 20px;
-            border: 1px solid rgba(37, 99, 235, 0.2); z-index: 1000; overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            backdrop-filter: blur(25px); border-radius: 16px;
+            border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.2); 
+            z-index: 100;
         }
 
         .menu-item {
-            padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
+            padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
             font-size: 0.75rem; font-weight: 800; color: #1e293b; text-transform: uppercase;
-            letter-spacing: 0.1em; border-bottom: 1px solid rgba(0,0,0,0.03); transition: 0.3s;
+            letter-spacing: 0.08em; border-bottom: 1px solid rgba(0,0,0,0.03); transition: 0.2s;
         }
-        .menu-item:hover { background: rgba(37, 99, 235, 0.05); color: #2563eb; padding-left: 1.8rem; }
+        .menu-item:hover { background: rgba(59, 130, 246, 0.05); color: #3b82f6; padding-left: 1.8rem; }
 
-        /* BACK TO TOP */
         #scrollTopBtn {
-            position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px;
-            background: white; border-radius: 18px; display: none; align-items: center; justify-content: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); z-index: 2000; cursor: pointer;
-            transition: 0.3s; border: 2px solid #2563eb;
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: white; border-radius: 15px; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3); z-index: 1000; cursor: pointer;
         }
-        #scrollTopBtn:hover { transform: translateY(-8px); background: #f8fafc; }
-
-        .theme-blue { color: #2563eb; }
-        .theme-purple { color: #9333ea; }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="vibrant-glass-wash"></div>
 
-    <div id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="4"><path d="m18 15-6-6-6 6"/></svg>
-    </div>
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
 
     <nav class="fixed top-0 w-full z-50 px-10 py-8">
         <div class="relative inline-block text-left">
@@ -112,97 +101,103 @@
                 <a href="#impact" class="menu-item" onclick="toggleMenu()">Impact</a>
                 <a href="#skills" class="menu-item" onclick="toggleMenu()">Skills</a>
                 <a href="#journey" class="menu-item" onclick="toggleMenu()">Journey</a>
-                <a href="#academic" class="menu-item" onclick="toggleMenu()">Academic</a>
+                <a href="#education" class="menu-item" onclick="toggleMenu()">Academic</a>
                 <a href="#contact" class="menu-item" onclick="toggleMenu()">Contact</a>
             </div>
         </div>
     </nav>
 
     <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-24">
-        <div class="flex gap-5 mb-12 flex-wrap justify-center">
-            <div class="hero-badge px-8 py-4 rounded-full border-blue-600 theme-blue font-black text-[11px] uppercase tracking-widest">USA Green Card</div>
-            <div class="hero-badge px-8 py-4 rounded-full border-purple-600 theme-purple font-black text-[11px] uppercase tracking-widest">ITIL® 4 Foundation</div>
+        <div class="flex gap-5 mb-12">
+            <div class="px-8 py-4 glass-bounce theme-blue font-black text-[11px] uppercase tracking-widest">USA Green Card</div>
+            <div class="px-8 py-4 glass-bounce theme-purple font-black text-[11px] uppercase tracking-widest">ITIL® 4 Foundation</div>
         </div>
         <h1 class="text-white font-black text-[5.5rem] md:text-[8.5rem] leading-[0.8] mb-12 drop-shadow-2xl uppercase">Operations <br><span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Leader.</span></h1>
         
         <div class="flex flex-col sm:flex-row gap-6">
-            <a href="assets/logo/Resume_L2_ITIL.pdf" download class="bg-blue-600 text-white px-12 py-5 rounded-full font-black text-[11px] tracking-[0.25em] shadow-2xl hover:scale-110 hover:bg-blue-700 transition-all">DOWNLOAD CV</a>
-            <a href="assets/certi/itil_cert.jpg" download class="bg-purple-600 text-white px-12 py-5 rounded-full font-black text-[11px] tracking-[0.25em] shadow-2xl hover:scale-110 hover:bg-purple-700 transition-all">DOWNLOAD CERT</a>
+            <a href="assets/logo/Resume_L2_ITIL.pdf" download class="glass-btn text-white px-12 py-5 rounded-full font-black text-[11px] tracking-[0.25em] shadow-2xl">DOWNLOAD CV</a>
+            <a href="assets/certi/itil_cert.jpg" download class="glass-btn text-white px-12 py-5 rounded-full font-black text-[11px] tracking-[0.25em] shadow-2xl">DOWNLOAD CERT</a>
         </div>
     </section>
 
-    <section id="impact" class="py-40 px-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-        <div class="glass-panel p-14 border-l-8 border-blue-600 shadow-xl">
-            <h3 class="text-4xl font-black mb-8 uppercase theme-blue tracking-tight">Site Reliability</h3>
-            <p class="text-slate-700 font-bold text-xl leading-relaxed mb-6">Masterminded the zero-downtime relocation of Regional HQ infrastructure for <span class="theme-blue">70+ power-users</span>.</p>
-            <ul class="text-slate-500 space-y-4 font-semibold text-lg leading-snug">
+    <section id="about" class="py-40 px-10 max-w-6xl mx-auto">
+        <div class="glass-bounce p-16 md:p-24 text-center shadow-2xl border-t-8 border-blue-600">
+            <h2 class="text-6xl font-black mb-10 uppercase tracking-tighter">Executive Leadership</h2>
+            <p class="text-2xl text-slate-700 leading-relaxed font-medium">
+                Strategic IT Operations Leader with <span class="theme-blue font-bold">17+ years of hands-on experience</span> in orchestrating high-availability infrastructure for global consulting giants. Expert in navigating complex technical transitions, managing large-scale office relocations, and implementing <span class="theme-purple font-bold">ITIL® 4 frameworks</span>.
+            </p>
+        </div>
+    </section>
+
+    <section id="impact" class="py-20 px-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+        <div class="glass-bounce p-14 border-l-8 border-blue-600 shadow-xl">
+            <h3 class="text-3xl font-black mb-8 uppercase theme-blue tracking-tight">Site Reliability</h3>
+            <p class="text-slate-600 font-semibold text-lg leading-relaxed mb-6">Designed and executed the <span class="theme-blue">Regional HQ infrastructure relocation</span> for 70+ power-users.</p>
+            <ul class="text-slate-500 space-y-4 font-medium">
                 <li>• Managed full physical and logical server room migrations.</li>
-                <li>• Maintained 100% Day-One operational readiness for executive functions.</li>
-                <li>• Automated proactive hardware health checks reducing reactive tickets by 40%.</li>
+                <li>• Achieved 100% Day-One operational readiness.</li>
             </ul>
         </div>
-        <div class="glass-panel p-14 border-l-8 border-purple-600 shadow-xl">
-            <h3 class="text-4xl font-black mb-8 uppercase theme-purple tracking-tight">Fleet Refresh</h3>
-            <p class="text-slate-700 font-bold text-xl leading-relaxed mb-6">Led the standardized rollout of <span class="theme-purple">Windows 11 environments</span> across 120+ mission-critical workstations.</p>
-            <ul class="text-slate-500 space-y-4 font-semibold text-lg leading-snug">
-                <li>• Established cross-regional EUC hardware standards for mobile workforces.</li>
-                <li>• Optimized procurement lifecycles, cutting annual overhead by 15%.</li>
-                <li>• Leveraged SCCM logic to automate workstation provisioning by 85%.</li>
+        <div class="glass-bounce p-14 border-l-8 border-purple-600 shadow-xl">
+            <h3 class="text-3xl font-black mb-8 uppercase theme-purple tracking-tight">Fleet Refresh</h3>
+            <p class="text-slate-600 font-semibold text-lg leading-relaxed mb-6">Orchestrated regional <span class="theme-purple">Windows 11 transitions</span> for 120+ mission-critical workstations.</p>
+            <ul class="text-slate-500 space-y-4 font-medium">
+                <li>• Optimized asset procurement cycles saving 15% annually.</li>
+                <li>• Automated 85% of provisioning tasks via SCCM/Intune.</li>
             </ul>
         </div>
     </section>
 
     <section id="skills" class="py-40 px-10 max-w-6xl mx-auto">
-        <h2 class="text-center text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-24">Technology Ecosystem</h2>
+        <h2 class="text-center text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-20 uppercase">Technology Stack</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="glass-panel p-14">
+            <div class="glass-bounce p-12">
                 <div class="text-5xl mb-6">🛠️</div>
                 <h4 class="text-2xl font-black theme-blue mb-4">ServiceNow Orchestration</h4>
-                <p class="text-slate-600 font-medium leading-relaxed">Expert-level incident management and SLA orchestration. Specialized in CMDB maintenance and automating high-priority executive support workflows.</p>
+                <p class="text-slate-600 font-medium leading-relaxed">Expert-level incident management and SLA orchestration. Specialized in maintaining CMDB health for global teams.</p>
             </div>
-            <div class="glass-panel p-14">
+            <div class="glass-bounce p-12">
                 <div class="text-5xl mb-6">💻</div>
                 <h4 class="text-2xl font-black theme-purple mb-4">EUC Modernization</h4>
-                <p class="text-slate-600 font-medium leading-relaxed">Advanced proficiency in SCCM and Microsoft Intune. Expert in automated software deployment and security patch management for enterprise fleets.</p>
-            </div>
-            <div class="glass-panel p-14">
-                <div class="text-5xl mb-6">📜</div>
-                <h4 class="text-2xl font-black theme-blue mb-4">ITIL® 4 Framework</h4>
-                <p class="text-slate-600 font-medium leading-relaxed">Certified practitioner leveraging ITIL® 4 to align technical service delivery with strategic business outcomes and Continual Service Improvement (CSI).</p>
-                
-            </div>
-            <div class="glass-panel p-14">
-                <div class="text-5xl mb-6">📦</div>
-                <h4 class="text-2xl font-black theme-purple mb-4">Asset Management</h4>
-                <p class="text-slate-600 font-medium leading-relaxed">Lifecycle management of multi-million dollar asset portfolios. Specialized in hardware standardization and vendor contract negotiations.</p>
+                <p class="text-slate-600 font-medium leading-relaxed">Deep proficiency in SCCM and Microsoft Intune for automated software deployment and security patch management.</p>
             </div>
         </div>
     </section>
 
     <section id="journey" class="py-40 px-10 max-w-5xl mx-auto space-y-12">
-        <h2 class="text-center text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-20">Career Journey</h2>
-        <div class="glass-panel p-12 flex flex-col md:flex-row items-center gap-10 border-b-8 border-blue-600">
+        <h2 class="text-center text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-20 uppercase">Career Journey</h2>
+        <div class="glass-bounce p-12 flex flex-col md:flex-row items-center gap-10 border-b-8 border-blue-600 shadow-xl">
             <img src="assets/logo/kf_logo.jpg" class="w-24 h-24 rounded-2xl shadow-lg" alt="KF">
             <div>
                 <p class="text-[12px] font-black theme-blue uppercase mb-1">Korn Ferry International</p>
                 <h3 class="text-4xl font-black uppercase">IT Operations Lead | 2013 — 2025</h3>
             </div>
         </div>
-        <div class="glass-panel p-12 flex flex-col md:flex-row items-center gap-10 border-b-8 border-purple-600">
+        <div class="glass-bounce p-12 flex flex-col md:flex-row items-center gap-10 border-b-8 border-purple-600 shadow-xl">
             <img src="assets/logo/team_logo.jpg" class="w-24 h-24 rounded-2xl shadow-lg" alt="Team">
             <div>
                 <p class="text-[12px] font-black theme-purple uppercase mb-1">Team Computers</p>
-                <h3 class="text-4xl font-black uppercase text-slate-900">Senior Support Engineer | 2012 — 2013</h3>
+                <h3 class="text-4xl font-black uppercase">Senior Support Engineer | 2012 — 2013</h3>
             </div>
         </div>
     </section>
 
+    <section id="education" class="py-40 px-10 max-w-5xl mx-auto">
+        <h2 class="text-center text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-20 uppercase">Academic Background</h2>
+        <div class="glass-bounce p-20 text-center border-t-8 border-blue-400 shadow-2xl">
+            <div class="text-6xl mb-8">🎓</div>
+            <h3 class="text-5xl font-black uppercase tracking-tight text-slate-900 mb-4">BCA Degree</h3>
+            <p class="text-2xl font-bold text-blue-600 mb-2 uppercase">YCMOU University</p>
+            <p class="text-xl text-slate-500 font-semibold uppercase tracking-widest">Graduated Class of 2013</p>
+        </div>
+    </section>
+
     <footer id="contact" class="py-40 px-10">
-        <div class="max-w-5xl mx-auto glass-panel p-12 md:p-20 border-t-4 border-blue-500 shadow-2xl">
+        <div class="max-w-5xl mx-auto glass-bounce p-12 md:p-20 border-t-4 border-blue-500 shadow-2xl">
             <div class="grid md:grid-cols-3 gap-16 items-center">
                 <div class="text-center">
                     <div class="w-48 h-48 bg-white p-3 rounded-3xl shadow-2xl mx-auto border-4 border-slate-100">
-                        <img src="assets/logo/linkedin_qr.png" alt="QR" class="w-full h-full rounded-xl">
+                        <img src="assets/logo/linkedin_qr.png" alt="LinkedIn QR" class="w-full h-full rounded-xl">
                     </div>
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-8">Scan to Connect</p>
                 </div>
