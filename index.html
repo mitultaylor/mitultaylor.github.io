@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=92">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=93">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -20,34 +20,35 @@
         .theme-blue { color: #2563eb; }
         .theme-purple { color: #9333ea; }
 
-        /* FULL PAGE SPACING */
-        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 20px; }
-
-        /* THE BOUNCING GLASS PHYSICS */
+        /* THE TRUE GLASS EFFECT - High Transparency */
         .glass-bounce {
-            background: rgba(255, 255, 255, 0.94) !important;
+            background: rgba(255, 255, 255, 0.82) !important; /* Reduced opacity for more transparency */
             backdrop-filter: blur(25px) saturate(180%) !important;
             border-radius: 2.5rem;
-            border: 2px solid rgba(255, 255, 255, 0.7) !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
         }
         .glass-bounce:hover {
-            transform: translateY(-15px) scale(1.02) !important;
+            transform: translateY(-12px) scale(1.02) !important;
+            background: rgba(255, 255, 255, 0.9) !important;
             box-shadow: 0 40px 80px rgba(0,0,0,0.4) !important;
         }
 
-        /* NAVIGATION & DROPDOWN */
+        /* HOVER-TO-OPEN DROPDOWN LOGIC */
+        .nav-container { position: relative; display: inline-block; padding-bottom: 20px; }
         .menu-trigger {
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.5); padding: 0.75rem 1.5rem;
             border-radius: 12px; display: flex; align-items: center; gap: 12px; cursor: pointer;
         }
         #dropdown-menu {
-            display: none; position: absolute; top: 75px; left: 0;
+            display: none; position: absolute; top: 100%; left: 0;
             width: 260px; background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(25px); border-radius: 16px;
             border: 1px solid rgba(59, 130, 246, 0.3); z-index: 1000;
         }
+        .nav-container:hover #dropdown-menu { display: block; }
+        
         .menu-item {
             padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
             font-size: 0.75rem; font-weight: 800; color: #1e293b; text-transform: uppercase;
@@ -55,11 +56,7 @@
         }
         .menu-item:hover { background: rgba(59, 130, 246, 0.05); color: #3b82f6; padding-left: 1.8rem; }
 
-        #scrollTopBtn {
-            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
-            background: white; border-radius: 15px; display: none; align-items: center; justify-content: center;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3); z-index: 1000; cursor: pointer;
-        }
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 20px; }
 
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;
@@ -71,33 +68,33 @@
 
     <div class="vibrant-glass-wash"></div>
 
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
-    </button>
-
     <nav class="fixed top-0 w-full z-50 px-10 py-8">
-        <div class="relative inline-block text-left">
-            <div class="menu-trigger" onclick="toggleMenu()">
+        <div class="nav-container">
+            <div class="menu-trigger">
                 <div class="w-6 h-6 bg-black rounded flex items-center justify-center text-white font-black text-[9px]">MT</div>
                 <span class="font-bold text-sm tracking-tight uppercase">M. Tailor</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
             </div>
             <div id="dropdown-menu">
-                <a href="#about" class="menu-item" onclick="toggleMenu()">1. Profile</a>
-                <a href="#impact" class="menu-item" onclick="toggleMenu()">2. Impact</a>
-                <a href="#skills" class="menu-item" onclick="toggleMenu()">3. Skills</a>
-                <a href="#journey" class="menu-item" onclick="toggleMenu()">4. Journey</a>
-                <a href="#academic" class="menu-item" onclick="toggleMenu()">5. Academic</a>
-                <a href="#contact" class="menu-item" onclick="toggleMenu()">6. Contact</a>
+                <a href="#profile" class="menu-item">Profile</a>
+                <a href="#impact" class="menu-item">Impact</a>
+                <a href="#skills" class="menu-item">Skills</a>
+                <a href="#journey" class="menu-item">Journey</a>
+                <a href="#academic" class="menu-item">Academic</a>
+                <a href="#contact" class="menu-item">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section id="about">
+    <section id="profile">
+        <div class="flex gap-4 mb-10 justify-center">
+            <div class="px-8 py-4 glass-bounce theme-blue font-black text-[11px] uppercase tracking-widest border-2 border-blue-500">USA Green Card</div>
+            <div class="px-8 py-4 glass-bounce theme-purple font-black text-[11px] uppercase tracking-widest border-2 border-purple-500">ITIL® 4 Foundation</div>
+        </div>
         <div class="max-w-5xl mx-auto glass-bounce p-16 md:p-24 text-center border-t-8 border-blue-600">
             <h2 class="text-6xl font-black mb-10 uppercase tracking-tighter">Executive Profile</h2>
             <p class="text-2xl text-slate-700 leading-relaxed font-medium">
-                Strategic IT Operations Leader with over <span class="theme-blue font-bold">17 years of experience</span> across global enterprise environments. Specializing in the stabilization of complex infrastructure and high-stakes executive support, I have built my career on transforming technical debt into high-performance operational resilience.
+                Strategic IT Operations Leader with over <span class="theme-blue font-bold">17 years of experience</span> across global enterprise environments. Specializing in the stabilization of complex infrastructure and high-stakes executive support at <span class="theme-purple font-bold">Korn Ferry</span>.
             </p>
         </div>
     </section>
@@ -107,38 +104,47 @@
             <div class="glass-bounce p-14 border-l-8 border-blue-600">
                 <h3 class="text-4xl font-black mb-8 uppercase theme-blue tracking-tight">HQ Relocation</h3>
                 <p class="text-slate-600 font-bold text-xl leading-relaxed mb-6">Led the end-to-end relocation of Regional HQ infrastructure for 70+ executive power-users.</p>
-                <ul class="text-slate-500 space-y-4 font-semibold text-lg">
+                <ul class="text-slate-500 space-y-4 font-semibold text-lg leading-snug">
                     <li>• Achieved 100% Day-One operational readiness.</li>
                     <li>• Zero data loss during complex server room migrations.</li>
-                    <li>• Standardized modern hardware across new executive suites.</li>
+                    <li>• Implemented proactive server monitoring reducing downtime by 40%.</li>
                 </ul>
             </div>
             <div class="glass-bounce p-14 border-l-8 border-purple-600">
                 <h3 class="text-4xl font-black mb-8 uppercase theme-purple tracking-tight">System Refresh</h3>
-                <p class="text-slate-600 font-bold text-xl leading-relaxed mb-6">Orchestrated regional Windows 11 refresh cycles for 120+ mission-critical workstations.</p>
-                <ul class="text-slate-500 space-y-4 font-semibold text-lg">
-                    <li>• Reduced annual procurement overhead by 15%.</li>
-                    <li>• Automated 85% of provisioning via SCCM/Intune logic.</li>
-                    <li>• 99.9% uptime maintained during rolling transition phases.</li>
+                <p class="text-slate-600 font-bold text-xl leading-relaxed mb-6">Orchestrated regional Windows 11 refresh cycles for 120+ workstations.</p>
+                <ul class="text-slate-500 space-y-4 font-semibold text-lg leading-snug">
+                    <li>• Reduced annual procurement overhead by 15% via asset management.</li>
+                    <li>• Automated 85% of provisioning tasks via SCCM/Intune logic.</li>
+                    <li>• Standardized EUC hardware across multiple regional branches.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="skills">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-20 uppercase">Tech Ecosystem</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="glass-bounce p-14">
-                    <div class="text-5xl mb-6">🛠️</div>
-                    <h4 class="text-2xl font-black theme-blue mb-4 uppercase">ServiceNow</h4>
-                    <p class="text-slate-600 font-medium leading-relaxed">Expert-level incident orchestration, CMDB lifecycle management, and executive-level SLA enforcement.</p>
-                </div>
-                <div class="glass-bounce p-14">
-                    <div class="text-5xl mb-6">💻</div>
-                    <h4 class="text-2xl font-black theme-purple mb-4 uppercase">SCCM & Intune</h4>
-                    <p class="text-slate-600 font-medium leading-relaxed">Advanced proficiency in automated software deployment, security patching, and global provisioning logic.</p>
-                </div>
+        <h2 class="text-center text-[11px] font-black uppercase tracking-[0.5em] text-slate-400 mb-20 uppercase">Core Ecosystem</h2>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+            <div class="glass-bounce p-12">
+                <div class="text-5xl mb-6">🛠️</div>
+                <h4 class="text-2xl font-black theme-blue mb-4 uppercase">ServiceNow Orchestration</h4>
+                <p class="text-slate-600 font-medium leading-relaxed">Expert-level incident management and SLA orchestration. Specialized in CMDB maintenance and automating high-priority executive support workflows to maintain 100% compliance.</p>
+            </div>
+            <div class="glass-bounce p-12">
+                <div class="text-5xl mb-6">💻</div>
+                <h4 class="text-2xl font-black theme-purple mb-4 uppercase">EUC & Endpoint Modernization</h4>
+                <p class="text-slate-600 font-medium leading-relaxed">Advanced proficiency in SCCM and Microsoft Intune for automated software deployment, security patch management, and zero-touch provisioning for large-scale enterprise fleets.</p>
+            </div>
+            <div class="glass-bounce p-12">
+                <div class="text-5xl mb-6">📜</div>
+                <h4 class="text-2xl font-black theme-blue mb-4 uppercase">ITIL® 4 Framework</h4>
+                <p class="text-slate-600 font-medium leading-relaxed">Certified practitioner leveraging ITIL® 4 to align technical services with business outcomes. Focused on Continual Service Improvement (CSI) and value-stream optimization.</p>
+                
+            </div>
+            <div class="glass-bounce p-12">
+                <div class="text-5xl mb-6">🏢</div>
+                <h4 class="text-2xl font-black theme-purple mb-4 uppercase">Asset Lifecycle Strategy</h4>
+                <p class="text-slate-600 font-medium leading-relaxed">Full lifecycle management of multi-million dollar asset portfolios. Expert in vendor contract negotiations, hardware standardization, and proactive procurement strategies.</p>
             </div>
         </div>
     </section>
@@ -149,16 +155,14 @@
                 <img src="assets/logo/kf_logo.jpg" class="w-24 h-24 rounded-2xl shadow-lg" alt="KF">
                 <div>
                     <p class="text-[12px] font-black theme-blue uppercase mb-1">Korn Ferry International</p>
-                    <h3 class="text-4xl font-black uppercase">IT Operations Lead | 2013 — 2025</h3>
-                    <p class="mt-4 text-slate-500 font-semibold uppercase tracking-widest text-xs">Directing Regional Infrastructure & Exec-Support</p>
+                    <h3 class="text-4xl font-black uppercase text-slate-900">IT Operations Lead | 2013 — 2025</h3>
                 </div>
             </div>
             <div class="glass-bounce p-12 flex flex-col md:flex-row items-center gap-10 border-b-8 border-purple-600">
                 <img src="assets/logo/team_logo.jpg" class="w-24 h-24 rounded-2xl shadow-lg" alt="Team">
                 <div>
                     <p class="text-[12px] font-black theme-purple uppercase mb-1">Team Computers</p>
-                    <h3 class="text-4xl font-black uppercase">Senior Support Engineer | 2012 — 2013</h3>
-                    <p class="mt-4 text-slate-500 font-semibold uppercase tracking-widest text-xs">Tier-3 Escalation & Enterprise Deployments</p>
+                    <h3 class="text-4xl font-black uppercase text-slate-900">Senior Support Engineer | 2012 — 2013</h3>
                 </div>
             </div>
         </div>
@@ -168,13 +172,13 @@
         <div class="max-w-5xl mx-auto glass-bounce p-20 text-center border-t-8 border-blue-400">
             <div class="text-7xl mb-8">🎓</div>
             <h3 class="text-5xl font-black uppercase tracking-tight text-slate-900 mb-4">BCA Degree</h3>
-            <p class="text-3xl font-bold theme-blue mb-4 uppercase">YCMOU University</p>
+            <p class="text-3xl font-bold theme-blue mb-2 uppercase">YCMOU University</p>
             <p class="text-xl text-slate-500 font-semibold uppercase tracking-widest">Graduated Class of 2013</p>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="max-w-5xl mx-auto glass-bounce p-12 md:p-20 border-t-4 border-blue-600 shadow-2xl">
+    <footer id="contact" class="min-h-screen flex items-center justify-center">
+        <div class="max-w-5xl mx-auto glass-bounce p-12 md:p-20 border-t-4 border-blue-500 shadow-2xl">
             <div class="grid md:grid-cols-3 gap-16 items-center">
                 <div class="text-center">
                     <div class="w-48 h-48 bg-white p-3 rounded-3xl shadow-2xl mx-auto">
@@ -183,7 +187,7 @@
                     <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest mt-8">Scan to Connect</p>
                 </div>
                 <div class="md:col-span-2 space-y-12 text-center md:text-left md:border-l-2 md:border-slate-100 md:pl-16">
-                    <div class="space-y-4">
+                    <div>
                         <p class="text-[11px] font-black theme-blue uppercase mb-4 tracking-widest">Primary Contact</p>
                         <p class="text-5xl font-black tracking-tighter text-slate-900">+91 91677 75155</p>
                     </div>
@@ -194,18 +198,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
-        window.onclick = function(e) { if (!e.target.closest('.menu-trigger')) document.getElementById('dropdown-menu').style.display = 'none'; }
-        
         window.onscroll = function() {
             let btn = document.getElementById("scrollTopBtn");
-            btn.style.display = (document.documentElement.scrollTop > 600) ? "flex" : "none";
+            if (document.documentElement.scrollTop > 500) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
         };
 
         function copyEmail() {
