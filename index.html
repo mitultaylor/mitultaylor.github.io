@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=72">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=73">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         body { margin: 0; padding: 0; background-color: #0c0c0e !important; font-family: 'Plus Jakarta Sans', sans-serif; color: #1a1a1a; overflow-x: hidden; }
         
-        /* THE IMAGE LAYER - Fixed visibility */
+        /* 1. BACKGROUND - Reduced blur for better visibility */
         #fixed-bg-layer {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -10;
             background-image: url('bg_mt_ws.jpg') !important;
             background-size: cover !important; background-position: center !important;
-            filter: blur(8px) brightness(0.8) !important; transform: scale(1.05);
+            filter: blur(6px) brightness(0.8) !important; transform: scale(1.05);
         }
 
-        /* THE VIBRANT OVERLAY - Lowered from 0.12 to 0.08 for maximum transparency */
+        /* 2. OVERLAY - Ultra-transparent (0.05) to remove the "thick wall" */
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5;
-            background: radial-gradient(circle at 5% 5%, rgba(59, 130, 246, 0.1), transparent 40%),
-                        radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.1), transparent 40%),
-                        rgba(255, 255, 255, 0.08); /* Minimal frost to see the desk image clearly */
+            background: radial-gradient(circle at 5% 5%, rgba(59, 130, 246, 0.08), transparent 40%),
+                        radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.08), transparent 40%),
+                        rgba(255, 255, 255, 0.05); /* Very thin frost layer */
         }
 
         .menu-trigger {
@@ -53,13 +53,13 @@
             letter-spacing: 0.15em; font-size: 0.65rem; animation: pulse-glow 2s infinite;
         }
 
-        .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); border-radius: 3rem; border: 1px solid rgba(255,255,255,0.4); }
+        .glass-panel { background: rgba(255, 255, 255, 0.82); backdrop-filter: blur(20px); border-radius: 3rem; border: 1px solid rgba(255,255,255,0.4); }
         .hero-title { font-size: 8.5rem; line-height: 0.82; font-weight: 900; letter-spacing: -0.04em; }
 
         #scrollTopBtn {
-            position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px;
-            background: white; border-radius: 12px; display: none; align-items: center; justify-content: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 100; cursor: pointer;
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background: white; border-radius: 15px; display: none; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; cursor: pointer;
         }
     </style>
 </head>
@@ -69,7 +69,7 @@
     <div class="vibrant-glass-wash"></div>
 
     <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3"><path d="m18 15-6-6-6 6"/></svg>
     </button>
 
     <nav class="fixed top-0 w-full z-50 px-10 py-8">
@@ -82,8 +82,8 @@
             <div id="dropdown-menu">
                 <a href="#about" class="menu-item" onclick="toggleMenu()">Profile</a>
                 <a href="#impact" class="menu-item" onclick="toggleMenu()">Impact</a>
-                <a href="#journey" class="menu-item" onclick="toggleMenu()">Journey</a>
                 <a href="#skills" class="menu-item" onclick="toggleMenu()">Skills</a>
+                <a href="#journey" class="menu-item" onclick="toggleMenu()">Journey</a>
                 <a href="#certifications" class="menu-item" onclick="toggleMenu()">Certs</a>
                 <a href="#contact" class="menu-item" onclick="toggleMenu()">Contact</a>
             </div>
@@ -92,26 +92,30 @@
 
     <section class="min-h-screen flex flex-col justify-center items-center px-10 text-center relative pt-24">
         <div class="flex gap-4 mb-10">
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-blue-50 text-blue-600 rounded-full border border-blue-100 shadow-sm">USA Green Card</span>
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-purple-50 text-purple-600 rounded-full border border-purple-100 shadow-sm">ITIL® 4 Foundation</span>
+            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-blue-50 text-blue-600 rounded-full border border-blue-100">USA Green Card</span>
+            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-purple-50 text-purple-600 rounded-full border border-purple-100">ITIL® 4 Foundation</span>
         </div>
         <h1 class="hero-title mb-10 text-black">Operations <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 italic">Leader.</span></h1>
         <p class="text-xl text-gray-500 font-medium tracking-tight mb-16">17+ years of driving infrastructure excellence at <strong>Korn Ferry</strong>.</p>
         <a href="assets/logo/Resume_L2_ITIL.pdf" target="_blank" class="btn-pulse">Full Profile</a>
     </section>
 
-    <section id="about" class="py-40 px-10 max-w-5xl mx-auto">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Expertise</h2>
-        <div class="glass-panel p-16 text-center shadow-2xl">
-            <h3 class="text-5xl font-black mb-8 tracking-tighter uppercase">IT Operations Architect</h3>
-            <p class="text-xl text-gray-600 leading-relaxed font-medium">
-                Seasoned leader specializing in global infrastructure stabilization, high-stakes office relocations, and end-user compute modernization. Leveraging ITIL® 4 frameworks to drive business efficiency.
-            </p>
+    <section id="impact" class="py-40 px-10 max-w-7xl mx-auto">
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Strategic Impact</h2>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="glass-panel p-14 shadow-2xl">
+                <h3 class="text-3xl font-black mb-6 uppercase text-blue-600">Site Reliability</h3>
+                <p class="text-gray-600 font-medium leading-relaxed">Directed end-to-end relocation for executive headquarters. Managed site reliability for 70+ power-users, achieving 100% Day-One readiness.</p>
+            </div>
+            <div class="glass-panel p-14 shadow-2xl">
+                <h3 class="text-3xl font-black mb-6 uppercase text-purple-600">Fleet Refresh</h3>
+                <p class="text-gray-600 font-medium leading-relaxed">Orchestrated regional Windows transitions for 120+ workstations. Implemented hardware lifecycles to ensure 99.9% uptime.</p>
+            </div>
         </div>
     </section>
 
     <section id="skills" class="py-40 px-10 max-w-6xl mx-auto">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Tech Ecosystem</h2>
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Tech Ecosystem</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="bg-white/70 backdrop-blur-lg p-10 rounded-3xl text-center border border-white/40 shadow-xl">
                 <p class="font-black uppercase text-xs tracking-widest text-blue-600">ServiceNow</p>
@@ -129,7 +133,7 @@
     </section>
 
     <section id="journey" class="py-40 px-10 max-w-5xl mx-auto space-y-12">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Journey & Academic</h2>
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center uppercase">Experience & Education</h2>
         <div class="space-y-8">
             <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 shadow-xl">
                 <img src="assets/logo/kf_logo.webp" class="w-20 h-20 rounded-xl" alt="KF">
@@ -146,16 +150,16 @@
                 </div>
             </div>
             <div class="glass-panel p-12 shadow-xl text-center">
-                <h4 class="text-[10px] font-black text-blue-300 uppercase mb-8 tracking-widest uppercase">Education</h4>
+                <h4 class="text-[10px] font-black text-blue-300 uppercase mb-8 tracking-widest uppercase">Academic Foundation</h4>
                 <p class="text-4xl font-black uppercase tracking-tighter text-black">BCA Degree</p>
-                <p class="text-[12px] text-gray-400 font-bold mt-2">YCMOU University • 2013</p>
+                <p class="text-[12px] text-gray-400 font-bold mt-2 uppercase">YCMOU University • 2013</p>
             </div>
         </div>
     </section>
 
     <section id="certifications" class="py-40 px-10 max-w-6xl mx-auto text-center">
         <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 uppercase">Credentials</h2>
-        <div class="glass-panel p-12 md:p-20 shadow-2xl flex flex-col items-center">
+        <div class="glass-panel p-16 shadow-2xl flex flex-col items-center">
             <h3 class="text-4xl font-black uppercase tracking-tighter mb-12">ITIL® 4 Foundation Certificate</h3>
             <div class="max-w-4xl rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
                 <img src="assets/certi/itil_cert.jpg" class="w-full h-auto" alt="ITIL Certificate">
@@ -164,21 +168,21 @@
     </section>
 
     <footer id="contact" class="py-60 text-center px-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-16">Connect</h2>
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-20 uppercase">Connect</h2>
         <div class="max-w-4xl mx-auto glass-panel p-16 shadow-2xl">
             <div class="grid md:grid-cols-2 gap-12 text-left items-center">
-                <div class="space-y-6">
+                <div class="space-y-8">
                     <div>
                         <p class="text-[10px] font-black text-blue-600 uppercase mb-2">Direct Line</p>
-                        <p class="text-3xl font-black text-black tracking-tighter">+91 91677 75155</p>
+                        <p class="text-3xl font-black text-black">+91 91677 75155</p>
                     </div>
                     <div>
-                        <p class="text-[10px] font-black text-purple-600 uppercase mb-2">Linkedin</p>
-                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-2xl font-black text-black border-b-2 border-black hover:text-blue-600">Visit Profile</a>
+                        <p class="text-[10px] font-black text-purple-600 uppercase mb-2">Network</p>
+                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="text-2xl font-black text-black border-b-2 border-black hover:text-blue-600 transition-colors">LinkedIn Profile</a>
                     </div>
                 </div>
-                <div>
-                    <button onclick="copyEmail()" id="smartBtn" class="btn-pulse w-full">meetul.t@gmail.com</button>
+                <div class="flex flex-col justify-center">
+                    <button onclick="copyEmail()" id="smartBtn" class="btn-pulse w-full uppercase">meetul.t@gmail.com</button>
                 </div>
             </div>
         </div>
@@ -190,13 +194,20 @@
             menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
         }
         window.onclick = function(e) { if (!e.target.closest('.menu-trigger')) document.getElementById('dropdown-menu').style.display = 'none'; }
+        
         window.onscroll = function() {
             let btn = document.getElementById("scrollTopBtn");
-            btn.style.display = (document.documentElement.scrollTop > 500) ? "flex" : "none";
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
         };
+
         function copyEmail() {
             navigator.clipboard.writeText("meetul.t@gmail.com");
-            const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
+            const btn = document.getElementById('smartBtn'); 
+            btn.innerText = "COPIED!";
             setTimeout(() => { btn.innerText = "MEETUL.T@GMAIL.COM"; }, 3000);
         }
     </script>
