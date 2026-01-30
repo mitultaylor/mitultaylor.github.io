@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="favicon.png?v=58">
+    <link rel="icon" type="image/png" href="favicon.png?v=59">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         body { margin: 0; padding: 0; background-color: #0c0c0e !important; font-family: 'Plus Jakarta Sans', sans-serif; color: #1a1a1a; overflow-x: hidden; }
         
-        /* 1. THE IMAGE LAYER - High Visibility */
+        /* 1. THE IMAGE LAYER */
         #fixed-bg-layer {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -10;
             background-image: url('bg_mt_ws.jpg') !important;
@@ -21,15 +21,15 @@
             transform: scale(1.05);
         }
 
-        /* 2. THE VIBRANT OVERLAY - Ultra Transparent */
+        /* 2. THE VIBRANT OVERLAY */
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5;
             background: radial-gradient(circle at 5% 5%, rgba(59, 130, 246, 0.2), transparent 40%),
                         radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.2), transparent 40%),
-                        rgba(255, 255, 255, 0.15); /* Lowered to 0.15 for clear view */
+                        rgba(255, 255, 255, 0.15);
         }
 
-        /* 3. SYNCED CLIPBOARD DESIGN */
+        /* 3. SYNCED CLIPBOARDS */
         .clipboard-nav {
             transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: pointer; position: relative;
@@ -42,7 +42,6 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.1); border: 1px solid rgba(255,255,255,0.8);
         }
 
-        /* The Minimalist Top Tab */
         .clipboard-card::before {
             content: ''; position: absolute; top: 10px;
             width: 32px; height: 6px; background: #f1f5f9; border-radius: 3px;
@@ -53,83 +52,10 @@
             filter: drop-shadow(0 20px 40px rgba(59, 130, 246, 0.25));
         }
 
+        /* Updated Font Color for Clipboard */
         .clip-text {
-            font-size: 0.55rem; font-weight: 800; color: #94a3b8;
+            font-size: 0.55rem; font-weight: 800; color: #1e293b; /* Darker, more legible Slate */
             letter-spacing: 0.12em; text-transform: uppercase; margin-top: 12px;
         }
         
-        .hero-title { font-size: 8rem; line-height: 0.82; font-weight: 900; letter-spacing: -0.04em; }
-
-        .btn-vibrant {
-            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%); color: #fff;
-            padding: 1.25rem 3.5rem; border-radius: 9999px; font-weight: 800; text-transform: uppercase;
-            letter-spacing: 0.15em; font-size: 0.7rem; transition: 0.3s ease;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
-        }
-    </style>
-</head>
-<body class="antialiased">
-
-    <div id="fixed-bg-layer"></div>
-    <div class="vibrant-glass-wash"></div>
-
-    <nav class="fixed top-0 w-full z-50 px-10 py-10 flex justify-start items-center">
-        <div class="flex items-center gap-3">
-            <div class="w-8 h-8 bg-black rounded flex items-center justify-center text-white font-black text-[10px]">MT</div>
-            <span class="font-black text-lg tracking-tighter uppercase italic text-black">M. Tailor</span>
-        </div>
-    </nav>
-
-    <section class="min-h-screen flex flex-col justify-center items-center px-10 text-center relative pt-20">
-        
-        <div class="flex gap-10 mb-20">
-            <a href="#impact" class="clipboard-nav">
-                <div class="clipboard-card">
-                    <span class="clip-text">Impact</span>
-                </div>
-            </a>
-            <a href="#journey" class="clipboard-nav">
-                <div class="clipboard-card">
-                    <span class="clip-text">Journey</span>
-                </div>
-            </a>
-        </div>
-
-        <h1 class="hero-title mb-10 text-black">
-            Operations <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 italic">Leader.</span>
-        </h1>
-        
-        <div class="max-w-xl mx-auto mb-16">
-            <p class="text-lg text-gray-500 font-medium tracking-tight">
-                17+ years of driving infrastructure excellence at <strong>Korn Ferry</strong>.
-            </p>
-        </div>
-
-        <a href="Resume_L2_ITIL.pdf" target="_blank" class="btn-vibrant">Download CV</a>
-    </section>
-
-    <section id="impact" class="py-40 px-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
-        <div class="bg-white/70 backdrop-blur-2xl p-14 rounded-[3rem] border border-white/40 shadow-2xl">
-            <h3 class="text-3xl font-black mb-8 uppercase tracking-tighter">Fleet Refresh</h3>
-            <p class="text-gray-600 leading-relaxed font-medium">Directed regional Windows transitions for Korn Ferry. Managed 120+ workstation lifecycles.</p>
-        </div>
-        <div class="bg-white/70 backdrop-blur-2xl p-14 rounded-[3rem] border border-white/40 shadow-2xl">
-            <h3 class="text-3xl font-black mb-8 uppercase tracking-tighter">Infrastructure</h3>
-            <p class="text-gray-600 leading-relaxed font-medium">Masterminded end-to-end IT logistics for office relocations for 70+ power users.</p>
-        </div>
-    </section>
-
-    <footer class="py-40 text-center">
-        <button onclick="copyEmail()" id="smartBtn" class="btn-vibrant">Copy meetul.t@gmail.com</button>
-    </footer>
-
-    <script>
-        function copyEmail() {
-            const email = "meetul.t@gmail.com"; navigator.clipboard.writeText(email);
-            const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
-            window.location.href = "mailto:" + email;
-            setTimeout(() => { btn.innerText = "Copy meetul.t@gmail.com"; }, 3000);
-        }
-    </script>
-</body>
-</html>
+        .hero-title { font-size: 8rem; line-height: 0.82; font-weight: 900; letter-spacing: -
