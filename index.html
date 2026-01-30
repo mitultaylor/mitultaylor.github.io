@@ -90,4 +90,125 @@
 <body class="antialiased">
 
     <div id="fixed-bg-layer"></div>
-    <div class="v
+    <div class="vibrant-glass-wash"></div>
+
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <nav class="fixed top-0 w-full z-50 px-10 py-10 flex justify-start items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-black rounded flex items-center justify-center text-white font-black text-[10px]">MT</div>
+            <span class="font-black text-lg tracking-tighter uppercase italic text-black">M. Tailor</span>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center px-10 text-center relative pt-20">
+        
+        <div class="flex gap-10 mb-20">
+            <a href="#impact" class="clipboard-nav">
+                <div class="clipboard-card"><span class="clip-text">Impact</span></div>
+            </a>
+            <a href="#experience" class="clipboard-nav">
+                <div class="clipboard-card"><span class="clip-text">Journey</span></div>
+            </a>
+            <a href="#skills" class="clipboard-nav">
+                <div class="clipboard-card"><span class="clip-text">Skills</span></div>
+            </a>
+        </div>
+
+        <h1 class="hero-title mb-10 text-black">Operations <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 italic">Leader.</span></h1>
+        
+        <div class="max-w-xl mx-auto mb-16">
+            <p class="text-lg text-gray-500 font-medium tracking-tight">17+ years of driving infrastructure excellence at <strong>Korn Ferry</strong>.</p>
+        </div>
+
+        <a href="Resume_L2_ITIL.pdf" target="_blank" class="btn-pulse">Full Profile</a>
+    </section>
+
+    <section id="impact" class="py-40 px-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+        <div class="glass-panel p-14 shadow-2xl">
+            <h3 class="text-3xl font-black mb-8 uppercase text-blue-600">Fleet Refresh</h3>
+            <p class="text-gray-600 font-medium">Directed regional Windows transitions for Korn Ferry. Managed 120+ workstation lifecycles.</p>
+        </div>
+        <div class="glass-panel p-14 shadow-2xl">
+            <h3 class="text-3xl font-black mb-8 uppercase text-purple-600">Infrastructure</h3>
+            <p class="text-gray-600 font-medium">Masterminded end-to-end IT logistics for office relocations for 70+ power users.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="py-40 px-10 max-w-5xl mx-auto">
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Tech Stack</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="glass-panel p-8 text-center"><p class="font-black uppercase text-xs">ServiceNow</p></div>
+            <div class="glass-panel p-8 text-center"><p class="font-black uppercase text-xs">SCCM</p></div>
+            <div class="glass-panel p-8 text-center"><p class="font-black uppercase text-xs">ITIL® 4</p></div>
+            <div class="glass-panel p-8 text-center"><p class="font-black uppercase text-xs">Windows 11</p></div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-40 px-10 max-w-5xl mx-auto space-y-8">
+        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-10 text-center">Professional History</h2>
+        
+        <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 border border-transparent hover:border-blue-500 transition-all duration-500">
+            <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-3 shadow-sm shrink-0">
+                <img src="KF_Logo.webp" class="max-w-full" alt="KF">
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-[10px] font-bold text-blue-600 uppercase mb-1">Korn Ferry International</p>
+                <h3 class="text-3xl font-bold uppercase text-black">IT Operations Lead</h3>
+                <p class="text-gray-400 text-[10px] font-bold mt-2">2013 — 2025</p>
+            </div>
+        </div>
+
+        <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 border border-transparent hover:border-purple-500 transition-all duration-500">
+            <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-3 shadow-sm shrink-0">
+                <img src="Team's Logo.jfif" class="max-w-full" alt="Team">
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-[10px] font-bold text-gray-400 uppercase mb-1">Team Computers</p>
+                <h3 class="text-3xl font-bold uppercase text-black">Senior Support Engineer</h3>
+                <p class="text-gray-400 text-[10px] font-bold mt-2">2012 — 2013</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 pt-10">
+            <div class="glass-panel p-12">
+                <h4 class="text-[10px] font-black text-blue-300 uppercase tracking-widest mb-8">Foundations</h4>
+                <div class="space-y-4 text-[11px] font-bold text-gray-500 uppercase">
+                    <p class="flex justify-between border-b border-gray-100 pb-2"><span>SAM INFOTECH</span> <span>2011-2012</span></p>
+                    <p class="flex justify-between border-b border-gray-100 pb-2"><span>LYM COMPUTERS</span> <span>2009-2011</span></p>
+                    <p class="flex justify-between"><span>RELIANCE | INDIABULLS</span> <span>2007-2008</span></p>
+                </div>
+            </div>
+            <div class="glass-panel p-12">
+                <h4 class="text-[10px] font-black text-purple-300 uppercase tracking-widest mb-8">Academic</h4>
+                <p class="text-3xl font-black text-black uppercase tracking-tighter">BCA Degree</p>
+                <p class="text-[10px] text-gray-400 uppercase font-bold mt-2">YCMOU University • 2013</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-60 text-center">
+        <button onclick="copyEmail()" id="smartBtn" class="btn-pulse">Copy meetul.t@gmail.com</button>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            let btn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                btn.style.display = "flex";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        function copyEmail() {
+            const email = "meetul.t@gmail.com"; navigator.clipboard.writeText(email);
+            const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED!";
+            window.location.href = "mailto:" + email;
+            setTimeout(() => { btn.innerText = "Copy meetul.t@gmail.com"; }, 3000);
+        }
+    </script>
+</body>
+</html>
