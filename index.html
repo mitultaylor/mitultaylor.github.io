@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitul Tailor | IT Operations Leader</title>
-    <link rel="icon" type="image/png" href="favicon.png?v=65">
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=69">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -21,10 +21,11 @@
         .vibrant-glass-wash {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -5;
             background: radial-gradient(circle at 5% 5%, rgba(59, 130, 246, 0.15), transparent 40%),
-                        radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.2), transparent 40%),
+                        radial-gradient(circle at 95% 95%, rgba(139, 92, 246, 0.15), transparent 40%),
                         rgba(255, 255, 255, 0.12);
         }
 
+        /* NAVIGATION DROPDOWN */
         .menu-trigger {
             background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.5); padding: 0.75rem 1.5rem;
@@ -35,8 +36,7 @@
             display: none; position: absolute; top: 70px; left: 0;
             width: 260px; background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(25px); border-radius: 16px;
-            border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            z-index: 100;
+            border: 1px solid rgba(59, 130, 246, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.15); z-index: 100;
         }
 
         .menu-item {
@@ -56,10 +56,10 @@
         .glass-panel { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(25px); border-radius: 3rem; border: 1px solid rgba(255,255,255,0.4); }
         .hero-title { font-size: 8.5rem; line-height: 0.82; font-weight: 900; letter-spacing: -0.04em; }
 
-        .qr-placeholder {
+        .qr-frame {
             width: 140px; height: 140px; background: white; border: 8px solid white;
             border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            display: flex; items-center; justify-center; margin: 0 auto;
+            display: flex; align-items: center; justify-content: center; margin: 0 auto;
         }
     </style>
 </head>
@@ -85,74 +85,4 @@
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center items-center px-10 text-center relative pt-24">
-        <div class="flex gap-4 mb-10">
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-blue-50 text-blue-600 rounded-full border border-blue-100">USA Green Card</span>
-            <span class="text-[9px] font-black uppercase tracking-[0.3em] px-6 py-2.5 bg-purple-50 text-purple-600 rounded-full border border-purple-100">ITIL® 4 Foundation</span>
-        </div>
-        <h1 class="hero-title mb-10 text-black">Operations <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 italic">Leader.</span></h1>
-        <p class="text-xl text-gray-500 font-medium tracking-tight mb-16">17+ years of building resilient infrastructure at <strong>Korn Ferry</strong>.</p>
-        <a href="Resume_L2_ITIL.pdf" target="_blank" class="btn-pulse">Full Profile</a>
-    </section>
-
-    <section id="journey" class="py-40 px-10 max-w-5xl mx-auto space-y-12">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-400 mb-20 text-center">Journey & Education</h2>
-        <div class="space-y-8">
-            <div class="glass-panel p-10 flex flex-col md:flex-row items-center gap-10 shadow-xl">
-                <img src="KF_Logo.webp" class="w-20 h-20 rounded-xl" alt="KF">
-                <div>
-                    <p class="text-[11px] font-black text-blue-600 uppercase mb-1">Korn Ferry International</p>
-                    <h3 class="text-3xl font-black uppercase">IT Operations Lead | 2013 — 2025</h3>
-                </div>
-            </div>
-            <div class="glass-panel p-12 shadow-xl text-center">
-                <h4 class="text-[10px] font-black text-blue-300 uppercase mb-8 tracking-widest">Education</h4>
-                <p class="text-4xl font-black uppercase tracking-tighter">BCA Degree</p>
-                <p class="text-[12px] text-gray-400 font-bold mt-2">YCMOU University • Graduated 2013</p>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="py-40 text-center px-10">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-300 mb-20">Direct Connection</h2>
-        <div class="max-w-4xl mx-auto glass-panel p-16 shadow-2xl">
-            <div class="grid md:grid-cols-3 gap-12 items-center">
-                <div class="space-y-4">
-                    <div class="qr-placeholder">
-                        <img src="linkedin_qr.png" alt="Scan me" class="w-full h-full rounded-lg">
-                    </div>
-                    <p class="text-[9px] font-black text-gray-400 uppercase tracking-widest">Scan to Connect</p>
-                </div>
-                
-                <div class="space-y-10 md:col-span-2 text-left md:border-l border-gray-100 md:pl-12">
-                    <div>
-                        <p class="text-[10px] font-black text-blue-600 uppercase mb-2">Primary Contact</p>
-                        <p class="text-3xl font-black text-black tracking-tighter">+91 91677 75155</p>
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-black text-purple-600 uppercase mb-2">Email Address</p>
-                        <button onclick="copyEmail()" id="smartBtn" class="text-2xl font-black text-black tracking-tighter hover:text-blue-600 transition-all">meetul.t@gmail.com</button>
-                    </div>
-                    <div>
-                        <a href="https://www.linkedin.com/in/mitultaylor/" target="_blank" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-black uppercase text-[10px] tracking-widest hover:bg-black transition-all">
-                            Visit LinkedIn Profile
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('dropdown-menu');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
-        function copyEmail() {
-            navigator.clipboard.writeText("meetul.t@gmail.com");
-            const btn = document.getElementById('smartBtn'); btn.innerText = "COPIED TO CLIPBOARD!";
-            setTimeout(() => { btn.innerText = "meetul.t@gmail.com"; }, 3000);
-        }
-    </script>
-</body>
-</html>
+    <section class="min-
