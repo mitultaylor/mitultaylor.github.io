@@ -60,7 +60,7 @@
             backdrop-filter: blur(20px) !important;
             border: 1px solid rgba(255, 255, 255, 0.35) !important;
             border-radius: 999px;
-            padding: 1.1rem 3.5rem; /* Adjusted for 3 buttons */
+            padding: 1.1rem 2.5rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.2em;
@@ -75,16 +75,64 @@
 
         .action-btn:hover {
             background: white !important;
-            color: black;
+            color: black !important;
             transform: translateY(-5px) scale(1.03);
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
+
+        /* NAVIGATION */
+        .nav-wrapper { position: relative; display: inline-block; padding-bottom: 30px; }
+        .nav-trigger {
+            background: rgba(255, 255, 255, 0.12) !important;
+            backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            padding: 1rem 2.4rem; border-radius: 20px;
+            display: flex; align-items: center; gap: 15px;
+            cursor: pointer; color: white; font-weight: 800; transition: 0.4s;
+        }
+        .nav-wrapper:hover .nav-trigger { background: white !important; color: black; }
+        
+        #nav-dropdown {
+            display: none; position: absolute; top: 100%; left: 0;
+            width: 280px; background: rgba(255, 255, 255, 0.12) !important;
+            backdrop-filter: var(--frost-level) !important;
+            border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            z-index: 1000; padding: 12px 0;
+        }
+        .nav-wrapper:hover #nav-dropdown { display: block; }
+        
+        .tab-link {
+            padding: 1.4rem 2.2rem; display: flex; align-items: center; justify-content: space-between;
+            font-size: 0.85rem; font-weight: 900; color: rgba(255,255,255,0.7);
+            text-transform: uppercase; letter-spacing: 0.18em; transition: 0.4s; position: relative;
+        }
+        .tab-link:hover { color: white; padding-left: 3rem; background: rgba(96, 165, 250, 0.15); }
+
+        section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 120px 40px; }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="fixed top-0 left-0 w-full h-full bg-black/45 -z-10"></div>
     <div id="scroll-tracker"><div id="scroll-fill"></div></div>
+
+    <nav class="fixed top-0 w-full z-50 px-12 py-12">
+        <div class="nav-wrapper">
+            <a href="#hero" class="nav-trigger no-underline">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-black text-[11px]">MT</div>
+                <span class="tracking-[0.5em] uppercase">M. Tailor</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+            <div id="nav-dropdown">
+                <a href="#profile" class="tab-link">Profile</a>
+                <a href="#impact" class="tab-link">Impact</a>
+                <a href="#skills" class="tab-link">Skills</a>
+                <a href="#journey" class="tab-link">Journey</a>
+                <a href="#academic" class="tab-link">Academic</a>
+                <a href="#contact" class="tab-link">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <section id="hero">
         <div class="flex gap-6 mb-16 justify-center flex-wrap">
@@ -97,7 +145,7 @@
             </h1>
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a href="assets/logo/Mitul_Tailor_IT_Operations_Director_NJ.pdf" target="_blank" class="action-btn">Download CV</a>
-                <a href="assets/logo/Mitul_Tailor_IT_Operations_Stewardship_Brief.pdf" target="_blank" class="action-btn border-blue-400">90-Day Brief</a>
+                <a href="assets/logo/Mitul_Tailor_IT_Operations_Stewardship_Brief.pdf" target="_blank" class="action-btn">90-Day Brief</a>
                 <a href="assets/certi/itil_cert.jpg" target="_blank" class="action-btn">View Cert</a>
             </div>
         </div>
@@ -107,7 +155,7 @@
         <div class="max-w-6xl frosted-slab p-24 md:p-32 text-center border-t-2 border-white/15">
            <h2 class="text-white text-7xl md:text-8xl font-black mb-14 uppercase tracking-tighter">Operational Sovereignty</h2>
             <p class="text-2xl md:text-4xl text-white/85 leading-relaxed font-medium">
-                Infrastructure Leader with <span class="theme-blue font-bold">17+ years of expertise</span>. Trusted as the <span class="theme-purple font-bold">Sole Site Authority</span> for Korn Ferry’s global executive hub.
+                [cite_start]Infrastructure Leader with <span class="theme-blue font-bold">17+ years of expertise</span>[cite: 1, 19]. [cite_start]Trusted as the <span class="theme-purple font-bold">Sole Site Authority</span> for Korn Ferry’s global executive hub[cite: 5, 20].
             </p>
         </div>
     </section>
@@ -116,21 +164,47 @@
         <div class="max-w-7xl grid md:grid-cols-2 gap-12">
             <div class="frosted-slab p-16 border-l-4 border-blue-400 shadow-2xl min-h-[500px]">
                 <h3 class="text-5xl font-black mb-10 uppercase theme-blue tracking-tighter">Stewardship</h3>
-                <p class="text-white font-bold text-xl leading-relaxed mb-8">Directed end-to-end site governance for executive power-users with zero operational downtime.</p>
+                [cite_start]<p class="text-white font-bold text-xl leading-relaxed mb-8">Directed end-to-end site governance for executive power-users with zero operational downtime[cite: 5].</p>
                 <ul class="text-white/65 space-y-6 font-semibold text-lg leading-snug">
-                    <li>• 100% Day-One operational readiness.</li>
-                    <li>• Zero data loss during migrations.</li>
-                    <li>• Proactive monitoring systems.</li>
+                    [cite_start]<li>• 100% Day-One operational readiness[cite: 5].</li>
+                    [cite_start]<li>• Zero data loss during migrations[cite: 5].</li>
+                    [cite_start]<li>• Proactive monitoring systems[cite: 5].</li>
                 </ul>
             </div>
             <div class="frosted-slab p-16 border-l-4 border-purple-400 shadow-2xl min-h-[500px]">
                 <h3 class="text-5xl font-black mb-10 uppercase theme-purple tracking-tighter">System Refresh</h3>
-                <p class="text-white font-bold text-xl leading-relaxed mb-8">Orchestrated Windows 11 refresh cycles for mission-critical regional hubs.</p>
+                [cite_start]<p class="text-white font-bold text-xl leading-relaxed mb-8">Orchestrated Windows 11 refresh cycles for mission-critical regional hubs[cite: 5, 13].</p>
                 <ul class="text-white/65 space-y-6 font-semibold text-lg leading-snug">
-                    <li>• Automated provisioning tasks.</li>
-                    <li>• Reduced procurement overhead.</li>
-                    <li>• Maintained 99.9% service uptime.</li>
+                    [cite_start]<li>• Automated provisioning tasks[cite: 5].</li>
+                    [cite_start]<li>• Reduced procurement overhead[cite: 5].</li>
+                    [cite_start]<li>• Maintained 99.9% service uptime[cite: 5].</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="text-center text-[15px] font-black uppercase tracking-[1.5em] text-white/25 mb-24">Tech Ecosystem</h2>
+        <div class="max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="frosted-slab p-12 text-center">
+                <div class="text-7xl mb-10">🛠️</div>
+                <h4 class="text-xl font-black theme-blue mb-5 uppercase tracking-widest">ServiceNow</h4>
+                [cite_start]<p class="text-white/60 text-sm font-bold uppercase tracking-widest">SLA & CMDB [cite: 3, 14]</p>
+            </div>
+            <div class="frosted-slab p-12 text-center">
+                <div class="text-7xl mb-10">💻</div>
+                <h4 class="text-xl font-black theme-purple mb-5 uppercase tracking-widest">EU Operation</h4>
+                [cite_start]<p class="text-white/60 text-sm font-bold uppercase tracking-widest">Endpoint Logic [cite: 3]</p>
+            </div>
+            <div class="frosted-slab p-12 text-center">
+                <div class="text-7xl mb-10">📜</div>
+                <h4 class="text-2xl font-black theme-blue mb-5 uppercase tracking-widest">ITIL® 4</h4>
+                [cite_start]<p class="text-white/60 text-sm font-bold uppercase tracking-widest">Value-Stream [cite: 3, 9]</p>
+            </div>
+            <div class="frosted-slab p-12 text-center">
+                <div class="text-7xl mb-10">🏢</div>
+                <h4 class="text-2xl font-black theme-purple mb-5 uppercase tracking-widest">Assets</h4>
+                [cite_start]<p class="text-white/60 text-sm font-bold uppercase tracking-widest">Lifecycle MGMT [cite: 3, 5]</p>
             </div>
         </div>
     </section>
@@ -141,7 +215,14 @@
                 <img src="assets/logo/kf_logo.jpg" class="w-32 h-32 rounded-2xl shadow-2xl" alt="KF">
                 <div>
                     <p class="text-[14px] font-black theme-blue uppercase mb-4 tracking-widest">Korn Ferry International</p>
-                    <h3 class="text-5xl font-black uppercase text-white tracking-tighter">Regional Site Authority | 2013 — 2025</h3>
+                    <h3 class="text-5xl font-black uppercase text-white tracking-tighter">Regional Site Authority | [cite_start]2013 — 2025 [cite: 5, 20]</h3>
+                </div>
+            </div>
+            <div class="frosted-slab p-16 flex flex-col md:flex-row items-center gap-14 border-b-4 border-purple-400">
+                <img src="assets/logo/team_logo.jpg" class="w-32 h-32 rounded-2xl shadow-2xl" alt="Team">
+                <div>
+                    <p class="text-[14px] font-black theme-purple uppercase mb-4 tracking-widest">Team Computers</p>
+                    <h3 class="text-5xl font-black uppercase text-white tracking-tighter">Senior Support Engineer | [cite_start]2012 — 2013 [cite: 5]</h3>
                 </div>
             </div>
         </div>
@@ -154,11 +235,11 @@
             </div>
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="space-y-8">
-                    <p class="text-8xl font-black tracking-tighter text-white">+91 (982) 1906 348</p>
-                    <a href="https://www.linkedin.com/in/mitultailor" target="_blank" class="text-sm font-black text-white uppercase border-b-4 border-white tracking-[0.6em] hover:theme-blue transition-all">LINKEDIN</a>
+                    [cite_start]<p class="text-5xl lg:text-8xl font-black tracking-tighter text-white">+91 (982) 1906 348 [cite: 1]</p>
+                    [cite_start]<a href="https://www.linkedin.com/in/mitultailor" target="_blank" class="text-sm font-black text-white uppercase border-b-4 border-white tracking-[0.6em] hover:theme-blue transition-all">LINKEDIN [cite: 1]</a>
                 </div>
                 <div class="space-y-4">
-                    <button onclick="copyEmail()" id="smartBtn" class="action-btn w-full py-8">COPY EMAIL</button>
+                    [cite_start]<button onclick="copyEmail()" id="smartBtn" class="action-btn w-full py-8">COPY EMAIL [cite: 1]</button>
                     <form action="https://formspree.io/f/your-id-here" method="POST" class="space-y-4">
                         <input type="email" name="email" placeholder="CORPORATE EMAIL" class="w-full bg-white/10 border border-white/20 p-4 rounded-xl text-white placeholder-white/30 text-sm font-bold">
                         <button type="submit" class="action-btn w-full">Request Discussion</button>
