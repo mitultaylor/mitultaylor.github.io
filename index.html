@@ -18,28 +18,32 @@
         }
         :root { --cobalt: #60a5fa; --amethyst: #c084fc; --glass-core: rgba(255, 255, 255, 0.08); --frost-level: blur(45px) saturate(170%); }
         .frosted-slab { background: var(--glass-core) !important; backdrop-filter: var(--frost-level) !important; -webkit-backdrop-filter: var(--frost-level) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important; border-radius: 3.5rem; transition: all 0.4s; }
-        .action-btn { background: rgba(255, 255, 255, 0.12) !important; backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.35) !important; border-radius: 999px; padding: 1rem 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: white; transition: 0.4s; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; }
-        .action-btn:hover { background: white !important; color: black !important; }
         
-        /* Navigation Dropdown */
+        /* THE DIRECTOR DROPDOWN FIX */
         .nav-wrapper { position: fixed; top: 40px; right: 40px; z-index: 1000; }
-        .nav-trigger { background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3); padding: 12px 24px; border-radius: 20px; color: white; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 10px; }
-        #nav-dropdown { display: none; position: absolute; top: 110%; right: 0; width: 220px; background: rgba(0,0,0,0.9); border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); padding: 10px 0; }
+        .nav-trigger { background: rgba(255, 255, 255, 0.12) !important; backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.35) !important; padding: 1rem 2.4rem; border-radius: 20px; display: flex; align-items: center; gap: 15px; cursor: pointer; color: white; font-weight: 800; }
+        #nav-dropdown { display: none; position: absolute; top: 110%; right: 0; width: 280px; background: rgba(0, 0, 0, 0.95) !important; backdrop-filter: var(--frost-level) !important; border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.3) !important; z-index: 1000; padding: 12px 0; }
         .nav-wrapper:hover #nav-dropdown { display: block; }
-        .tab-link { padding: 12px 24px; display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .tab-link:hover { color: white; background: rgba(255,255,255,0.1); }
+        .tab-link { padding: 1.4rem 2.2rem; display: block; font-size: 0.85rem; font-weight: 900; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; transition: 0.3s; }
+        .tab-link:hover { color: white; background: rgba(96, 165, 250, 0.15); }
 
-        .back-to-top { position: fixed; bottom: 30px; right: 30px; z-index: 999; width: 50px; height: 50px; background: white; color: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-decoration: none; }
+        .action-btn { background: rgba(255, 255, 255, 0.12) !important; backdrop-filter: blur(20px) !important; border: 1px solid rgba(255, 255, 255, 0.35) !important; border-radius: 999px; padding: 1rem 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: white; transition: 0.4s; font-size: 11px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+        .action-btn:hover { background: white !important; color: black !important; transform: translateY(-3px); }
+        
+        .back-to-top { position: fixed; bottom: 30px; left: 30px; z-index: 999; width: 50px; height: 50px; background: white; color: black; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 20px; }
     </style>
 </head>
 <body class="antialiased text-white">
 
-    <div class="fixed top-0 left-0 w-full h-full bg-black/50 -z-10"></div>
+    <div class="fixed top-0 left-0 w-full h-full bg-black/45 -z-10"></div>
     <a href="#" class="back-to-top">↑</a>
 
-    <div class="nav-wrapper">
-        <div class="nav-trigger">MENU <span>☰</span></div>
+    <nav class="nav-wrapper">
+        <div class="nav-trigger">
+            <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-black text-[11px]">MT</div>
+            <span class="tracking-[0.5em] uppercase">MENU</span>
+        </div>
         <div id="nav-dropdown">
             <a href="#hero" class="tab-link">Home</a>
             <a href="#profile" class="tab-link">Profile</a>
@@ -48,68 +52,49 @@
             <a href="#academic" class="tab-link">Academic</a>
             <a href="#contact" class="tab-link">Contact</a>
         </div>
-    </div>
+    </nav>
 
     <section id="hero">
-        <div class="flex gap-4 mb-12">
-            <div class="px-8 py-3 frosted-slab text-blue-400 font-black text-[10px] uppercase tracking-widest">USA Green Card</div>
-            <div class="px-8 py-3 frosted-slab text-purple-400 font-black text-[10px] uppercase tracking-widest">ITIL® 4 Certified</div>
+        <div class="flex gap-4 mb-12 flex-wrap justify-center">
+            <div class="px-8 py-4 frosted-slab text-blue-400 font-black text-[11px] uppercase tracking-[0.4em]">USA Green Card</div>
+            <div class="px-8 py-4 frosted-slab text-purple-400 font-black text-[11px] uppercase tracking-[0.4em]">ITIL® 4 Certified</div>
         </div>
-        <h1 class="text-7xl md:text-[9rem] font-black uppercase text-center leading-[0.85] tracking-tighter">
-            Infrastructure <br><span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Governance.</span>
-        </h1>
-        <div class="mt-16 flex flex-wrap gap-6 justify-center">
-            <a href="assets/logo/Mitul_Tailor_IT_Operations_Director_NJ.pdf" target="_blank" class="action-btn">Download CV</a>
-            <a href="assets/logo/Mitul_Tailor_IT_Operations_Stewardship_Brief.pdf" target="_blank" class="action-btn">90-Day Brief</a>
-            <a href="assets/certi/itil_cert.jpg" target="_blank" class="action-btn">View Certificate</a>
+        <div class="text-center">
+            <h1 class="font-black text-[4.5rem] md:text-[8.5rem] leading-[0.9] mb-12 uppercase tracking-tighter">
+                Infrastructure <br><span class="italic text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Governance.</span>
+            </h1>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="assets/logo/Mitul_Tailor_IT_Operations_Director_NJ.pdf" target="_blank" class="action-btn">Download CV</a>
+                <a href="assets/logo/Mitul_Tailor_IT_Operations_Stewardship_Brief.pdf" target="_blank" class="action-btn">90-Day Brief</a>
+                <a href="assets/certi/itil_cert.jpg" target="_blank" class="action-btn">View Certificate</a>
+            </div>
         </div>
     </section>
 
     <section id="profile">
-        <div class="max-w-5xl frosted-slab p-16 md:p-24 text-center">
+        <div class="max-w-5xl frosted-slab p-12 md:p-24 text-center">
            <h2 class="text-5xl md:text-7xl font-black mb-10 uppercase tracking-tighter">Operational Sovereignty</h2>
-            <p class="text-xl md:text-3xl text-white/80 leading-relaxed font-medium">
+            <p class="text-xl md:text-3xl text-white/85 leading-relaxed">
                 Infrastructure Leader with <span class="text-blue-400 font-bold">17+ years of expertise</span>. Trusted as the <span class="text-purple-400 font-bold">Sole Site Authority</span> for Korn Ferry’s global executive hub.
             </p>
         </div>
     </section>
 
-    <section id="impact">
-        <div class="max-w-6xl grid md:grid-cols-2 gap-8 w-full">
-            <div class="frosted-slab p-12 border-l-4 border-blue-400">
-                <h3 class="text-3xl font-black mb-6 uppercase text-blue-400">Stewardship</h3>
-                <p class="font-bold text-lg mb-4">Directed site governance for executive power-users with zero downtime.</p>
-                <ul class="text-white/60 space-y-2 text-sm">
-                    <li>• 100% Day-One operational readiness.</li>
-                    <li>• Zero data loss during migrations.</li>
-                </ul>
-            </div>
-            <div class="frosted-slab p-12 border-l-4 border-purple-400">
-                <h3 class="text-3xl font-black mb-6 uppercase text-purple-400">System Refresh</h3>
-                <p class="font-bold text-lg mb-4">Orchestrated Windows 11 refresh cycles for mission-critical hubs.</p>
-                <ul class="text-white/60 space-y-2 text-sm">
-                    <li>• Automated provisioning tasks.</li>
-                    <li>• Maintained 99.9% service uptime.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <section id="journey">
-        <div class="max-w-5xl w-full space-y-10">
+        <div class="max-w-5xl w-full space-y-12">
             <div class="frosted-slab p-10 flex flex-col md:flex-row items-center gap-10 border-b-2 border-blue-400">
-                <img src="assets/logo/kf_logo.jpg" class="w-24 h-24 rounded-2xl" alt="Korn Ferry">
-                <div class="text-center md:text-left">
+                <img src="assets/logo/kf_logo.jpg" class="w-24 h-24 rounded-2xl" alt="KF">
+                <div>
                     <p class="text-[12px] font-black text-blue-400 uppercase mb-2 tracking-widest">Korn Ferry International</p>
-                    <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">Regional&nbsp;&nbsp;Site&nbsp;&nbsp;Authority</h3>
+                    <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight whitespace-nowrap">Regional Site Authority</h3>
                     <p class="text-white/40 font-bold uppercase mt-4">2013 — 2025</p>
                 </div>
             </div>
             <div class="frosted-slab p-10 flex flex-col md:flex-row items-center gap-10 border-b-2 border-purple-400">
-                <img src="assets/logo/team_logo.jpg" class="w-24 h-24 rounded-2xl" alt="Team Computers">
-                <div class="text-center md:text-left">
+                <img src="assets/logo/team_logo.jpg" class="w-24 h-24 rounded-2xl" alt="Team">
+                <div>
                     <p class="text-[12px] font-black text-purple-400 uppercase mb-2 tracking-widest">Team Computers</p>
-                    <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight">Senior&nbsp;&nbsp;Support&nbsp;&nbsp;Engineer</h3>
+                    <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-tight whitespace-nowrap">Senior Support Engineer</h3>
                     <p class="text-white/40 font-bold uppercase mt-4">2012 — 2013</p>
                 </div>
             </div>
@@ -117,22 +102,21 @@
     </section>
 
     <section id="academic">
-        <div class="max-w-4xl frosted-slab p-20 text-center">
+        <div class="max-w-3xl frosted-slab p-16 text-center">
             <div class="text-7xl mb-6">🎓</div>
-            <h3 class="text-5xl font-black uppercase tracking-tighter text-white mb-6">BCA Degree</h3>
-            <p class="text-3xl font-bold text-blue-400 mb-2 uppercase">YCMOU University</p>
-            <p class="text-xl text-white/40 font-black uppercase tracking-widest">Class of 2013</p>
+            <h3 class="text-5xl font-black uppercase tracking-tighter mb-4">BCA Degree</h3>
+            <p class="text-2xl font-bold text-blue-400">YCMOU University</p>
+            <p class="text-sm text-white/30 font-black uppercase tracking-[0.5em]">Class of 2013</p>
         </div>
     </section>
 
     <section id="contact">
-        <div class="max-w-5xl w-full frosted-slab p-12 md:p-20 text-center">
-            <h3 class="text-2xl font-black uppercase tracking-[0.5em] mb-12">Connect for Discussion</h3>
-            <p class="text-5xl md:text-8xl font-black tracking-tighter mb-12">+91 (982) 1906 348</p>
-            
+        <div class="max-w-5xl frosted-slab p-12 md:p-20 text-center">
+            <h3 class="text-3xl font-black uppercase tracking-widest mb-10">Direct Contact</h3>
+            <p class="text-5xl md:text-7xl font-black tracking-tighter mb-12">+91 (982) 1906 348</p>
             <div class="flex flex-col items-center gap-8">
                 <a href="https://www.linkedin.com/in/mitultailor" target="_blank" class="action-btn px-12 py-5 text-sm">
-                   LinkedIn Profile Link
+                   View LinkedIn Profile
                 </a>
                 <button onclick="copyEmail()" id="smartBtn" class="text-white/50 font-bold uppercase tracking-widest border-b border-white/20 pb-2">Copy Email: meetul.t@gmail.com</button>
             </div>
@@ -143,7 +127,7 @@
     <script>
         function copyEmail() {
             navigator.clipboard.writeText("meetul.t@gmail.com");
-            document.getElementById('smartBtn').innerText = "COPIED TO CLIPBOARD";
+            document.getElementById('smartBtn').innerText = "COPIED";
             setTimeout(() => { document.getElementById('smartBtn').innerText = "Copy Email: meetul.t@gmail.com"; }, 3000);
         }
     </script>
