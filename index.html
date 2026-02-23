@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitul Tailor | Infrastructure Steward</title>
+    <title>Mitul Tailor | IT Operations Leader</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=105">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         body { margin: 0; padding: 0; background: #000 url('bg_mt_ws.jpg') no-repeat center center fixed !important; background-size: cover !important; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-        :root { --cobalt: #60a5fa; --amethyst: #c084fc; --glass-core: rgba(255, 255, 255, 0.08); --frost-level: blur(45px) saturate(170%); }
+        :root { --glass-core: rgba(255, 255, 255, 0.08); --frost-level: blur(45px) saturate(170%); }
         .frosted-slab { background: var(--glass-core) !important; backdrop-filter: var(--frost-level) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important; border-radius: 3.5rem; transition: 0.4s; }
         
-        /* SHIMMER EFFECT */
+        /* SHIMMER & HOVER */
         .shimmer-card { position: relative; overflow: hidden; }
-        .shimmer-card::after {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent);
-            transform: rotate(45deg); animation: shimmer 4s infinite;
-        }
+        .shimmer-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent); transform: rotate(45deg); animation: shimmer 4s infinite; }
         @keyframes shimmer { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
-
-        /* HOVER & PULSE */
+        .tactical-card { transition: 0.4s; cursor: pointer; text-decoration: none; display: block; }
         .tactical-card:hover { transform: translateY(-12px); background: rgba(255,255,255,0.15) !important; border-color: rgba(255,255,255,0.5) !important; }
+
+        /* PULSE */
         .pulse-ring { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 120%; height: 120%; border-radius: 50%; background: rgba(239, 68, 68, 0.3); animation: pulse-ring 2s infinite; }
         @keyframes pulse-ring { 0% { transform: translate(-50%, -50%) scale(0.3); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; } }
 
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* NAV STABILITY */
         .nav-wrapper { position: fixed; top: 40px; left: 40px; z-index: 1000; }
-        .nav-trigger { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.35); padding: 1rem 2.4rem; border-radius: 20px; display: flex; align-items: center; gap: 15px; cursor: pointer; color: white; font-weight: 800; text-decoration: none; }
+        .nav-trigger { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.35); padding: 1rem 2.4rem; border-radius: 20px; display: flex; align-items: center; gap: 15px; color: white; font-weight: 800; text-decoration: none; }
         #nav-dropdown { display: none; position: absolute; top: 100%; left: 0; width: 280px; background: rgba(0, 0, 0, 0.95); border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.3); padding: 12px 0; }
         .nav-wrapper:hover #nav-dropdown { display: block; }
         .tab-link { padding: 1.4rem 2.2rem; display: block; font-size: 0.85rem; font-weight: 900; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.18em; text-decoration: none; }
-        .tab-link:hover { color: white; background: rgba(96, 165, 250, 0.15); }
         
         .action-btn { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 999px; padding: 1rem 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: white; transition: 0.4s; font-size: 11px; display: inline-flex; align-items: center; text-decoration: none; }
         .action-btn:hover { background: white; color: black; transform: translateY(-3px); }
-        
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 20px; }
     </style>
 </head>
@@ -58,7 +52,6 @@
             <a href="#profile" class="tab-link">Profile</a>
             <a href="#skills" class="tab-link">Skills</a>
             <a href="#journey" class="tab-link">Journey</a>
-            <a href="#academic" class="tab-link">Academic</a>
             <a href="#contact" class="tab-link">Contact</a>
         </div>
     </nav>
@@ -98,18 +91,18 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 mt-12 w-full reveal">
-                <div class="p-10 frosted-slab tactical-card border-t-2 border-blue-400/30 text-center">
-                    <h4 class="text-blue-400 font-black text-xl mb-2 uppercase">Geographic</h4>
+                <a href="#command-center" class="p-10 frosted-slab tactical-card border-t-2 border-blue-400/30 text-center">
+                    <h4 class="text-blue-400 font-black text-xl mb-2">GEOGRAPHIC</h4>
                     <p class="text-[10px] text-white/40 uppercase tracking-widest">NY/NJ Corridor Bleed</p>
-                </div>
-                <div class="p-10 frosted-slab tactical-card border-t-2 border-red-500/50 text-center">
-                    <h4 class="text-red-400 font-black text-xl mb-2 uppercase">Root Cause</h4>
+                </a>
+                <a href="#command-center" class="p-10 frosted-slab tactical-card border-t-2 border-red-500/50 text-center">
+                    <h4 class="text-red-400 font-black text-xl mb-2">ROOT CAUSE</h4>
                     <p class="text-[10px] text-white/40 uppercase tracking-widest">Hardware Stalls</p>
-                </div>
-                <div class="p-10 frosted-slab tactical-card border-t-2 border-purple-400/30 text-center">
-                    <h4 class="text-purple-400 font-black text-xl mb-2 uppercase">Strategic</h4>
+                </a>
+                <a href="#command-center" class="p-10 frosted-slab tactical-card border-t-2 border-purple-400/30 text-center">
+                    <h4 class="text-purple-400 font-black text-xl mb-2">STRATEGIC</h4>
                     <p class="text-[10px] text-white/40 uppercase tracking-widest">Executive Accountability</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -126,81 +119,11 @@
     <section id="skills">
         <div class="max-w-6xl grid grid-cols-2 lg:grid-cols-4 gap-6 w-full reveal">
             <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
-                <div class="text-4xl mb-4">🛠️</div>
                 <h4 class="text-lg font-black text-blue-400 uppercase">ServiceNow</h4>
                 <p class="text-[10px] text-white/40 uppercase tracking-widest">SLA & CMDB</p>
             </div>
             <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
-                <div class="text-4xl mb-4">💻</div>
                 <h4 class="text-lg font-black text-purple-400 uppercase">EU Operation</h4>
                 <p class="text-[10px] text-white/40 uppercase tracking-widest">Endpoint Logic</p>
             </div>
-            <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
-                <div class="text-4xl mb-4">📜</div>
-                <h4 class="text-lg font-black text-blue-400 uppercase">ITIL® 4</h4>
-                <p class="text-[10px] text-white/40 uppercase tracking-widest">Value-Stream</p>
-            </div>
-            <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
-                <div class="text-4xl mb-4">🏢</div>
-                <h4 class="text-lg font-black text-purple-400 uppercase">Assets</h4>
-                <p class="text-[10px] text-white/40 uppercase tracking-widest">Lifecycle MGMT</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="journey">
-        <div class="max-w-5xl w-full space-y-12 reveal">
-            <div class="frosted-slab p-10 flex flex-col md:flex-row items-center gap-10 border-b-2 border-blue-400 tactical-card">
-                <img src="assets/logo/kf_logo.jpg" class="w-24 h-24 rounded-2xl" alt="KF">
-                <div>
-                    <p class="text-[12px] font-black text-blue-400 uppercase mb-2 tracking-widest">Korn Ferry International</p>
-                    <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter">Regional Site Authority</h3>
-                    <p class="text-white/40 font-bold uppercase mt-4">2013 — 2025</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="academic">
-        <div class="max-w-3xl frosted-slab p-20 text-center reveal tactical-card">
-            <div class="text-6xl mb-6">🎓</div>
-            <h3 class="text-5xl font-black uppercase tracking-tighter mb-4">BCA Degree</h3>
-            <p class="text-3xl font-bold text-blue-400">YCMOU University</p>
-            <p class="text-sm text-white/30 font-black uppercase tracking-[0.5em]">Class of 2013</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="max-w-5xl frosted-slab p-12 md:p-20 text-center reveal">
-            <h3 class="text-3xl font-black uppercase tracking-widest mb-10">Direct Contact</h3>
-            <p class="text-5xl md:text-7xl font-black tracking-tighter mb-12">+91 (982) 1906 348</p>
-            <div class="flex flex-col items-center gap-8">
-                <a href="https://www.linkedin.com/in/mitultailor" target="_blank" class="action-btn px-12 py-5 text-sm">LinkedIn Profile</a>
-                <button onclick="copyEmail()" id="smartBtn" class="text-white/50 font-bold uppercase tracking-widest border-b border-white/20 pb-2">Copy Email: meetul.t@gmail.com</button>
-            </div>
-            <p class="mt-16 text-[10px] uppercase tracking-[0.8em] text-white/30">Establishing Residency in Edison, New Jersey</p>
-        </div>
-    </section>
-
-    <script>
-        function copyEmail() {
-            navigator.clipboard.writeText("meetul.t@gmail.com");
-            document.getElementById('smartBtn').innerText = "COPIED";
-            setTimeout(() => { document.getElementById('smartBtn').innerText = "Copy Email: meetul.t@gmail.com"; }, 3000);
-        }
-
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-        window.addEventListener('scroll', reveal);
-        reveal();
-    </script>
-</body>
-</html>
+            <div class="frosted-slab p-8 text-center
