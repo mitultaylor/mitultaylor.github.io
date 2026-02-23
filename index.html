@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitul Tailor | Infrastructure Steward</title>
+    <title>Mitul Tailor | IT Operations Leader</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png?v=105">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,22 +13,16 @@
         :root { --glass-core: rgba(255, 255, 255, 0.08); --frost-level: blur(45px) saturate(170%); }
         .frosted-slab { background: var(--glass-core) !important; backdrop-filter: var(--frost-level) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important; border-radius: 3.5rem; transition: 0.4s; }
         
-        /* SHIMMER & HOVER */
         .shimmer-card { position: relative; overflow: hidden; }
         .shimmer-card::after { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent, rgba(255,255,255,0.03), transparent); transform: rotate(45deg); animation: shimmer 4s infinite; }
         @keyframes shimmer { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
+        
         .tactical-card { transition: 0.4s; cursor: pointer; text-decoration: none; display: block; }
         .tactical-card:hover { transform: translateY(-12px); background: rgba(255,255,255,0.15) !important; border-color: rgba(255,255,255,0.5) !important; }
-
-        /* LOGO FALLBACK: Fixes the "Broken Box" issue */
-        .logo-container { width: 96px; height: 96px; border-radius: 1rem; overflow: hidden; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .logo-container img { width: 100%; height: 100%; object-fit: cover; }
-        .logo-container img[alt]:after { content: 'MT'; display: block; font-weight: 900; color: white; }
 
         .reveal { opacity: 0; transform: translateY(40px); transition: 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* NAV STABILITY */
         .nav-wrapper { position: fixed; top: 40px; left: 40px; z-index: 1000; }
         .nav-trigger { background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.35); padding: 1rem 2.4rem; border-radius: 20px; display: flex; align-items: center; gap: 15px; color: white; font-weight: 800; text-decoration: none; }
         #nav-dropdown { display: none; position: absolute; top: 100%; left: 0; width: 280px; background: rgba(0, 0, 0, 0.95); border-radius: 28px; border: 1px solid rgba(255, 255, 255, 0.3); padding: 12px 0; }
@@ -39,6 +33,8 @@
         .action-btn:hover { background: white; color: black; transform: translateY(-3px); }
         
         section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 20px; }
+        
+        .logo-box { width: 96px; height: 96px; border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; font-weight: 900; color: white; shrink-0; }
     </style>
 </head>
 <body class="antialiased text-white">
@@ -52,6 +48,8 @@
         <div id="nav-dropdown">
             <a href="#hero" class="tab-link">Home</a>
             <a href="#command-center" class="tab-link">Command Center</a>
+            <a href="#profile" class="tab-link">Profile</a>
+            <a href="#skills" class="tab-link">Skills</a>
             <a href="#journey" class="tab-link">Journey</a>
             <a href="#contact" class="tab-link">Contact</a>
         </div>
@@ -84,18 +82,48 @@
                 <iframe width="100%" height="100%" src="https://lookerstudio.google.com/embed/reporting/91213934-5fc8-4d3a-a6c7-146a87cfc089/page/uYopF" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
             <div class="grid md:grid-cols-3 gap-6 mt-12 w-full reveal">
-                <a href="#command-center" class="p-10 frosted-slab tactical-card border-t-2 border-blue-400/30 text-center">
-                    <h4 class="text-blue-400 font-black text-xl mb-2">GEOGRAPHIC</h4>
+                <div class="p-10 frosted-slab tactical-card border-t-2 border-blue-400/30 text-center">
+                    <h4 class="text-blue-400 font-black text-xl mb-2 uppercase">Geographic</h4>
                     <p class="text-[10px] text-white/40 uppercase tracking-widest">NY/NJ Corridor Bleed</p>
-                </a>
-                <a href="#command-center" class="p-10 frosted-slab tactical-card border-t-2 border-red-500/50 text-center">
-                    <h4 class="text-red-400 font-black text-xl mb-2">ROOT CAUSE</h4>
+                </div>
+                <div class="p-10 frosted-slab tactical-card border-t-2 border-red-500/50 text-center">
+                    <h4 class="text-red-400 font-black text-xl mb-2 uppercase">Root Cause</h4>
                     <p class="text-[10px] text-white/40 uppercase tracking-widest">Hardware Stalls</p>
-                </a>
-                <a href="#command-center" class="p-10 frosted-slab tactical-card border-t-2 border-purple-400/30 text-center">
-                    <h4 class="text-purple-400 font-black text-xl mb-2">STRATEGIC</h4>
+                </div>
+                <div class="p-10 frosted-slab tactical-card border-t-2 border-purple-400/30 text-center">
+                    <h4 class="text-purple-400 font-black text-xl mb-2 uppercase">Strategic</h4>
                     <p class="text-[10px] text-white/40 uppercase tracking-widest">Executive Accountability</p>
-                </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile">
+        <div class="max-w-5xl frosted-slab p-12 md:p-24 text-center reveal">
+           <h2 class="text-5xl md:text-7xl font-black mb-10 uppercase tracking-tighter">Operational Sovereignty</h2>
+            <p class="text-xl md:text-3xl text-white/85 leading-relaxed">
+                Infrastructure Leader with <span class="text-blue-400 font-bold">17+ years of expertise</span>. Trusted as the <span class="text-purple-400 font-bold">Sole Site Authority</span> for Korn Ferry’s global executive hub.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="max-w-6xl grid grid-cols-2 lg:grid-cols-4 gap-6 w-full reveal">
+            <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
+                <h4 class="text-lg font-black text-blue-400 uppercase">ServiceNow</h4>
+                <p class="text-[10px] text-white/40 uppercase tracking-widest">SLA & CMDB</p>
+            </div>
+            <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
+                <h4 class="text-lg font-black text-purple-400 uppercase">EU Operation</h4>
+                <p class="text-[10px] text-white/40 uppercase tracking-widest">Endpoint Logic</p>
+            </div>
+            <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
+                <h4 class="text-lg font-black text-blue-400 uppercase">ITIL® 4</h4>
+                <p class="text-[10px] text-white/40 uppercase tracking-widest">Value-Stream</p>
+            </div>
+            <div class="frosted-slab p-8 text-center tactical-card shimmer-card">
+                <h4 class="text-lg font-black text-purple-400 uppercase">Assets</h4>
+                <p class="text-[10px] text-white/40 uppercase tracking-widest">Lifecycle MGMT</p>
             </div>
         </div>
     </section>
@@ -103,17 +131,17 @@
     <section id="journey">
         <div class="max-w-5xl w-full space-y-12 reveal">
             <div class="frosted-slab p-10 flex flex-col md:flex-row items-center gap-10 border-b-2 border-blue-400 tactical-card">
-                <div class="logo-container"><img src="assets/logo/kf_logo.jpg" alt="KF"></div>
+                <div class="logo-box bg-blue-600">KF</div>
                 <div>
-                    <p class="text-[12px] font-black text-blue-400 uppercase tracking-widest">Korn Ferry International</p>
+                    <p class="text-[12px] font-black text-blue-400 uppercase mb-2 tracking-widest">Korn Ferry International</p>
                     <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter">Regional Site Authority</h3>
                     <p class="text-white/40 font-bold uppercase mt-4">2013 — 2025</p>
                 </div>
             </div>
             <div class="frosted-slab p-10 flex flex-col md:flex-row items-center gap-10 border-b-2 border-purple-400 tactical-card">
-                <div class="logo-container"><img src="assets/logo/team_computers_logo.jpg" alt="Team"></div>
+                <div class="logo-box bg-purple-600">TC</div>
                 <div>
-                    <p class="text-[12px] font-black text-purple-400 uppercase tracking-widest">Team Computers</p>
+                    <p class="text-[12px] font-black text-purple-400 uppercase mb-2 tracking-widest">Team Computers</p>
                     <h3 class="text-3xl md:text-5xl font-black uppercase tracking-tighter">Infrastructure Specialist</h3>
                     <p class="text-white/40 font-bold uppercase mt-4">2008 — 2013</p>
                 </div>
