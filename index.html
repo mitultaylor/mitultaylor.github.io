@@ -1,183 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mitul Tailor | IT Operations Leader</title>
-    <style>
-        :root {
-            --bg: #050505;
-            --glass: rgba(255, 255, 255, 0.06);
-            --border: rgba(255, 255, 255, 0.12);
-            --blue: #3b82f6;
-            --purple: #8b5cf6;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--bg); 
-            color: white; 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        /* FROSTED GLASS CORE */
-        .glass {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 2rem;
-        }
-        nav {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            width: 90%;
-            max-width: 600px;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-around;
-        }
-        nav a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        nav a:hover { color: white; }
-        section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: clamp(3rem, 10vw, 7rem);
-            font-weight: 900;
-            line-height: 0.9;
-            letter-spacing: -3px;
-            text-transform: uppercase;
-            margin: 20px 0;
-        }
-        .italic-blue { color: var(--blue); font-style: italic; }
-        .badge-container { display: flex; gap: 15px; margin-bottom: 20px; }
-        .badge {
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .btn {
-            padding: 15px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 12px;
-            text-transform: uppercase;
-            transition: 0.3s;
-            display: inline-block;
-            margin: 10px;
-            border: 1px solid var(--border);
-            color: white;
-            background: rgba(255,255,255,0.05);
-        }
-        .btn:hover { background: white; color: black; }
-        iframe {
-            width: 100%;
-            max-width: 1100px;
-            height: 600px;
-            border-radius: 2rem;
-            border: none;
-            margin-top: 30px;
-        }
-        .card {
-            width: 100%;
-            max-width: 800px;
-            padding: 40px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            text-align: left;
-        }
-        .logo-box {
-            width: 80px;
-            height: 80px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-        #journey h2 { margin-bottom: 40px; font-size: 3rem; text-transform: uppercase; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitul Tailor | IT Operations Leader</title>
+<style>
+:root {
+--bg: #050505;
+--glass: rgba(255, 255, 255, 0.07);
+--border: rgba(255, 255, 255, 0.15);
+--blue: #3b82f6;
+--purple: #8b5cf6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+background-color: var(--bg);
+color: white;
+font-family: 'Segoe UI', Roboto, sans-serif;
+overflow-x: hidden;
+}
+.glass {
+background: var(--glass);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid var(--border);
+border-radius: 2.5rem;
+}
+nav {
+position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+z-index: 1000; width: 90%; max-width: 600px;
+padding: 15px; display: flex; justify-content: space-around;
+}
+nav a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
+section { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; }
+h1 { font-size: clamp(3rem, 10vw, 7rem); font-weight: 900; line-height: 0.9; text-transform: uppercase; margin: 20px 0; letter-spacing: -3px; }
+.btn { padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: 800; font-size: 12px; text-transform: uppercase; transition: 0.3s; display: inline-block; margin: 10px; border: 1px solid var(--border); color: white; background: rgba(255,255,255,0.05); }
+.btn:hover { background: white; color: black; }
+iframe { width: 100%; max-width: 1100px; height: 650px; border-radius: 2.5rem; border: none; margin-top: 30px; }
+.card { width: 100%; max-width: 850px; padding: 40px; margin-bottom: 25px; display: flex; align-items: center; gap: 30px; text-align: left; }
+.logo { width: 80px; height: 80px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 28px; flex-shrink: 0; }
+</style>
 </head>
 <body>
-
-    <nav class="glass">
-        <a href="#hero">Home</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#journey">Experience</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="hero">
-        <div class="badge-container">
-            <div class="glass badge" style="color: var(--blue);">USA Green Card</div>
-            <div class="glass badge" style="color: var(--purple);">ITIL® 4 Certified</div>
-        </div>
-        <h1>IT Operations <br> <span class="italic-blue">Leader.</span></h1>
-        <div>
-            <a href="#dashboard" class="btn">Command Center</a>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-    </section>
-
-    <section id="dashboard">
-        <h2 style="font-size: clamp(4rem, 15vw, 10rem); margin: 0; line-height: 1;">$2.53M</h2>
-        <p style="color: #ef4444; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 30px;">Operational Leakage Identified</p>
-        <div class="glass" style="width: 100%; max-width: 1150px; padding: 10px;">
-            <iframe src="https://lookerstudio.google.com/embed/reporting/91213934-5fc8-4d3a-a6c7-146a87cfc089/page/uYopF"></iframe>
-        </div>
-    </section>
-
-    <section id="journey">
-        <h2>Journey</h2>
-        <div class="glass card" style="border-left: 8px solid var(--blue);">
-            <div class="logo-box" style="background: var(--blue);">KF</div>
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 5px;">Regional Site Authority</h3>
-                <p style="opacity: 0.5; font-weight: 700; text-transform: uppercase; font-size: 13px;">Korn Ferry | 2013 — 2025</p>
-            </div>
-        </div>
-        <div class="glass card" style="border-left: 8px solid var(--purple);">
-            <div class="logo-box" style="background: var(--purple);">TC</div>
-            <div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 5px;">Infrastructure Specialist</h3>
-                <p style="opacity: 0.5; font-weight: 700; text-transform: uppercase; font-size: 13px;">Team Computers | 2008 — 2013</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="glass" style="padding: 60px; max-width: 700px; width: 100%;">
-            <p style="color: var(--blue); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Academic: BCA Degree</p>
-            <h2 style="font-size: 3rem; margin-bottom: 40px; letter-spacing: -2px;">MEETUL.T@GMAIL.COM</h2>
-            <p style="font-size: 1.5rem; font-weight: 700; opacity: 0.6; margin-bottom: 40px;">+91 (982) 1906 348</p>
-            <a href="https://www.linkedin.com/in/mitultailor" target="_blank" class="btn" style="background: white; color: black;">LinkedIn Profile</a>
-        </div>
-    </section>
-
+<nav class="glass">
+<a href="#hero">Home</a>
+<a href="#dashboard">Dashboard</a>
+<a href="#journey">Journey</a>
+<a href="#contact">Contact</a>
+</nav>
+<section id="hero">
+<div style="display: flex; gap: 10px; margin-bottom: 20px;">
+<div class="glass" style="padding: 8px 20px; color: var(--blue); font-size: 10px; font-weight: 800; border-radius: 50px;">USA GREEN CARD</div>
+<div class="glass" style="padding: 8px 20px; color: var(--purple); font-size: 10px; font-weight: 800; border-radius: 50px;">ITIL® 4 CERTIFIED</div>
+</div>
+<h1>IT Operations <br> <span style="color: var(--blue); font-style: italic;">Leader.</span></h1>
+<div><a href="#dashboard" class="btn">Command Center</a><a href="#contact" class="btn">Get in Touch</a></div>
+</section>
+<section id="dashboard">
+<h2 style="font-size: clamp(4rem, 15vw, 9rem); font-weight: 900; margin: 0;">$2.53M</h2>
+<p style="color: #ff4444; font-weight: 800; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 20px;">Operational Leakage Identified</p>
+<div class="glass" style="width: 100%; max-width: 1150px; padding: 10px;">
+<iframe src="https://lookerstudio.google.com/embed/reporting/91213934-5fc8-4d3a-a6c7-146a87cfc089/page/uYopF"></iframe>
+</div>
+</section>
+<section id="journey">
+<h2 style="font-size: 3rem; font-weight: 900; text-transform: uppercase; margin-bottom: 40px;">Experience</h2>
+<div class="glass card" style="border-left: 10px solid var(--blue);">
+<div class="logo" style="background: var(--blue);">KF</div>
+<div>
+<h3 style="font-size: 1.8rem; font-weight: 900;">Regional Site Authority</h3>
+<p style="opacity: 0.5; font-weight: 700; text-transform: uppercase; font-size: 14px;">Korn Ferry | 2013 — 2025</p>
+</div>
+</div>
+<div class="glass card" style="border-left: 10px solid var(--purple);">
+<div class="logo" style="background: var(--purple);">TC</div>
+<div>
+<h3 style="font-size: 1.8rem; font-weight: 900;">Infrastructure Specialist</h3>
+<p style="opacity: 0.5; font-weight: 700; text-transform: uppercase; font-size: 14px;">Team Computers | 2008 — 2013</p>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="glass" style="padding: 80px 40px; max-width: 800px; width: 100%;">
+<p style="color: var(--blue); font-weight: 800; text-transform: uppercase; margin-bottom: 15px;">BCA Degree (2013)</p>
+<h2 style="font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; margin-bottom: 30px;">MEETUL.T@GMAIL.COM</h2>
+<p style="font-size: 1.8rem; font-weight: 700; opacity: 0.6; margin-bottom: 40px;">+91 (982) 1906 348</p>
+<a href="https://www.linkedin.com/in/mitultailor" target="_blank" class="btn" style="background: white; color: black; padding: 20px 50px;">LinkedIn Profile</a>
+</div>
+</section>
 </body>
 </html>
