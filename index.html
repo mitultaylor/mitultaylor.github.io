@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mitul Tailor — IT Operations Leader</title>
+<link rel="icon" type="image/png" href="assets/logo/Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Syne','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;cursor:none;color:#fff;background:#030510}
+
+/* ─── CURSOR ─── */
+#dot{width:7px;height:7px;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);background:#fff;mix-blend-mode:difference}
+
+/* ─── VIDEO BG ─── */
+#bg-video{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;object-fit:cover;filter:brightness(.38) saturate(1.5);background:#030510}
+
+
+/* ─── iOS 26 GLASS ─── */
+.gc{
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(30px) saturate(200%);
+  -webkit-backdrop-filter:blur(30px) saturate(200%);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:20px;
+  box-shadow:0 1.5px 0 rgba(255,255,255,.4) inset,0 -1px 0 rgba(0,0,0,.3) inset,0 8px 40px rgba(0,0,0,.5);
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s;
+  overflow:visible
+}
+.gc:hover{transform:translateY(-4px);box-shadow:0 1.5px 0 rgba(255,255,255,.5) inset,0 -1px 0 rgba(0,0,0,.3) inset,0 20px 60px rgba(0,0,0,.65)}
+
+/* ─── NAV PILL ─── */
+nav{
+  position:fixed;top:1.4rem;left:50%;transform:translateX(-50%);
+  z-index:600;
+  background:rgba(255,255,255,.1);
+  backdrop-filter:blur(30px) saturate(200%);
+  -webkit-backdrop-filter:blur(30px) saturate(200%);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:100px;
+  padding:.52rem 1.2rem;
+  display:inline-flex;align-items:center;gap:1.2rem;
+  box-shadow:0 1.5px 0 rgba(255,255,255,.3) inset,0 8px 30px rgba(0,0,0,.5);
+  white-space:nowrap
+}
+.n-brand{font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;position:relative;cursor:default}
+.n-dd{
+  position:absolute;top:calc(100% + .9rem);left:50%;
+  transform:translateX(-50%) translateY(-6px) scale(.97);
+  transform-origin:top center;min-width:175px;
+  background:rgba(8,10,28,.94);
+  backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+  border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:.5rem;
+  opacity:0;visibility:hidden;transition:all .22s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 16px 40px rgba(0,0,0,.7)
+}
+.n-brand:hover .n-dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0) scale(1)}
+.dda{display:block;padding:.52rem .85rem;text-decoration:none;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.65);border-radius:8px;transition:all .15s}
+.dda:hover{background:rgba(255,255,255,.1);color:#fff}
+.n-sep{width:1px;height:14px;background:rgba(255,255,255,.22);flex-shrink:0}
+.n-badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26);color:rgba(255,255,255,.9);padding:.36rem 1rem;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-decoration:none;transition:all .2s;flex-shrink:0}
+.n-badge:hover{background:rgba(255,255,255,.2);transform:translateY(-1px)}
+/* ─── CERTS DROPDOWN ─── */
+.n-certs{position:relative;cursor:default;flex-shrink:0}
+.n-certs-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26);color:rgba(255,255,255,.9);padding:.36rem 1rem;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.05em;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem;user-select:none}
+.n-certs-pill::after{content:'▾';font-size:.55rem;opacity:.6;transition:transform .2s}
+.n-certs:hover .n-certs-pill{background:rgba(255,255,255,.2)}
+.n-certs:hover .n-certs-pill::after{transform:rotate(180deg)}
+.n-certs-dd{
+  position:absolute;top:calc(100% + .9rem);right:0;
+  transform:translateY(-6px) scale(.97);
+  transform-origin:top right;min-width:260px;
+  background:rgba(8,10,28,.96);
+  backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+  border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:.5rem;
+  opacity:0;visibility:hidden;transition:all .22s cubic-bezier(.16,1,.3,1);
+  box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 16px 40px rgba(0,0,0,.7)
+}
+.n-certs:hover .n-certs-dd{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.cert-row{display:flex;flex-direction:column;padding:.55rem .85rem;border-radius:8px;transition:background .15s;cursor:pointer;text-decoration:none}
+.cert-row:hover{background:rgba(255,255,255,.08)}
+.cert-row+.cert-row{border-top:1px solid rgba(255,255,255,.07)}
+.cert-row.no-file{cursor:default;opacity:.45;pointer-events:none}
+.cert-row-name{font-size:.76rem;font-weight:700;color:rgba(255,255,255,.88);line-height:1.3}
+.cert-row-issuer{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:.18rem}
+
+/* ─── HERO — locked to viewport ─── */
+#hero{
+  position:relative;
+  height:100vh;
+  padding:7rem 5% 0;
+  display:flex;flex-direction:column;
+  overflow:hidden;
+  z-index:1
+}
+.h-inner{max-width:1400px;margin:0 auto;width:100%;flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+.h-pre{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:2.5rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:fu .6s ease .1s both}
+.h-pre::before{content:'';width:18px;height:1px;background:rgba(255,255,255,.38)}
+@keyframes fu{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* NAME — clean, simple, no canvas mess */
+.h-name{margin-bottom:0;line-height:.9}
+.hn{
+  display:block;
+  font-size:clamp(3.5rem,9.5vw,10.5rem);
+  font-weight:800;letter-spacing:-.04em;
+  color:#fff;
+  opacity:0;transform:translateY(22px);
+  animation:ni 1.1s cubic-bezier(.16,1,.3,1) both
+}
+.hn1{animation-delay:.28s}
+.hn2{animation-delay:.46s}
+@keyframes ni{to{opacity:1;transform:translateY(0)}}
+
+.h-div{width:100%;height:1px;background:rgba(255,255,255,.15);transform:scaleX(0);transform-origin:left;animation:bx .8s cubic-bezier(.16,1,.3,1) .72s both;margin:1.8rem 0}
+@keyframes bx{to{transform:scaleX(1)}}
+
+.h-body{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;opacity:0;animation:fu .8s ease 1.1s both}
+.h-desc{font-size:clamp(.9rem,1.1vw,1.05rem);font-weight:400;line-height:1.88;color:rgba(255,255,255,.7);max-width:520px}
+.h-desc strong{color:#fff;font-weight:700}
+.h-right{display:flex;flex-direction:column;align-items:flex-end;gap:.8rem}
+.h-specs{font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);text-align:right;line-height:2.2}
+
+/* MARQUEE */
+.mq-wrap{overflow:hidden;border-top:1px solid rgba(255,255,255,.1);padding:.95rem 0;margin:2rem -5% 0;background:rgba(255,255,255,.05);backdrop-filter:blur(10px)}
+.mq-track{display:flex;gap:0;animation:mq 30s linear infinite;width:max-content}
+.mq-track:hover{animation-play-state:paused}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-i{display:inline-block;white-space:nowrap;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.48);padding:0 2rem;border-right:1px solid rgba(255,255,255,.12)}
+
+/* ─── SECTIONS ─── */
+.sec{padding:7rem 5%;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.si{max-width:1400px;margin:0 auto;width:100%}
+.ey{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.5rem;display:flex;align-items:center;gap:.7rem}
+.ey::before{content:'';width:18px;height:1px;background:rgba(255,255,255,.3)}
+.sh{font-size:clamp(2.2rem,4.5vw,4rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;color:#fff;margin-bottom:1rem}
+.ssub{font-size:.96rem;color:rgba(255,255,255,.55);line-height:1.78;max-width:500px;margin-bottom:2.5rem}
+
+/* ─── PROFILE ─── */
+.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch}
+.ab-grid .gc{display:flex;flex-direction:column;height:100%}
+.gc-pad{padding:2.5rem;display:flex;flex-direction:column;flex:1}
+.gc-pad p{font-size:1rem;line-height:2;color:rgba(255,255,255,.78)}
+.gc-pad p+p{margin-top:1rem}
+.gc-pad p strong{color:#fff;font-weight:700}
+.slist{display:flex;flex-direction:column;flex:1;justify-content:space-between;padding:.25rem 0}
+.sr{display:flex;align-items:center;gap:1.5rem;padding:1.5rem 1.2rem;border-bottom:1px solid rgba(255,255,255,.08);border-radius:10px;transition:background .2s;cursor:default}
+.sr:first-child{border-top:1px solid rgba(255,255,255,.08)}
+.sr:hover{background:rgba(255,255,255,.06)}
+.sr-n{width:105px;flex-shrink:0;font-size:1.85rem;font-weight:800;letter-spacing:-.04em;color:#fff;text-align:right;line-height:1}
+.sr-d{flex:1;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.6}
+
+/* ─── CAPABILITIES ─── */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.cap{padding:2.5rem;cursor:default;position:relative;overflow:visible}
+.cap::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:rgba(255,255,255,.5);border-radius:0 0 20px 20px;transition:width .4s cubic-bezier(.16,1,.3,1)}
+.cap:hover::after{width:100%}
+.cn{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.12);line-height:1;margin-bottom:1rem;transition:color .3s}
+.cap:hover .cn{color:rgba(255,255,255,.38)}
+.cnm{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-bottom:.75rem}
+.cb{font-size:.92rem;font-weight:400;color:rgba(255,255,255,.6);line-height:1.8}
+
+/* ─── JOURNEY ─── */
+.tl-card{background:rgba(255,255,255,.08);backdrop-filter:blur(30px) saturate(200%);-webkit-backdrop-filter:blur(30px) saturate(200%);border:1px solid rgba(255,255,255,.22);border-radius:20px;box-shadow:0 1.5px 0 rgba(255,255,255,.28) inset,0 10px 50px rgba(0,0,0,.6);padding:0 3rem;margin-top:2rem;overflow:hidden}
+.tl{display:flex;flex-direction:column}
+.ti{display:grid;grid-template-columns:170px 1fr;border-top:1px solid rgba(255,255,255,.08)}
+.ti:first-child{border-top:none}
+.ti-l{padding:2.5rem 2rem 2.5rem 0;border-right:1px solid rgba(255,255,255,.1)}
+.ti-yr{font-size:2.2rem;font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.22);line-height:1;white-space:nowrap;transition:color .3s}
+.ti:hover .ti-yr{color:rgba(255,255,255,.58)}
+.ti-dt{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:.5rem;line-height:1.6}
+.ti-r{padding:2.5rem 0 2.5rem 2.5rem;min-width:0}
+.ti-co{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.5rem}
+.ti-role{font-size:1.45rem;font-weight:800;letter-spacing:-.025em;line-height:1.18;margin-bottom:.75rem;color:#fff;word-wrap:break-word}
+.ti-desc{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.6);line-height:1.88;word-wrap:break-word}
+
+/* ─── CONTACT ─── */
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.ct-main{padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;min-height:300px}
+.ct-tag{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.ct-tag::before{content:'';width:14px;height:1px;background:rgba(255,255,255,.28)}
+.ct-h{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;color:#fff;margin-bottom:1.2rem}
+.ct-p{font-size:.92rem;line-height:1.85;color:rgba(255,255,255,.58);max-width:360px;margin-bottom:2rem}
+.ct-btns{display:flex;gap:.65rem;flex-wrap:wrap}
+.btn-d{background:rgba(255,255,255,.95);color:#030510;padding:.85rem 1.8rem;font-size:.76rem;font-weight:800;letter-spacing:.04em;text-decoration:none;border-radius:12px;transition:all .25s;display:inline-block}
+.btn-d:hover{background:#fff;transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.6)}
+.btn-gl{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.26);color:rgba(255,255,255,.88);padding:.85rem 1.8rem;font-size:.76rem;font-weight:700;letter-spacing:.04em;text-decoration:none;border-radius:12px;transition:all .25s;display:inline-block}
+.btn-gl:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.ct-info{padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+.ci{padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.08);transition:padding .2s;cursor:default}
+.ci:first-child{border-top:1px solid rgba(255,255,255,.08)}
+.ci:last-child{border-bottom:none}
+.ci:hover{padding-left:.5rem}
+.ci-l{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.35rem}
+.ci-v{font-size:1rem;font-weight:700;color:rgba(255,255,255,.82);text-decoration:none;display:block;transition:color .2s}
+.ci-v:hover{color:#fff}
+.ci-v.sm{font-size:.9rem}
+
+footer{margin:0 5% 3rem;padding:1.5rem 2.2rem;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15);border-radius:16px;display:flex;justify-content:space-between;font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* ─── SCROLL ANCHOR + REVEAL ─── */
+section,#hero{scroll-margin-top:4.5rem}
+/* visibility:hidden stops backdrop-filter from rendering ghost boxes */
+.rv{opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .7s ease,visibility .7s,transform .7s ease}
+.rv.in{opacity:1;visibility:visible;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .ti{grid-template-columns:150px 1fr}
+  .ti-l{padding:2.5rem 1.5rem 2.5rem 0}
+  .ti-r{padding:2.5rem 0 2.5rem 2rem}
+}
+@media(max-width:900px){
+  nav{padding:.42rem .9rem;gap:.9rem;max-width:calc(100vw - 2rem)}
+  .n-badge:last-child{display:none}
+  #hero{padding:6rem 5% 0}
+  .sec{padding:5rem 5%;min-height:auto}
+  .h-body{grid-template-columns:1fr;gap:1.5rem}
+  .h-right{align-items:flex-start}
+  .h-specs{text-align:left}
+  .ab-grid,.ct-grid{grid-template-columns:1fr}
+  .cap-grid{grid-template-columns:1fr 1fr;gap:1.2rem}
+  .ti{grid-template-columns:130px 1fr}
+  .ti-l{padding:2rem 1.5rem 2rem 0}
+  .ti-r{padding:2rem 0 2rem 1.8rem}
+  .tl-card{padding:0 2rem}
+  footer{margin:0 5% 2rem}
+}
+@media(max-width:640px){
+  nav{gap:.6rem;padding:.42rem .8rem}
+  .n-badge{display:none}
+  #hero{padding:5.5rem 5% 0}
+  .sec{padding:4rem 5%}
+  .hn{font-size:clamp(3rem,12.5vw,5.5rem)}
+  .cap-grid{grid-template-columns:1fr;gap:1rem}
+  .ti{grid-template-columns:1fr}
+  .ti-l{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:1.5rem 0 1rem}
+  .ti-r{padding:1.2rem 0 2rem}
+  .ct-btns{flex-direction:column}
+  .btn-d,.btn-gl{text-align:center;width:100%}
+  footer{flex-direction:column;gap:.5rem;text-align:center;margin:0 5% 1.5rem}
+}
+@media(max-width:400px){
+  .hn{font-size:clamp(2.5rem,11.5vw,4rem)}
+  .sr-n{font-size:1.6rem;width:90px}
+}
+</style>
+</head>
+<body>
+<div id="dot"></div>
+<video id="bg-video" autoplay muted loop playsinline>
+  <source src="assets/Video/bg.mp4" type="video/mp4">
+  <source src="assets/videos/bg.mp4" type="video/mp4">
+</video>
+
+<nav>
+  <div class="n-brand">MT™
+    <div class="n-dd">
+      <a href="#hero" class="dda">Home</a>
+      <a href="#about" class="dda">Profile</a>
+      <a href="#caps" class="dda">Capabilities</a>
+      <a href="#journey" class="dda">Journey</a>
+      <a href="#contact" class="dda">Contact</a>
+    </div>
+  </div>
+  <div class="n-sep"></div>
+  <div class="n-certs">
+    <div class="n-certs-pill">Certs</div>
+    <div class="n-certs-dd">
+      <a href="assets/certi/itil_cert.jpg" target="_blank" class="cert-row"><span class="cert-row-name">ITIL® 4 Foundation</span><span class="cert-row-issuer">KnowledgeHut UpGrad · 2026</span></a>
+      <a href="assets/certi/ServiceNow_System_(CSA).pdf" target="_blank" class="cert-row"><span class="cert-row-name">ServiceNow Certified System Administrator</span><span class="cert-row-issuer">ServiceNow University · 2026</span></a>
+      <a href="assets/certi/Collaborative_Management_Delivery_Accreditation.pdf" target="_blank" class="cert-row"><span class="cert-row-name">ServiceNow Collaborative Management & Delivery</span><span class="cert-row-issuer">ServiceNow University · 2026</span></a>
+      <a href="assets/certi/AI_Essential.pdf" target="_blank" class="cert-row"><span class="cert-row-name">Google AI Essentials Specialization</span><span class="cert-row-issuer">Google · 2026</span></a>
+      <a href="assets/certi/AI_Professional.pdf" target="_blank" class="cert-row"><span class="cert-row-name">Google AI Professional Certificate</span><span class="cert-row-issuer">Google · 2026</span></a>
+    </div>
+  </div>
+  <a href="assets/Mitul_Tailor_Universal_Resume.pdf" target="_blank" class="n-badge">US Green Card</a>
+</nav>
+
+<section id="hero">
+  <div class="h-inner">
+    <div class="h-pre">IT Operations Leader · 17 Years · Edison, NJ · U.S. Green Card</div>
+    <div class="h-name">
+      <span class="hn hn1">MITUL</span>
+      <span class="hn hn2">TAILOR.</span>
+    </div>
+    <div class="h-div"></div>
+    <div class="h-body">
+      <p class="h-desc">17 years building enterprise IT operations that run <strong>without noise.</strong> 11 years as sole on-site authority for Korn Ferry's executive hub — 98% SLA. 100% CMDB. 100% Day-1 readiness.</p>
+      <div class="h-right">
+        <div class="h-specs">IT Operations · ServiceNow · ITIL® v4<br>End User Computing · EUC Leadership</div>
+      </div>
+    </div>
+    <div class="mq-wrap">
+      <div class="mq-track">
+        <span class="mq-i">ITIL® v4 Certified</span><span class="mq-i">ServiceNow · 8 Years</span><span class="mq-i">98% SLA Compliance</span><span class="mq-i">100% CMDB Accuracy</span><span class="mq-i">17 Years Experience</span><span class="mq-i">U.S. Green Card</span><span class="mq-i">Korn Ferry · 11 Years</span><span class="mq-i">4× Office Relocations</span><span class="mq-i">100% Day-1 Readiness</span><span class="mq-i">Edison, New Jersey</span><span class="mq-i">ITIL® v4 Certified</span><span class="mq-i">ServiceNow · 8 Years</span><span class="mq-i">98% SLA Compliance</span><span class="mq-i">100% CMDB Accuracy</span><span class="mq-i">17 Years Experience</span><span class="mq-i">U.S. Green Card</span><span class="mq-i">Korn Ferry · 11 Years</span><span class="mq-i">4× Office Relocations</span><span class="mq-i">100% Day-1 Readiness</span><span class="mq-i">Edison, New Jersey</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="sec">
+  <div class="si">
+    <div class="ey rv">Profile</div>
+    <h2 class="sh rv d1">The standard is invisible delivery.</h2>
+    <p class="ssub rv d2">For 11 years — the business should never notice IT.</p>
+    <div class="ab-grid">
+      <div class="gc gc-pad rv d1">
+        <p>For 11 years I served as the <strong>senior on-site IT authority</strong> for Korn Ferry's Mumbai executive hub — the world's largest executive search firm, with operations across 52 countries — serving Fortune 500 and global financial services clients.</p>
+        <p>I owned service delivery, endpoint lifecycle, and operational governance as the <strong>single point of on-site accountability</strong> — coordinating across specialist central teams to make technology invisible to the business, without exception.</p>
+      </div>
+      <div class="gc gc-pad rv d2">
+        <div class="slist">
+          <div class="sr"><span class="sr-n">100%</span><span class="sr-d">Day-1 Readiness — Every Hire, No Exceptions</span></div>
+          <div class="sr"><span class="sr-n">8yr</span><span class="sr-d">ServiceNow — All Core ITSM Modules</span></div>
+          <div class="sr"><span class="sr-n">100%</span><span class="sr-d">CMDB Accuracy Throughout</span></div>
+          <div class="sr"><span class="sr-n">4×</span><span class="sr-d">Office Relocations — 50–55 Staff, Zero Disruption</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="caps" class="sec">
+  <div class="si">
+    <div class="ey rv">Core Capabilities</div>
+    <h2 class="sh rv d1">What I own.</h2>
+    <div class="cap-grid">
+      <div class="cap gc rv"><div class="cn">01</div><div class="cnm">ServiceNow ITSM</div><div class="cb">Incident, change, problem, request, asset, CMDB. 8 years. 98% SLA. 100% accuracy throughout.</div></div>
+      <div class="cap gc rv d1"><div class="cn">02</div><div class="cnm">Endpoint Lifecycle</div><div class="cb">Windows & MacOS fleet — imaging, deployment, viability, reallocation, decommissioning. Mumbai, Bangalore, remote India.</div></div>
+      <div class="cap gc rv d2"><div class="cn">03</div><div class="cnm">ITIL v4 Management</div><div class="cb">Certified. Process standardization and service delivery governance in demanding executive environments.</div></div>
+      <div class="cap gc rv"><div class="cn">04</div><div class="cnm">VIP Executive Support</div><div class="cb">Zero-downtime, white-glove support for Senior Partners and MDs. The business never notices IT.</div></div>
+      <div class="cap gc rv d1"><div class="cn">05</div><div class="cnm">Process Standardization</div><div class="cb">Hire-to-Retire ownership. 100% Day-1 readiness. Clean access revocation. Zero exceptions.</div></div>
+      <div class="cap gc rv d2"><div class="cn">06</div><div class="cnm">Microsoft 365</div><div class="cb">Teams, Exchange Online, SharePoint, OneDrive — client-side operational ownership.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey" class="sec">
+  <div class="si">
+    <div class="ey rv">Career</div>
+    <h2 class="sh rv d1">17 years of enterprise delivery.</h2>
+    <div class="tl-card rv d2">
+      <div class="tl">
+        <div class="ti"><div class="ti-l"><div class="ti-yr">2013</div><div class="ti-dt">Oct 2013 — Oct 2025</div></div><div class="ti-r"><div class="ti-co">Korn Ferry International</div><div class="ti-role">IT Operations Lead — EUC & Infrastructure</div><div class="ti-desc">Senior on-site IT authority for Korn Ferry's Mumbai executive hub. World's largest executive search firm, 52 countries. Single point of accountability for service delivery, endpoint lifecycle, and operational governance.</div></div></div>
+        <div class="ti"><div class="ti-l"><div class="ti-yr">2012</div><div class="ti-dt">Jul 2012 — Sep 2013</div></div><div class="ti-r"><div class="ti-co">Team Computers</div><div class="ti-role">Senior Infrastructure Support Engineer</div><div class="ti-desc">Resident enterprise engineer. Hardware deployments, Tier 3 escalation management, vendor coordination within strict SLA timelines.</div></div></div>
+        <div class="ti"><div class="ti-l"><div class="ti-yr">2011</div><div class="ti-dt">Jul 2011 — Jul 2012</div></div><div class="ti-r"><div class="ti-co">SAM Infotech</div><div class="ti-role">Technical Support Engineer</div><div class="ti-desc">Enterprise hardware and network support. LAN/WAN configuration, vendor escalation, on-site outage resolution.</div></div></div>
+        <div class="ti"><div class="ti-l"><div class="ti-yr">2009</div><div class="ti-dt">Jun 2009 — Jul 2011</div></div><div class="ti-r"><div class="ti-co">LYM Computers</div><div class="ti-role">Customer Technical Support Engineer</div><div class="ti-desc">Network and endpoint support with full IT asset lifecycle management across client environments.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="sec">
+  <div class="si">
+    <div class="ey rv">Contact</div>
+    <div class="ct-grid">
+      <div class="ct-main gc rv d1">
+        <div>
+          <div class="ct-tag">Get in Touch</div>
+          <h2 class="ct-h">Let's talk about the role.</h2>
+          <p class="ct-p">Director and VP-level IT Operations — NJ / NY. U.S. Green Card. No sponsorship required.</p>
+        </div>
+        <div class="ct-btns">
+          <a href="assets/Mitul_Tailor_Universal_Resume.pdf" target="_blank" class="btn-d">Download CV</a>
+          <a href="mailto:meetul.t@gmail.com" class="btn-gl">Send Email</a>
+        </div>
+      </div>
+      <div class="ct-info gc rv d2">
+        <div class="ci"><div class="ci-l">Email</div><a href="mailto:meetul.t@gmail.com" class="ci-v">meetul.t@gmail.com</a></div>
+        <div class="ci"><div class="ci-l">LinkedIn</div><a href="https://linkedin.com/in/mitultailor" target="_blank" class="ci-v">linkedin.com/in/mitultailor</a></div>
+        <div class="ci"><div class="ci-l">Location</div><div class="ci-v">Edison, New Jersey</div></div>
+        <div class="ci"><div class="ci-l">Status</div><div class="ci-v sm">U.S. Green Card · No Sponsorship Required</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><span>© 2026 Mitul Tailor™</span><span>ITIL® v4 · ServiceNow · Edison, NJ</span></footer>
+
+<script>
+/* CURSOR */
+const dot=document.getElementById('dot');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px'});
+document.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('mouseenter',()=>{dot.style.transform='translate(-50%,-50%) scale(3.5)';dot.style.opacity='.3'});
+  a.addEventListener('mouseleave',()=>{dot.style.transform='translate(-50%,-50%) scale(1)';dot.style.opacity='1'});
+});
+
+/* HERO: exact viewport height — fixes mobile chrome & ghost card issues */
+function fixHero(){document.getElementById('hero').style.height=window.innerHeight+'px';}
+fixHero();
+window.addEventListener('resize',fixHero);
+
+
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:.06});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
